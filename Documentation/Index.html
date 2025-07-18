@@ -1044,10 +1044,14 @@ font-weight: 400;
                                 <a onclick="scrollToBottom('TISTroubleshooting', 0,'userTISOverview',this)">Troubleshooting TIS Flow Issues</a>
                               
                             </li>
+                          
                           </ul>
                         </div>
                       </li>
-
+                      <p></p>
+                     <a onclick="handlePage(this,'TISreleaseVersion')" class="">
+                      <b>TIS release version 1.0</b>
+                    </a>
                       <li class="deviceScroll">
                         <div class="sub-content">
                           <input
@@ -6638,7 +6642,186 @@ font-weight: 400;
             </div>
           </section>
         </div>
-      
+       <div class="container" id="TISreleaseVersion" style="display: none">
+
+        <section class="content" id="Setup">
+          <div class="title">
+            <h1>TIS Release Note</h1>
+          </div>
+          <ol>
+            <li>
+              <article>
+                <h1>Purpose</h1>
+                <p>
+                  The document communicates the major features in the upgraded
+                  release of the Waymo Automation Tool. It also documents known
+                  problems and workarounds.
+                </p>
+              </article>
+            </li>
+            <li>
+              <article>
+                <h1>Release Summary</h1>
+                <table border="1" cellspacing="0" cellpadding="8">
+                  <thead>
+                    <tr>
+                      <th colspan="2">SUMMARY</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Release Version</strong></td>
+                      <td>4.1.0</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Release Date</strong></td>
+                      <td>11-JUL-2025</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Release Type</strong></td>
+                      <td>WAYMO AUTOMATION TOOL</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </article>
+            </li>
+            <li>
+              <h1>OVERVIEW/DESCRIPTION</h1>
+              <div class="image-container">
+                <a
+                  href="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/User_Guide/Tool_Flows/TIS_Release/1.png"
+                  target="_blank"
+                >
+                  <img
+                    src="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/User_Guide/Tool_Flows/TIS_Release/1.png"
+                    alt="error-loading"
+                  />
+                </a>
+                <div class="description">
+                  <p>Description text</p>
+                </div>
+              </div>
+              <p>
+                The above is the TIS Flow Diagram. The motion stage mentioned
+                here is the Animatic motor, which moves the heat spreader.
+                Basler Camera is for capturing images. Image is processed with
+                OpevCV and the below results are displayed for the Operator
+                using Node-Red Dashboard.
+              </p>
+              <div class="image-container">
+                <a
+                  href="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/User_Guide/Tool_Flows/TIS_Release/2.png"
+                  target="_blank"
+                >
+                  <img
+                    src="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/User_Guide/Tool_Flows/TIS_Release/2.png"
+                    alt="error-loading"
+                  />
+                </a>
+                <div class="description">
+                  <p>Description text</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <h1>MAJOR DELIVERABLES</h1>
+              <ol type="a">
+                <li>
+                  <strong>Device Drivers</strong>
+                  <ol type="1">
+                    <li>Brainbox ED588 and BrainBox ED527</li>
+                    <li>Animatic Motor</li>
+                    <li>Basler Camera</li>
+                    <li>Safety Controller SC10</li>
+                  </ol>
+                </li>
+                <li>
+                  JWT authentication implemented for Node-RED and React client
+                </li>
+                <li>
+                  Brainbox driver code converted from Python to C language
+                </li>
+                <li>
+                  Passing model number as input for multiple Basler models
+                </li>
+                <li>Edit and Delete functionality on device list</li>
+                <li>Add Device functionality on device list</li>
+                <li>Merger of Role and User management under Access Control</li>
+                <li>Device Management moved under Tool Management</li>
+                <li>
+                  Tool Selection tab introduced to filter the Node-RED dashboard
+                  menu
+                </li>
+                <li>Capturing image from left and right sides on TIS tool</li>
+                <li>
+                  Added revised Python scripts for blob detection and creating
+                  annotated images
+                </li>
+                <li>Added warning popup to keep the user logged in</li>
+                <li>Added sub-menu options for logs in the system tray</li>
+                <li>
+                  Added node-red-dev option under Advanced menu to start
+                  Node-RED in dev server
+                </li>
+                <li>
+                  Added Log menu in system tray to access respective log folders
+                </li>
+                <li>
+                  Added Log Management feature to clear logs:
+                  <ol type="1">
+                    <li>Log for MFG-Inspector</li>
+                    <li>Log for gRPC</li>
+                    <li>Log for Node-RED</li>
+                    <li>Log for MFG-Inspector Records</li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <h1>DEVELOPMENT SOFTWARES AND TOOLS USED</h1>
+              <ol type="a">
+                <li>Visual Studio IDE</li>
+                <li>Node-RED</li>
+                <li>Node.js</li>
+                <li>gRPC I/O Tools</li>
+                <li>Pylint</li>
+                <li>React</li>
+                <li>Gerrit</li>
+                <li>GitHub</li>
+              </ol>
+            </li>
+            <li>
+              <h1>KNOWN BUGS AND LIMITATIONS</h1>
+              <ul>
+                <li>None</li>
+              </ul>
+            </li>
+            <li>
+              <h1>ABBREVIATIONS:</h1>
+              <table border="1" cellspacing="0" cellpadding="8">
+                <thead>
+                  <tr>
+                    <th>Term</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>TIS</td>
+                    <td>Team Inspection Station</td>
+                  </tr>
+                  <tr>
+                    <td>gRPC</td>
+                    <td>Google Remote Procedure Call</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+          </ol>
+        </section>
+      </div>
+
+       
       <div class="container" id="userCBGOverview" style="display: none">
       <section class="content" id="Setup">
         <div class="title">
