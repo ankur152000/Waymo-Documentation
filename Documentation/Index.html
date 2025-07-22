@@ -572,6 +572,8 @@ background-color: transparent;
         width: 100%;
         position: relative;
         pointer-events: auto;
+        margin-bottom: 6px;border-radius: 4px;
+        overflow: hidden;
       }
       .image-container img {
         width: 100%;
@@ -597,10 +599,12 @@ background-color: transparent;
         opacity: 0;
         transition: opacity 0.3s;
         pointer-events: none;
+        border-radius: 4px;
       }
 
       .image-container:hover .description {
         opacity: 1;
+        backdrop-filter: blur(4px);
       }
       #GRPC,
       #ArchitectureDocument {
@@ -3437,7 +3441,7 @@ font-weight: 400;
                 </section>
               </div>
             <div class="container" id="userStationSetup" style="display: none;">
-            
+          
       <section class="content" id="Setup">
         <div class="title">
           <h1>Station Setup Flow Guide for User</h1>
@@ -3550,7 +3554,7 @@ font-weight: 400;
                 </div>
               </div>
               
-              <li>A Waymo icon will be created on your desktop and taskbar.</li></br>
+              <li>A Waymo icon will be created on your desktop and taskbar then double-click the Waymo icon to launch the application.</li></br>
               <div class="image-container">
                 <a href="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/User_Guide/InitialSetupStationSetup/5.png"
                   target="_blank">
@@ -3563,7 +3567,13 @@ font-weight: 400;
                 </div>
               </div>
              
-              <li>Double-click the Waymo icon to launch the application.</li>
+              <li>
+                Now we have multiple options to start Node-RED:
+                <ul>
+                  <li>For development run: go to <strong>Advanced</strong> → Start Node-RED</li>
+                  <li>For production run: directly start Node-RED</li>
+                </ul>
+              </li>
               <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
                 <thead>
                   <tr style="background-color: #f2f2f2;">
@@ -3739,9 +3749,9 @@ font-weight: 400;
             </article>
           </li>
           <li>
-            <strong>Important Note:</strong> If the setup <code>.bat</code> file is ever deleted or misplaced, you can find a backup copy in the following directory:<br>
-            C:\WaymoApplication\WaymoGrpcService\WaymoGrpcService\WaymoGrpcService\Batch Script<br><br>
-            Simply double-click the <code>.bat</code> file from this location to re-run the full station setup, including installations, repository cloning, virtual environment setup, and dependency installations.
+            <strong>Important Note:</strong> If the setup <b>.bat</b> file is ever deleted or misplaced, you can find a backup copy in the following directory:<br>
+            C:\WaymoApplication\WaymoGrpcService\WaymoGrpcService\WaymoGrpcService\Batch Script</br>
+            Simply double-click the <b>.bat</b> file from this location to re-run the full station setup, including installations, repository cloning, virtual environment setup, and dependency installations.
           </li>
         </ol>
       </section>
