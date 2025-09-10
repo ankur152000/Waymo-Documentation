@@ -2,549 +2,778 @@
 <html>
 
 <head>
-  <style>
-    :root {
-      --color-base: #202122;
-      --color-black: #000;
-    }
-
-    * {
-      padding: 0px;
-      margin: 0px;
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      font-family: sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    /* Height Issuse */
-    body {
-      height: 35vh;
-    }
-
-    body {
-      width: 100%;
-      font-size: 0.875rem;
-      line-height: 1.5714285;
-      /* padding:
-        10px 60px; */
-      color: var(--color-base,
-          #202122);
-      /* background-color: #fcfcfc;
-        */
-      overflow-x: hidden;
-      text-align: justify;
-    }
-
-    main {
-      display: flex;
-    }
-
-    header {
-      padding: 0px 10px 40px 10px;
-    }
-
-    a {
-      display: inline !important;
-    }
-
-    i {
-      padding-left: 16px;
-    }
-
-    .profile {
-      float: right;
-    }
-
-    .logo svg {
-      width: 36px;
-    }
-
-    .leftbar {
-      width: 330px;
-      height: 100vh;
-      overflow-x: visible;
-      overflow-y: auto;
-      padding: 46px 0px 0px 18px;
-      position: sticky;
-      top: 0px;
-    }
-
-    .leftbar ul {
-      margin: 0px;
-      padding-left: 15px;
-    }
-
-    .leftbar ul li {
-      list-style: none;
-      text-align: left;
-      margin-top: 6px;
-    }
-
-    .leftbar h5 {
-      border-bottom: 1px solid #eaecf0;
-      padding-bottom: 6px;
-      margin-bottom: 16px;
-    }
-
-    .leftbar input {
-      visibility: hidden;
-      display: none;
-    }
-
-    /* .leftbar span{ text-indent: 0px !important;
-        } */
-    .leftbar label {
-      position: relative;
-    }
-
-    .leftbar button {}
-
-    .container {
-      width: 100%;
-      padding: 0px 16px 0px 36px;
-      /* height: 100vh; overflow-y:
-        auto; */
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5 {
-      color: var(--color-black, #000);
-      font-weight: bold;
-    }
-
-    h1,
-    h2 {
-      font-size: 1.8em;
-      font-family: "Linux Libertine", "Georgia", "Times", "Source Serif Pro",
-        serif;
-      font-weight: normal;
-    }
-
-    h5 {
-      font-size: 0.875rem;
-    }
-
-    hr {
-      margin: 10px 0px 16px 0px;
-      border-color: #eaecf0;
-    }
-
-    p,
-    span {
-      font-size: 0.875rem;
-      line-height: 1.5714285;
-    }
-
-    table {
-      text-align: left;
-    }
-
-    /* table td p{ text-indent: 0px !important; } */
-    table {
-      width: 100%;
-    }
-
-    table,
-    th,
-    td {
-      border: 1px solid #e3e3e3;
-      border-collapse: collapse;
-    }
-
-    table,
-    th,
-    td {
-      padding: 6px 10px;
-    }
-
-    ol,
-    ul {
-      margin-bottom: 16px;
-    }
-
-    ul,
-    ol {
-      /* list-style: none; */
-      padding-left: 30px;
-    }
-
-    a {
-      color: #36c;
-      padding: 6px 0px;
-      display: block;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    code {
-      background-color: #e6e6e6;
-      display: block;
-      padding: 16px 16px;
-      border-radius: 2px 2px;
-      margin-bottom: 26px;
-      box-shadow: rgb(232 232 232) 3.2px 3.2px 8px 0px inset,
-        rgb(226 226 226) -3.2px -3.2px 8px 0px inset;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .checkBox:checked~label {
-      /*
-        background-color: red; */
-    }
-
-    .checkBox:checked~ul {
-      height: 0px;
-      overflow: hidden;
-    }
-
-    .checkBox:checked~label .btn-min {
-      display: block;
-    }
-
-    .checkBox:checked~label .btn {
-      display: none;
-    }
-
-    .btn,
-    .btn-min {
-      position: absolute;
-      left: -18px;
-      top: 0px;
-      background-color: #f8f9fa;
-      padding: 0px 4px;
-    }
-
-    .btn:hover {
-      background-color: #eaecf0;
-    }
-
-    .btn-min {
-      display: none;
-    }
-
-    .title {
-      margin-bottom: 26px;
-    }
-
-    .title h1,
-    h2 {
-      padding-bottom: 10px;
-      border-bottom: 1px solid #ccc;
-    }
-
-    h2 {
-      margin-bottom: 16px;
-    }
-
-    /* Contect Style Starts */
-    .content {
-      padding: 0px 0px 16px 0px;
-    }
-
-    .content ul {
-      list-style: circle;
-    }
-
-    .content ol {
-      counter-reset: article;
-      /* list-style-type: none; */
-      position: relative;
-      padding: 0px 0px 0px 26px;
-      font-weight: normal;
-    }
-
-    .content ol>li {
-      counter-increment: article;
-      /* list-style: none; */
-      pointer-events: none;
-      padding: 2px 0px;
-      font-size: 0.875rem;
-      /* font-weight: bold; */
-    }
-
-    .content p,
-    .content span {
-      font-weight: normal;
-      /* text-indent: 24px; */
-    }
-
-    .content ol>li:before {
-      display: none;
-    }
-
-    .content ol>li:before {
-      content: counters(article, ".") " ";
-      font-weight: normal;
-    }
-
-    article {
-      margin-bottom: 16px;
-    }
-
-    article h3 {
-      font-size: 1.2em;
-    }
-
-    .sub-content {
-      position: relative;
-    }
-
-    .sub-content p~a {
-      color: #202122;
-    }
-
-    .flower-bracket {
-      border: 1px solid #ccc;
-      width: 100%;
-      height: 10px;
-      position: relative;
-      border-radius: 50px;
-      border-bottom: 0px;
-      margin: 4px 0px;
-    }
-
-    .bracket::before {
-      content: "";
-      position: absolute;
-      bottom: 100%;
-      right: 50%;
-      border: 9px solid transparent;
-      border-bottom-color: #ccc;
-    }
-
-    .bracket::after {
-      content: "";
-      position: absolute;
-      bottom: 99.3%;
-      right: 50.1%;
-      border: 8px solid transparent;
-      border-bottom-color: #fcfcfc;
-    }
-
-    .text-center {
-      text-align: center;
-    }
-
-    .pos {
-      position: relative;
-      margin: 0 auto;
-    }
-
-    .scrollTop {
-      width: 50px;
-      height: 50px;
-      position: fixed;
-      bottom: 6px;
-      right: 6px;
-      background-color: #fff;
-      color: #2e3138;
-      transform: rotateZ(-90deg);
-      border-radius: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
-        0px 1px 18px 0px rgba(0, 0, 0, 0.12),
-        0px 3px 5px -1px rgba(0, 0, 0, 0.2);
-      /* padding-left:
-        16px; */
-      z-index: 99;
-    }
-
-    .scrollTop p {
-      font-size: 12px;
-      display: none;
-    }
-
-    .moveTop {
-      height: 40px;
-      width: 45px;
-      border-radius: 100%;
-      position: relative;
-      transform: rotateZ(90deg);
-      cursor: pointer;
-    }
-
-    .scrollTop:hover .moveTop:before,
-    .scrollTop:hover .moveTop:after {
-      top: 16px;
-      /* // transition:
-        top 1s; */
-    }
-
-    .moveTop:before,
-    .moveTop:after {
-      /* transition: top 1s; */
-      border-radius: 50px;
-      content: "";
-      position: absolute;
-      top: 18px;
-      width: 12px;
-      border: 1.5px solid #2e3138;
-      transition: all 0.3s;
-      -webkit-transition: all 0.3s;
-    }
-
-    .moveTop:before {
-      transform: rotateZ(45deg);
-      -webkit-transform: rotateZ(-45deg);
-      left: 10px;
-    }
-
-    .moveTop:after {
-      transform: rotateZ(-45deg);
-      -webkit-transform: rotateZ(45deg);
-      left: 19px;
-    }
-
-    .image-container img {
-      /* height: 250px; margin: 0px auto; display: flex; */
-    }
-
-    .image-container {
-      position: relative;
-    }
-
-    .description {
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: rgba(0,
-          0,
-          0,
-          0.7);
-      /* Adjust background color and
-        opacity */
-      color: #fff;
-      /* Text color */
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: opacity 0.3s;
-      pointer-events: none;
-    }
-
-    .image-container:hover .description {
-      opacity: 1;
-    }
-
-    #GRPC {
-      width: 80%;
-    }
-
-    .leftbar a:focus,
-    .leftbar a:visited,
-    .leftbar a:active,
-    .leftbar a:target,
-    .leftbar a:focus-within {
-      text-decoration: underline;
-    }
-
-    /* Menu Stylyling */
-    #menuCheckbox {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    @media screen and (max-width: 1023px) {
-
-      /* #menuCheckbox{ width:
-        100px; height: 100px; background-color: red; } */
-      .menu {
-        width: 30px;
-        height: 3px;
-        background-color: #414141;
+    <style>
+      :root {
+        --color-base: #202122;
+        --color-black: #000;
+      }
+
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        /* font-family: sans-serif; */
+        font-family: "Roboto", sans-serif;
+
+        scroll-behavior: smooth;
+      }
+      /* Height Issuse */
+      body {
+        height: 100vh;
+      }
+      body {
+        width: 100%;
+        font-size: 0.875rem;
+        line-height: 1.5714285;
+        /* padding: 10px 60px; */
+        color: var(--color-base, #202122);
+        /* background-color: #fcfcfc; */
+        overflow-x: hidden;
+        text-align: justify;
+      }
+
+      main {
+        display: flex;
         position: absolute;
-        margin-top: 20px;
-        display: block;
-        z-index: 99;
+      }
+
+      header {
+        padding: 0px 10px 40px 10px;
+      }
+
+      a {
+        display: inline !important;
         cursor: pointer;
+        pointer-events: auto;
       }
 
-      .menu::before,
-      .menu::after {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 30px;
-        height: 3px;
-        background-color: #414141;
+      i {
+        padding-left: 16px;
       }
 
-      .menu::before {
-        top: -10px;
-        transform: rotateZ(0deg);
+      .profile {
+        float: right;
       }
 
-      .menu::after {
-        top: 10px;
-        transform: rotateZ(0deg);
-      }
-
-      #menuCheckbox~label {
-        width: 30px;
-        height: 40px;
-        position: fixed;
-        left: 10px;
-        z-index: 99;
-      }
-
-      #menuCheckbox:checked~label .menu {
-        background-color: rgba(65, 65, 65, 0);
-      }
-
-      #menuCheckbox:checked~label .menu::before {
-        top: 0px;
-        transform: rotateZ(45deg);
-      }
-
-      #menuCheckbox:checked~label .menu::after {
-        top: 0px;
-        transform: rotateZ(-45deg);
+      .logo svg {
+        width: 36px;
       }
 
       .leftbar {
-        position: fixed;
-        width: 100%;
+        width: 530px;
         height: 100vh;
-        background-color: white;
-        z-index: 9;
-        text-align: center;
-        height: 0px;
-        overflow-x: hidden;
+        color: #fff;
+        background-color: rgb(5, 131, 255);
+        overflow-x: visible;
         overflow-y: auto;
-        padding: 0px 0px;
+        padding: 36px 12px 0px 12px;
+        position: sticky;
+        top: 0px;
+        font-size: 12px;
+      }
+
+      .leftbar ul {
+        padding-left: 10px;
+        margin: 0px 0px 0px 5px;
+        border-left: 1px dotted rgb(255 255 255 / 60%);
       }
 
       .leftbar ul li {
-        text-align: center;
+        list-style: none;
+        text-align: left;
+        /* margin-top: 6px; */
+        position: relative;
+      }
+       .leftbar ul li:first-child{
+        margin-top: 6px;
+       }
+      /* .leftbar ul li:last-child::after{
+display: block;
+content: "";
+background-color: #07f;
+width: 100px;
+height: 2;
+      } */
+
+      .leftbar h5 {
+        color: rgb(234, 236, 240, 0.4);
+        border-bottom: 1px dotted rgb(255 255 255 / 60%);
+        padding-bottom: 6px;
+        margin-bottom: 16px;
+        text-indent: 15px;
       }
 
-      .leftbar p,
-      .leftbar span,
-      .deviceScroll ul {
+      .leftbar input {
+        visibility: hidden;
         display: none;
       }
 
-      #menuCheckbox:checked~.leftbar {
-        height: 100vh;
-        padding: 46px 0px 0px 18px;
+      /* .leftbar span{
+      text-indent: 0px !important;
+      } */
+      .leftbar label {
+        width: 100%;
+        display: block;
+        position: relative;
+        text-align: left;
+        /* padding-right: 25px; */
       }
-    }
-  </style>
+      .leftbar label b{
+       
+    /* height: 36px; */
+    display: block;
+    border-radius: 4px;
+    /* color: #07f;
+    background-color: rgb(255 255 255 / 100%); */
+    color: #fff;
+    background-color: transparent;
+    line-height: 36px;
+    font-weight: 500;
+    padding-left: 15px;
+    position: relative;
+    padding:0px 28px 0px 5px;
+      }
+      .leftbar label b::before,
+      .leftbar a.active::before{
+        display: block;
+        content: "";
+        width: 2px;
+        height: 70%;
+        position: absolute;
+        left: 1px;
+        top: 5px;
+        background-color: transparent;
+        border-radius: 0px 66px 56px 0px;
+        z-index: 9;
+        display: block;
+      }
+      .leftbar a.active{
+        background-color: #fff;
+        position: relative;
+        color: #07f;
+      }
+      .leftbar a.active::before{
+        background-color: #07f;
+      }
+  
+     
+      .leftbar label p {
+        position: absolute;
+        top: 10%;
+    right: 6px;
+    /* background-color: red; */
+    width: 24px;
+    height: 24px;
+    z-index: 9;
+    transition: all 0.6s;
+    transform: rotatez(90deg);
+      }
+      .leftbar label p::after{
+        content: "";
+    display: block;
+    width: 10px;
+    height: 2px;
+    background-color: #fff;
+    transform: rotatez(45deg);
+    border-radius: 50px;
+    top: 9px;
+    position: absolute;
+    left: 5px;
+      }
+      .leftbar label p::before{
+        content: "";
+    display: block;
+    width: 10px;
+    height: 2px;
+    background-color: #fff;
+    transform: rotatez(-45deg);
+    border-radius: 50px;
+    top: 15px;
+    position: absolute;
+    left: 5px;
+      }
+
+      .leftbar label img {
+        width: 20px;
+    position: absolute;
+    top: 6px;
+    left: 8px;
+      }
+
+      .container {
+        width: 100%;
+        padding: 0px 16px 0px 36px;
+        /* height: 100vh;
+              overflow-y: auto; */
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        /* color: var(--color-black, #000); */
+        font-weight: bold;
+      }
+
+      h1,
+      h2 {
+        font-size: 1.8em;
+        font-family: "Linux Libertine", "Georgia", "Times", "Source Serif Pro",
+          serif;
+        font-weight: normal;
+      }
+
+      h5 {
+        font-size: 0.875rem;
+      }
+
+      hr {
+        margin: 10px 0px 16px 0px;
+        border-color: #eaecf0;
+      }
+
+      p,
+      span {
+        font-size: 0.875rem;
+        line-height: 1.5714285;
+      }
+
+      table {
+        text-align: left;
+      }
+
+      /* table td p{
+             text-indent: 0px !important;
+            } */
+      table {
+        width: 100%;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #e3e3e3;
+        border-collapse: collapse;
+      }
+
+      table,
+      th,
+      td {
+        padding: 6px 10px;
+      }
+
+      ol,
+      ul {
+        margin-bottom: 16px;
+      }
+
+      ul,
+      ol {
+        /* list-style: none; */
+        padding-left: 30px;
+      }
+
+      a {
+        color: #36c;
+        padding: 6px 0px;
+        display: block;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      code {
+        background-color: #e6e6e6;
+        display: block;
+        padding: 16px 16px;
+        border-radius: 2px 2px;
+        margin-bottom: 26px;
+        box-shadow: rgb(232 232 232) 3.2px 3.2px 8px 0px inset,
+          rgb(226 226 226) -3.2px -3.2px 8px 0px inset;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .checkBox:checked ~ label {
+        /* background-color: red; */
+      }
+
+      .checkBox:checked ~ ul {
+        height: 0px;
+        overflow: hidden;
+        margin: 0px;
+      }
+      .checkBox:checked ~ ul li{
+        margin: 0px;
+      }
+
+      .checkBox:checked ~ label .btn-min {
+        display: block;
+      }
+
+      .checkBox:checked ~ label .btn {
+        display: none;
+      }
+      .checkBox:checked ~ label b{
+        /* background-color: rgb(255 255 255 / 80%) */
+        background-color: transparent;
+      }
+      .checkBox:checked ~ label b::after{
+        display: none;
+      }
+      .checkBox:checked ~ label p{
+        transform: rotatez(0deg);
+        transition: all 0.6s;
+      }
+      
+
+      .btn,
+      .btn-min {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: -18px;
+        top: 0px;
+        /* border: 2px solid rgb(248, 249, 250, 0.5); */
+        color: #07f;
+        /* border-radius: 50px; */
+        line-height: 16px;
+        text-align: center;
+        font-size: 20px;
+      }
+
+      /* .btn:hover {
+        background-color: #eaecf0;
+      } */
+
+      .btn-min {
+        display: none;
+      }
+
+      .title {
+        margin-bottom: 26px;
+      }
+
+      .title h1,
+      h2 {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      h2 {
+        margin-bottom: 16px;
+      }
+
+      /* Contect Style Starts */
+      .content {
+        padding: 0px 0px 16px 0px;
+      }
+
+      .content ul {
+        list-style: circle;
+      }
+
+      .content ol {
+        counter-reset: section;
+        /* list-style-type: none;  */
+        position: relative;
+        padding: 0px 0px 0px 26px;
+        font-weight: normal;
+      }
+
+      .content ol > li {
+        counter-increment: section;
+        /* list-style: none; */
+        pointer-events: none;
+        padding: 2px 0px;
+        font-size: 0.875rem;
+        /* font-weight: bold; */
+      }
+
+      .content p,
+      .content span {
+        font-weight: normal;
+        /* text-indent: 24px; */
+      }
+
+      .content ol > li:before {
+        display: none;
+      }
+
+      .content ol > li:before {
+        content: counters(section, ".") " ";
+        font-weight: normal;
+      }
+
+      article {
+        margin-bottom: 16px;
+      }
+
+      article h3 {
+        font-size: 1.2em;
+      }
+
+      .sub-content {
+        position: relative;
+        /* padding: 10px 0px 10px 0px; */
+      }
+      .sub-content .sub-content {
+        font-weight: 200;
+      }
+
+      .sub-content p ~ a {
+        width: 100%;
+        font-weight: 300;
+        text-align: left;
+        /* color: rgb(255 255 255 / 66%); */
+        /* color: #07f; 
+        background-color: rgb(255 255 255 / 80%); */
+        color: #fff;
+background-color: transparent;
+        display: block !important;
+        border-radius: 4px;
+        /* text-indent: 15px; */
+        
+        padding: 10px 26px 10px 10px;
+        border-bottom: 1px;
+        position: relative;
+      }
+     
+      .sub-content p ~ a::after{
+          display: block;
+    content: "";
+    width: 18px;
+    height: 6px;
+    position: absolute;
+    left: -12px;
+    top: 12px;
+    border-radius: 50px;
+    border-bottom: 1px dotted rgb(255 255 255 / 60%);
+      }
+
+      .flower-bracket {
+        border: 1px solid #ccc;
+        width: 100%;
+        height: 10px;
+        position: relative;
+        border-radius: 50px;
+        border-bottom: 0px;
+        margin: 4px 0px;
+      }
+
+      .bracket::before {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        right: 50%;
+        border: 9px solid transparent;
+        border-bottom-color: #ccc;
+      }
+
+      .bracket::after {
+        content: "";
+        position: absolute;
+        bottom: 99.3%;
+        right: 50.1%;
+        border: 8px solid transparent;
+        border-bottom-color: #fcfcfc;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .pos {
+        position: relative;
+        margin: 0 auto;
+      }
+
+      .scrollTop {
+        width: 56px;
+        height: 56px;
+        position: fixed;
+        bottom: 82px;
+        right: 10px;
+        background-color: #f5f5f5;
+        color: #2e3138;
+        transform: rotateZ(-90deg);
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+          0px 1px 18px 0px rgba(0, 0, 0, 0.12),
+          0px 3px 5px -1px rgba(0, 0, 0, 0.2);
+        /* padding-left: 16px; */
+        z-index: 99;
+      }
+
+      .scrollTop p {
+        font-size: 12px;
+        display: none;
+      }
+
+      .moveTop {
+        height: 40px;
+        width: 45px;
+        border-radius: 100%;
+        position: relative;
+        transform: rotateZ(90deg);
+        cursor: pointer;
+      }
+
+      .scrollTop:hover .moveTop:before,
+      .scrollTop:hover .moveTop:after {
+        top: 16px;
+        /* // transition: top 1s; */
+      }
+
+      .moveTop:before,
+      .moveTop:after {
+        /* transition: top 1s; */
+        border-radius: 50px;
+        content: "";
+        position: absolute;
+        top: 18px;
+        width: 12px;
+        border: 1.5px solid #2e3138;
+        transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+      }
+
+      .moveTop:before {
+        transform: rotateZ(45deg);
+        -webkit-transform: rotateZ(-45deg);
+        left: 10px;
+      }
+
+      .moveTop:after {
+        transform: rotateZ(-45deg);
+        -webkit-transform: rotateZ(45deg);
+        left: 19px;
+      }
+      .image-container img {
+        /* height: 250px;
+          margin: 0px auto;
+          display: flex; */
+      }
+
+      .image-container {
+        width: 100%;
+        position: relative;
+        pointer-events: auto;
+        margin-bottom: 6px;border-radius: 4px;
+        overflow: hidden;
+      }
+      .image-container img {
+        width: 100%;
+        /* max-height: 250px; */
+      }
+
+      .description {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.7
+        ); /* Adjust background color and opacity */
+        color: #fff; /* Text color */
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+        border-radius: 4px;
+      }
+
+      .image-container:hover .description {
+        opacity: 1;
+        backdrop-filter: blur(4px);
+      }
+      #GRPC,
+      #ArchitectureDocument {
+        width: 80%;
+      }
+      .leftbar a:focus,
+      .leftbar a:visited,
+      .leftbar a:active,
+      .leftbar a:target,
+      .leftbar a:focus-within {
+        text-decoration: underline;
+      }
+      /* Menu Stylyling  */
+      #menuCheckbox {
+        width: 0px;
+        opacity: 0;
+        pointer-events: none;
+      }
+      @media screen and (max-width: 768px) {
+        /* #menuCheckbox{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      } */
+
+        .menu {
+          width: 30px;
+          height: 3px;
+          background-color: #414141;
+          position: absolute;
+          margin-top: 20px;
+          display: block;
+          z-index: 99;
+          cursor: pointer;
+        }
+        .menu::before,
+        .menu::after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 30px;
+          height: 3px;
+          background-color: #414141;
+        }
+        .menu::before {
+          top: -10px;
+          transform: rotateZ(0deg);
+        }
+        .menu::after {
+          top: 10px;
+          transform: rotateZ(0deg);
+        }
+
+        #menuCheckbox ~ label {
+          width: 30px;
+          height: 40px;
+          position: fixed;
+          left: 10px;
+          z-index: 99;
+        }
+        #menuCheckbox:checked ~ label .menu {
+          background-color: rgba(65, 65, 65, 0);
+        }
+        #menuCheckbox:checked ~ label .menu::before {
+          top: 0px;
+          transform: rotateZ(45deg);
+        }
+        #menuCheckbox:checked ~ label .menu::after {
+          top: 0px;
+          transform: rotateZ(-45deg);
+        }
+        .leftbar {
+          position: fixed;
+          width: 100%;
+          height: 100vh;
+          background-color: white;
+          z-index: 9;
+          text-align: center;
+          height: 0px;
+          overflow-x: hidden;
+          overflow-y: auto;
+          padding: 0px 0px;
+        }
+        .leftbar ul li {
+          text-align: center;
+          margin: 0px;
+        }
+        .leftbar p,
+        .leftbar span,
+        .deviceScroll ul {
+          display: none;
+        }
+        #menuCheckbox:checked ~ .leftbar {
+          height: 100vh;
+          padding: 46px 0px 0px 18px;
+        }
+      }
+      .deviceImg {
+        float: right;
+        width: 156px;
+        border: 1px solid #c8ccd1;
+        background-color: #f8f9fa;
+        padding: 4px;
+        margin-left: 22px;
+      }
+      .deviceImg img {
+        width: 100%;
+      }
+      .deviceImg p {
+        font-size: 13px;
+        text-align: center;
+        color: #414141;
+      }
+       .leftbar .searchBlock{
+        position: relative;
+            margin-bottom: 24px;
+       }
+      .leftbar .searchBlock .search{
+        display: block;
+    width: 100%;
+    border: 1px solid rgb(255, 255, 255);
+    visibility: visible;
+    height: 36px;
+    border-radius: 4px;
+    background-color:#ffff;
+        padding: 6px 12px 6px 36px;
+      }
+      .leftbar .searchBlock img{
+           width: 18px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+
+      }
+      .linkContent{
+            background-color:rgb(255 255 255);
+            color: #000;
+    border-radius: 4px;
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+      }
+      .linkContent ul{
+            padding: 0px;
+            margin: 0px;
+      }
+      .linkContent li{
+               background-color: rgb(230 230 230);
+    margin-bottom: 6px;
+    line-height: 30px;
+    text-indent: 16px;
+    border-radius: 4px
+      }
+      .linkContent li a{
+        width: 100%;
+        border-radius: 4px;
+         padding: 0px 10px;
+         display: block !important;
+            transition: all 0.5s; 
+      }
+      .linkContent li a:hover{
+           background-color:#eee;
+           font-weight: 600;
+   transition: all 0.5s;
+      }
+      .linkContent li a b{
+font-weight: 400;
+      }
+      /* linkContent{
+
+      } */
+    </style>
 </head>
 
 <body>
@@ -665,7 +894,8 @@
         </div>
       </div>
     </div>
-    <div class="container">
+      <div class="container" id="userStationSetup" >
+          
       <section class="content" id="Setup">
         <div class="title">
           <h1>Station Setup Flow Guide for User</h1>
@@ -719,10 +949,10 @@
               <li>WaymoIcon</li>
             </ol>
             <div class="image-container">
-              <a href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/UI_Site/Users/User3.png?raw=true"
+              <a href="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/User_Guide/InitialSetupStationSetup/1.png"
                 target="_blank">
                 <img
-                  src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/UI_Site/Users/User3.png?raw=true"
+                  src="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/User_Guide/InitialSetupStationSetup/1.png"
                   alt="error-loading" />
               </a>
               <div class="description">
@@ -743,10 +973,10 @@
             <ol type="a">
               <li>Download the WaymoArtifacts.zip folder and extract it. The folder contains all the necessary files for setup.</li></br>
               <div class="image-container">
-                <a href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/UI_Site/Users/User3.png?raw=true"
+                <a href="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/User_Guide/InitialSetupStationSetup/2.png"
                   target="_blank">
                   <img
-                    src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/UI_Site/Users/User3.png?raw=true"
+                    src="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/User_Guide/InitialSetupStationSetup/2.png"
                     alt="error-loading" />
                 </a>
                 <div class="description">
@@ -755,10 +985,10 @@
               </div>
               <li>Run install-pre-requisites_v.3.0.1.bat as Administrator. This will automatically download and install all required dependencies.</li></br>
               <div class="image-container">
-                <a href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/UI_Site/Users/User3.png?raw=true"
+                <a href="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/User_Guide/InitialSetupStationSetup/3.png"
                   target="_blank">
                   <img
-                    src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/UI_Site/Users/User3.png?raw=true"
+                    src="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/User_Guide/InitialSetupStationSetup/3.png"
                     alt="error-loading" />
                 </a>
                 <div class="description">
@@ -767,10 +997,10 @@
               </div>
               </br>
               <div class="image-container">
-                <a href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/UI_Site/Users/User3.png?raw=true"
+                <a href="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/User_Guide/InitialSetupStationSetup/4.png"
                   target="_blank">
                   <img
-                    src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/UI_Site/Users/User3.png?raw=true"
+                    src="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/User_Guide/InitialSetupStationSetup/4.png"
                     alt="error-loading" />
                 </a>
                 <div class="description">
@@ -780,10 +1010,10 @@
               
               <li>A Waymo icon will be created on your desktop and taskbar then double-click the Waymo icon to launch the application.</li></br>
               <div class="image-container">
-                <a href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/UI_Site/Users/User3.png?raw=true"
+                <a href="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/User_Guide/InitialSetupStationSetup/5.png"
                   target="_blank">
                   <img
-                    src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/UI_Site/Users/User3.png?raw=true"
+                    src="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/User_Guide/InitialSetupStationSetup/5.png"
                     alt="error-loading" />
                 </a>
                 <div class="description">
@@ -845,10 +1075,10 @@
                 </tbody>
               </table></br>
               <div class="image-container">
-                <a href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/UI_Site/Users/User3.png?raw=true"
+                <a href="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/User_Guide/InitialSetupStationSetup/6.png"
                   target="_blank">
                   <img
-                    src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/UI_Site/Users/User3.png?raw=true"
+                    src="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/User_Guide/InitialSetupStationSetup/6.png"
                     alt="error-loading" />
                 </a>
                 <div class="description">
@@ -858,10 +1088,10 @@
               
               <li>A login page will automatically open in your default browser.</li></br>
               <div class="image-container">
-                <a href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/UI_Site/Users/User3.png?raw=true"
+                <a href="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/User_Guide/InitialSetupStationSetup/7.png"
                   target="_blank">
                   <img
-                    src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/UI_Site/Users/User3.png?raw=true"
+                    src="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/User_Guide/InitialSetupStationSetup/7.png"
                     alt="error-loading" />
                 </a>
                 <div class="description">
