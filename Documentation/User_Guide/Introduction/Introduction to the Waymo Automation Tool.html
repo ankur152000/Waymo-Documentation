@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-
-<head>
- <style>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
       :root {
         --color-base: #202122;
         --color-black: #000;
@@ -18,13 +18,14 @@
       body {
         /* font-family: sans-serif; */
         font-family: "Roboto", sans-serif;
-
         scroll-behavior: smooth;
       }
+
       /* Height Issuse */
       body {
         height: 100vh;
       }
+
       body {
         width: 100%;
         font-size: 0.875rem;
@@ -88,9 +89,11 @@
         /* margin-top: 6px; */
         position: relative;
       }
-       .leftbar ul li:first-child{
+
+      .leftbar ul li:first-child {
         margin-top: 6px;
-       }
+      }
+
       /* .leftbar ul li:last-child::after{
 display: block;
 content: "";
@@ -98,7 +101,6 @@ background-color: #07f;
 width: 100px;
 height: 2;
       } */
-
       .leftbar h5 {
         color: rgb(234, 236, 240, 0.4);
         border-bottom: 1px dotted rgb(255 255 255 / 60%);
@@ -122,23 +124,24 @@ height: 2;
         text-align: left;
         /* padding-right: 25px; */
       }
-      .leftbar label b{
-       
-    /* height: 36px; */
-    display: block;
-    border-radius: 4px;
-    /* color: #07f;
+
+      .leftbar label b {
+        /* height: 36px; */
+        display: block;
+        border-radius: 4px;
+        /* color: #07f;
     background-color: rgb(255 255 255 / 100%); */
-    color: #fff;
-    background-color: transparent;
-    line-height: 36px;
-    font-weight: 500;
-    padding-left: 15px;
-    position: relative;
-    padding:0px 28px 0px 5px;
+        color: #fff;
+        background-color: transparent;
+        line-height: 36px;
+        font-weight: 500;
+        padding-left: 15px;
+        position: relative;
+        padding: 0px 28px 0px 5px;
       }
+
       .leftbar label b::before,
-      .leftbar a.active::before{
+      .leftbar a.active::before {
         display: block;
         content: "";
         width: 2px;
@@ -151,57 +154,60 @@ height: 2;
         z-index: 9;
         display: block;
       }
-      .leftbar a.active{
+
+      .leftbar a.active {
         background-color: #fff;
         position: relative;
         color: #07f;
       }
-      .leftbar a.active::before{
+
+      .leftbar a.active::before {
         background-color: #07f;
       }
-  
-     
+
       .leftbar label p {
         position: absolute;
         top: 10%;
-    right: 6px;
-    /* background-color: red; */
-    width: 24px;
-    height: 24px;
-    z-index: 9;
-    transition: all 0.6s;
-    transform: rotatez(90deg);
+        right: 6px;
+        /* background-color: red; */
+        width: 24px;
+        height: 24px;
+        z-index: 9;
+        transition: all 0.6s;
+        transform: rotatez(90deg);
       }
-      .leftbar label p::after{
+
+      .leftbar label p::after {
         content: "";
-    display: block;
-    width: 10px;
-    height: 2px;
-    background-color: #fff;
-    transform: rotatez(45deg);
-    border-radius: 50px;
-    top: 9px;
-    position: absolute;
-    left: 5px;
+        display: block;
+        width: 10px;
+        height: 2px;
+        background-color: #fff;
+        transform: rotatez(45deg);
+        border-radius: 50px;
+        top: 9px;
+        position: absolute;
+        left: 5px;
       }
-      .leftbar label p::before{
+
+      .leftbar label p::before {
         content: "";
-    display: block;
-    width: 10px;
-    height: 2px;
-    background-color: #fff;
-    transform: rotatez(-45deg);
-    border-radius: 50px;
-    top: 15px;
-    position: absolute;
-    left: 5px;
+        display: block;
+        width: 10px;
+        height: 2px;
+        background-color: #fff;
+        transform: rotatez(-45deg);
+        border-radius: 50px;
+        top: 15px;
+        position: absolute;
+        left: 5px;
       }
 
       .leftbar label img {
         width: 20px;
-    position: absolute;
-    top: 6px;
-    left: 8px;
+        position: absolute;
+        top: 6px;
+        left: 8px;
       }
 
       .container {
@@ -300,38 +306,41 @@ height: 2;
         text-decoration: underline;
       }
 
-      .checkBox:checked ~ label {
+      .checkBox:checked~label {
         /* background-color: red; */
       }
 
-      .checkBox:checked ~ ul {
+      .checkBox:checked~ul {
         height: 0px;
         overflow: hidden;
         margin: 0px;
       }
-      .checkBox:checked ~ ul li{
+
+      .checkBox:checked~ul li {
         margin: 0px;
       }
 
-      .checkBox:checked ~ label .btn-min {
+      .checkBox:checked~label .btn-min {
         display: block;
       }
 
-      .checkBox:checked ~ label .btn {
+      .checkBox:checked~label .btn {
         display: none;
       }
-      .checkBox:checked ~ label b{
+
+      .checkBox:checked~label b {
         /* background-color: rgb(255 255 255 / 80%) */
         background-color: transparent;
       }
-      .checkBox:checked ~ label b::after{
+
+      .checkBox:checked~label b::after {
         display: none;
       }
-      .checkBox:checked ~ label p{
+
+      .checkBox:checked~label p {
         transform: rotatez(0deg);
         transition: all 0.6s;
       }
-      
 
       .btn,
       .btn-min {
@@ -351,7 +360,6 @@ height: 2;
       /* .btn:hover {
         background-color: #eaecf0;
       } */
-
       .btn-min {
         display: none;
       }
@@ -387,7 +395,7 @@ height: 2;
         font-weight: normal;
       }
 
-      .content ol > li {
+      .content ol>li {
         counter-increment: section;
         /* list-style: none; */
         pointer-events: none;
@@ -402,11 +410,11 @@ height: 2;
         /* text-indent: 24px; */
       }
 
-      .content ol > li:before {
+      .content ol>li:before {
         display: none;
       }
 
-      .content ol > li:before {
+      .content ol>li:before {
         content: counters(section, ".") " ";
         font-weight: normal;
       }
@@ -423,11 +431,12 @@ height: 2;
         position: relative;
         /* padding: 10px 0px 10px 0px; */
       }
+
       .sub-content .sub-content {
         font-weight: 200;
       }
 
-      .sub-content p ~ a {
+      .sub-content p~a {
         width: 100%;
         font-weight: 300;
         text-align: left;
@@ -435,26 +444,25 @@ height: 2;
         /* color: #07f; 
         background-color: rgb(255 255 255 / 80%); */
         color: #fff;
-background-color: transparent;
+        background-color: transparent;
         display: block !important;
         border-radius: 4px;
         /* text-indent: 15px; */
-        
         padding: 10px 26px 10px 10px;
         border-bottom: 1px;
         position: relative;
       }
-     
-      .sub-content p ~ a::after{
-          display: block;
-    content: "";
-    width: 18px;
-    height: 6px;
-    position: absolute;
-    left: -12px;
-    top: 12px;
-    border-radius: 50px;
-    border-bottom: 1px dotted rgb(255 255 255 / 60%);
+
+      .sub-content p~a::after {
+        display: block;
+        content: "";
+        width: 18px;
+        height: 6px;
+        position: absolute;
+        left: -12px;
+        top: 12px;
+        border-radius: 50px;
+        border-bottom: 1px dotted rgb(255 255 255 / 60%);
       }
 
       .flower-bracket {
@@ -558,6 +566,7 @@ background-color: transparent;
         -webkit-transform: rotateZ(45deg);
         left: 19px;
       }
+
       .image-container img {
         /* height: 250px;
           margin: 0px auto;
@@ -568,9 +577,11 @@ background-color: transparent;
         width: 100%;
         position: relative;
         pointer-events: auto;
-        margin-bottom: 6px;border-radius: 4px;
+        margin-bottom: 6px;
+        border-radius: 4px;
         overflow: hidden;
       }
+
       .image-container img {
         width: 100%;
         /* max-height: 250px; */
@@ -580,13 +591,13 @@ background-color: transparent;
         position: absolute;
         top: 0;
         left: 0;
-        background-color: rgba(
-          0,
-          0,
-          0,
-          0.7
-        ); /* Adjust background color and opacity */
-        color: #fff; /* Text color */
+        background-color: rgba(0,
+            0,
+            0,
+            0.7);
+        /* Adjust background color and opacity */
+        color: #fff;
+        /* Text color */
         width: 100%;
         height: 100%;
         display: flex;
@@ -602,10 +613,12 @@ background-color: transparent;
         opacity: 1;
         backdrop-filter: blur(4px);
       }
+
       #GRPC,
       #ArchitectureDocument {
         width: 80%;
       }
+
       .leftbar a:focus,
       .leftbar a:visited,
       .leftbar a:active,
@@ -613,19 +626,21 @@ background-color: transparent;
       .leftbar a:focus-within {
         text-decoration: underline;
       }
+
       /* Menu Stylyling  */
       #menuCheckbox {
         width: 0px;
         opacity: 0;
         pointer-events: none;
       }
+
       @media screen and (max-width: 768px) {
+
         /* #menuCheckbox{
       width: 100px;
       height: 100px;
       background-color: red;
       } */
-
         .menu {
           width: 30px;
           height: 3px;
@@ -636,6 +651,7 @@ background-color: transparent;
           z-index: 99;
           cursor: pointer;
         }
+
         .menu::before,
         .menu::after {
           content: "";
@@ -645,33 +661,39 @@ background-color: transparent;
           height: 3px;
           background-color: #414141;
         }
+
         .menu::before {
           top: -10px;
           transform: rotateZ(0deg);
         }
+
         .menu::after {
           top: 10px;
           transform: rotateZ(0deg);
         }
 
-        #menuCheckbox ~ label {
+        #menuCheckbox~label {
           width: 30px;
           height: 40px;
           position: fixed;
           left: 10px;
           z-index: 99;
         }
-        #menuCheckbox:checked ~ label .menu {
+
+        #menuCheckbox:checked~label .menu {
           background-color: rgba(65, 65, 65, 0);
         }
-        #menuCheckbox:checked ~ label .menu::before {
+
+        #menuCheckbox:checked~label .menu::before {
           top: 0px;
           transform: rotateZ(45deg);
         }
-        #menuCheckbox:checked ~ label .menu::after {
+
+        #menuCheckbox:checked~label .menu::after {
           top: 0px;
           transform: rotateZ(-45deg);
         }
+
         .leftbar {
           position: fixed;
           width: 100%;
@@ -684,20 +706,24 @@ background-color: transparent;
           overflow-y: auto;
           padding: 0px 0px;
         }
+
         .leftbar ul li {
           text-align: center;
           margin: 0px;
         }
+
         .leftbar p,
         .leftbar span,
         .deviceScroll ul {
           display: none;
         }
-        #menuCheckbox:checked ~ .leftbar {
+
+        #menuCheckbox:checked~.leftbar {
           height: 100vh;
           padding: 46px 0px 0px 18px;
         }
       }
+
       .deviceImg {
         float: right;
         width: 156px;
@@ -706,194 +732,1378 @@ background-color: transparent;
         padding: 4px;
         margin-left: 22px;
       }
+
       .deviceImg img {
         width: 100%;
       }
+
       .deviceImg p {
         font-size: 13px;
         text-align: center;
         color: #414141;
       }
-       .leftbar .searchBlock{
+
+      .leftbar .searchBlock {
         position: relative;
-            margin-bottom: 24px;
-       }
-      .leftbar .searchBlock .search{
+        margin-bottom: 24px;
+      }
+
+      .leftbar .searchBlock .search {
         display: block;
-    width: 100%;
-    border: 1px solid rgb(255, 255, 255);
-    visibility: visible;
-    height: 36px;
-    border-radius: 4px;
-    background-color:#ffff;
+        width: 100%;
+        border: 1px solid rgb(255, 255, 255);
+        visibility: visible;
+        height: 36px;
+        border-radius: 4px;
+        background-color: #ffff;
         padding: 6px 12px 6px 36px;
       }
-      .leftbar .searchBlock img{
-           width: 18px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
 
+      .leftbar .searchBlock img {
+        width: 18px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
 
+      .linkContent {
+        background-color: rgb(255 255 255);
+        color: #000;
+        border-radius: 4px;
+        position: absolute;
+        width: 100%;
+        z-index: 999;
       }
-      .linkContent{
-            background-color:rgb(255 255 255);
-            color: #000;
-    border-radius: 4px;
-    position: absolute;
-    width: 100%;
-    z-index: 999;
+
+      .linkContent ul {
+        padding: 0px;
+        margin: 0px;
       }
-      .linkContent ul{
-            padding: 0px;
-            margin: 0px;
+
+      .linkContent li {
+        background-color: rgb(230 230 230);
+        margin-bottom: 6px;
+        line-height: 30px;
+        text-indent: 16px;
+        border-radius: 4px
       }
-      .linkContent li{
-               background-color: rgb(230 230 230);
-    margin-bottom: 6px;
-    line-height: 30px;
-    text-indent: 16px;
-    border-radius: 4px
-      }
-      .linkContent li a{
+
+      .linkContent li a {
         width: 100%;
         border-radius: 4px;
-         padding: 0px 10px;
-         display: block !important;
-            transition: all 0.5s; 
+        padding: 0px 10px;
+        display: block !important;
+        transition: all 0.5s;
       }
-      .linkContent li a:hover{
-           background-color:#eee;
-           font-weight: 600;
-   transition: all 0.5s;
+
+      .linkContent li a:hover {
+        background-color: #eee;
+        font-weight: 600;
+        transition: all 0.5s;
       }
-      .linkContent li a b{
-font-weight: 400;
+
+      .linkContent li a b {
+        font-weight: 400;
       }
+
       /* linkContent{
 
       } */
     </style>
-</head>
-
-<body>
-  <!-- <header>
-            <div class="logo"><svg width="49" height="42" viewBox="0 0 49 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20.9297 2.93408L11.2207 19.8295L18.4947 24.0221L28.2037 7.12668L20.9297 2.93408Z" fill="#0583FF" />
-                    <path d="M40.3478 2.93408L30.6387 19.8295L37.9127 24.0221L47.6217 7.12668L40.3478 2.93408Z" fill="#0583FF" />
-                    <path d="M48.1807 5.02976C48.1807 5.86106 47.9346 6.67366 47.4735 7.36486C47.0123 8.05606 46.3569 8.59486 45.59 8.91296C44.8231 9.23106 43.9793 9.31426 43.1652 9.15216C42.3511 8.98996 41.6033 8.58966 41.0163 8.00186C40.4294 7.41396 40.0297 6.66506 39.8678 5.84976C39.7058 5.03446 39.789 4.18936 40.1066 3.42126C40.4242 2.65326 40.9622 1.99686 41.6523 1.53496C42.3425 1.07316 43.1539 0.82666 43.9839 0.82666C44.5351 0.82666 45.0808 0.935361 45.59 1.14656C46.0992 1.35776 46.5618 1.66736 46.9515 2.05766C47.3412 2.44796 47.6504 2.91136 47.8613 3.42126C48.0722 3.93126 48.1807 4.47776 48.1807 5.02976Z" fill="#00EBA7" />
-                    <path d="M14.8606 26.1291C14.1222 26.1299 13.3967 25.9355 12.7574 25.5655C12.1181 25.1956 11.5877 24.6632 11.2197 24.0221L1.51055 7.12656C0.95535 6.16056 0.80615 5.01316 1.09565 3.93696C1.38525 2.86076 2.08975 1.94376 3.05435 1.38776C4.01895 0.831865 5.16455 0.682363 6.23915 0.972363C7.31375 1.26226 8.22935 1.96796 8.78445 2.93396L18.4936 19.8295C18.8604 20.4683 19.0532 21.1923 19.0525 21.9292C19.0518 22.6661 18.8578 23.3898 18.4898 24.0279C18.1218 24.666 17.5928 25.196 16.9559 25.5647C16.3189 25.9335 15.5963 26.1281 14.8606 26.1291Z" fill="#00EBA7" />
-                    <path d="M34.2784 26.1291C33.5401 26.1299 32.8146 25.9355 32.1753 25.5655C31.536 25.1955 31.0056 24.6631 30.6376 24.0221L20.9285 7.12655C20.3734 6.16055 20.2241 5.01315 20.5137 3.93695C20.8032 2.86075 21.5077 1.94375 22.4723 1.38775C22.9499 1.11245 23.477 0.934153 24.0235 0.862853C24.5699 0.791553 25.125 0.828752 25.6571 0.972352C26.7317 1.26225 27.6473 1.96785 28.2025 2.93395L37.9115 19.8295C38.2784 20.4682 38.4711 21.1923 38.4704 21.9292C38.4697 22.666 38.2757 23.3898 37.9077 24.0279C37.5397 24.666 37.0107 25.1959 36.3737 25.5647C35.7367 25.9335 35.0142 26.1282 34.2784 26.1291Z" fill="#00EBA7" />
-                    <path d="M8.94407 34.5347L7.63327 38.7775L6.31327 34.5347H5.16007L3.84927 38.7775L2.52937 34.5347H0.951172L3.23087 41.005H4.45837L5.74107 36.938L7.02417 41.005H8.24257L10.522 34.5347H8.94407Z" fill="#9EA4A9" />
-                    <path d="M17.4362 41.0055L17.187 40.2197H14.8886L14.6397 41.0055H13.043L15.3504 34.5352H16.7257L19.0605 41.0055H17.4362ZM16.0424 36.3837L15.2487 39.0457H16.8176L16.0424 36.3837Z" fill="#9EA4A9" />
-                    <path d="M27.6868 34.5342H25.9422L24.567 37.0763L24.5659 37.0784L24.5651 37.0768L23.1899 34.535H21.4453L23.8091 38.7061V41.0061H25.3227V38.7061L27.6868 34.5342Z" fill="#9EA4A9" />
-                    <path d="M37.8554 41.005H36.397V36.9933L35.0034 41.005H33.8958L32.4562 36.9933V41.005H30.998V34.5347H32.7234L34.4496 39.0362L36.1572 34.5347H37.8554V41.005Z" fill="#9EA4A9" />
-                    <path d="M41.4464 37.77C41.4418 37.0919 41.6383 36.4276 42.0111 35.8614C42.3838 35.2952 42.916 34.8526 43.5402 34.5897C44.1644 34.3267 44.8525 34.2553 45.5173 34.3845C46.1821 34.5136 46.7936 34.8375 47.2744 35.3151C47.7552 35.7927 48.0835 36.4025 48.2179 37.0672C48.3522 37.7319 48.2865 38.4216 48.029 39.0488C47.7716 39.6761 47.334 40.2127 46.7717 40.5906C46.2094 40.9685 45.5477 41.1707 44.8706 41.1716C44.4191 41.1869 43.9693 41.1096 43.5488 40.9445C43.1282 40.7794 42.7459 40.5298 42.4252 40.2112C42.1045 39.8927 41.8522 39.5118 41.6839 39.0919C41.5156 38.6721 41.4348 38.2223 41.4464 37.77ZM46.7627 37.77C46.7627 36.7071 46.0429 35.7181 44.8706 35.7181C43.6891 35.7181 42.9785 36.7071 42.9785 37.77C42.9785 38.833 43.6891 39.822 44.8706 39.822C46.0429 39.822 46.7627 38.833 46.7627 37.77Z" fill="#9EA4A9" />
-                </svg>
-                <div class="profile">
-                    <h5>Waymo Manual Documentation</h5>
-                </div>
-            </div>
-        </header> -->
-  <main>
-    <div class="leftbar">
-      <h5>Device Documnent List</h5>
-      <div class="content">
-        <div class="title">
-          <div class="sub-content">
-            <input type="checkbox" id="deviceDriverDocument" class="checkBox" /><label for="deviceDriverDocument">
-              <p><span class="btn">+</span><span class="btn-min">-</span></p>
-              <a>Device Driver Document</a>
-            </label>
-            <ul>
-              <li><a href="#">Brain Box</a></li>
-              <li>
-                <a href="https://sites.google.com/view/waymo-csg/device-driver-document/animaticmotor">Animatic
-                  Motor</a>
-              </li>
-              <li><a href="#">Keyence LJV7020</a></li>
-              <li>
-                <a href="https://sites.google.com/view/waymo-csg/device-driver-document/baslercamera">Basler Camera
-                </a>
-              </li>
-              <!--li><a target="_blank" href="#">Janome </a></li>-->
-              <li class="deviceScroll">
-                <input type="checkbox" id="devicePosition" class="checkBox" /><label for="devicePosition">
-                  <p>
-                    <span class="btn">+</span><span class="btn-min">-</span>
-                  </p>
-                  <a>Janome</a>
-                </label>
-                <ul>
-                  <li>
-                    <a onclick="scrollToElement('introduction', -80)">Introduction</a>
-                  </li>
-                  <li>
-                    <a onclick="scrollToElement('deviceOverview', -80)">Device Overview & SDK Instalation</a>
-                  </li>
-                  <li>
-                    <a onclick="scrollToElement('driverDevelopment', -80)">Driver Development</a>
-                  </li>
-                  <li>
-                    <a onclick="scrollToElement('gRPC_API', -80)">gRPC API’s Description</a>
-                  </li>
-                  <li>
-                    <a onclick="scrollToElement('testingDebug', -80)">Testing and Debugging</a>
-                  </li>
-                  <li>
-                    <a onclick="scrollToElement('resourcesLinks', -80)">Resources & Links</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="https://sites.google.com/view/waymo-csg/device-driver-document/optocamera">Opto Camera
-                </a>
-              </li>
-              <li><a href="#">LMI Gocator</a></li>
-              <li><a target="#">Banner SC10 </a></li>
-              <li><a href="#">Keyence CL3000 </a></li>
-              <li><a href="#">Alio 3 axis stage </a></li>
-              <li><a href="#">Prosilica GT6600 </a></li>
-              <li><a href="#">Denkovi Relay </a></li>
-              <li><a href="#">EX250-SEN1 </a></li>
+  </head>
+  <body>
+    <main style="width: 100%">
+      <div class="scrollTop" onclick="handleMoveTop()">
+        <p>Move Top</p>
+        <div class="moveTop"></div>
+      </div>
+      <input type="checkbox" id="menuCheckbox" />
+      <label for="menuCheckbox">
+        <span class="menu"></span>
+      </label>
+      <div class="leftbar" id="navlinks">
+        <div class="searchBlock">
+          <img src="https://raw.githubusercontent.com/umeshb-creative/waymo-documentation/refs/heads/main/Icons/search.svg" alt="search" />
+          <input type="search" placeholder="search....." class="search" style="display: block;" id="searchInput" />
+          <div class="linkContent">
+            <ul id="searchLinks" style="display: none;">
+              <li></li>
             </ul>
           </div>
-          <div class="sub-content">
-            <input type="checkbox" id="CDocument" class="checkBox" /><label for="CDocument">
-              <p><span class="btn">+</span><span class="btn-min">-</span></p>
-              <a>C# Document</a>
-            </label>
-            <ul>
-              <li><a target="_blank" href="#">GRPC Client Helpfile</a></li>
-            </ul>
-          </div>
-          <div>
-            <div class="sub-content">
-              <input type="checkbox" id="gRPCDocument" class="checkBox" /><label for="gRPCDocument">
+        </div>
+        <!-- <h5>Outline</h5> -->
+        <div class="content">
+          <div class="title">
+            <div class="sub-contents">
+              <input type="checkbox" id="userGuideDocument" class="checkBox" />
+              <label for="userGuideDocument">
                 <p>
-                  <span class="btn">+</span><span class="btn-min">-</span>
+                  <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
                 </p>
-                <a>gRPC Document</a>
+                <b style="padding-left: 36px">
+                  <img src="https://raw.githubusercontent.com/umeshb-creative/waymo-documentation/refs/heads/main/DocumentImages/NewImages/userguide.png" alt="UserGuide" /> User Guide </b>
               </label>
-              <ul>
-                <li><a target="_blank" href="#">Documnent Link</a></li>
-                <li><a target="_blank" href="#">Documnent Link</a></li>
-                <li><a target="_blank" href="#">Documnent Link</a></li>
-                <li><a target="_blank" href="#">Documnent Link</a></li>
+              <ul style="margin-left: 15px;">
+                <li>
+                  <div class="sub-content">
+                    <p></p>
+                    <a onclick="handlePage(this,'developerDocumentOverview')" class="active">
+                      <b>Document Overview</b>
+                    </a>
+                    <a onclick="handlePage(this,'introductionWaymo')">
+                      <b>Introduction</b>
+                    </a>
+                    <a onclick="handlePage(this,'userStationSetup')">
+                      <b>Initial Setup / Station Setup</b>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="sub-content">
+                    <input type="checkbox" id="UserSystemTrayGuide" class="checkBox" />
+                    <label for="UserSystemTrayGuide">
+                      <p>
+                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                      </p>
+                      <b>System Tray Guide</b>
+                    </label>
+                    <ul>
+                      <li class="deviceScroll">
+                        <p></p>
+                        <a onclick="handlePage(this,'SystemTray')"> System Tray Overview</a>
+                      </li>
+                      <li class="deviceScroll">
+                        <p></p>
+                        <a onclick="handlePage(this,'SystemTrayLaunching')">System Tray Features</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="sub-content">
+                    <input type="checkbox" id="UserInterfaceGuide" class="checkBox" />
+                    <label for="UserInterfaceGuide">
+                      <p>
+                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                      </p>
+                      <b>User Interface (UI) Guide</b>
+                    </label>
+                    <ul>
+                      <li class="deviceScroll">
+                        <p></p>
+                        <a onclick="handlePage(this,'userIntroductiontoUI')"> Introduction to UI Features</a>
+                      </li>
+                      <li class="deviceScroll">
+                        <p></p>
+                        <a onclick="handlePage(this,'userUIAccessperRoll')"> UI Access per Role</a>
+                      </li>
+                      <!-- <li class="deviceScroll"><p></p><a onclick="scrollToElement('loginDoc', 'loginDoc', 'userlaunchingUI')"> Launching the UI & Usage</a></li> -->
+                      <li class="deviceScroll">
+                        <div class="sub-content">
+                          <input type="checkbox" id="userlaunchingUIInput" class="checkBox" />
+                          <label for="userlaunchingUIInput">
+                            <p>
+                              <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                            </p>
+                            <b> Launching the UI & Usage</b>
+                          </label>
+                          <ul>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('loginDoc', 0,'userlaunchingUI',this)">Login and Security</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('userDoc', 0,'userlaunchingUI',this)">User Management</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('roleDoc', 0,'userlaunchingUI',this)">Role Management</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('deviceDoc', 0,'userlaunchingUI',this)">Device Management</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('deviceWork', 0,'userlaunchingUI',this)">Working with Devices</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="deviceScroll">
+                        <p></p>
+                        <a onclick="handlePage(this,'userTroubleshootingUIIssues')">
+                          <b> Troubleshooting UI Issues</b>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="sub-content">
+                    <input type="checkbox" id="userNode-RED-Flow" class="checkBox" />
+                    <label for="userNode-RED-Flow">
+                      <p>
+                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                      </p>
+                      <b>Node-RED Flow & XML File Creation</b>
+                    </label>
+                    <ul>
+                      <li class="deviceScroll">
+                        <p></p>
+                        <a onclick="handlePage(this,'userIntroductionNodeRED')"> Introduction to Node-RED</a>
+                      </li>
+                      <li class="deviceScroll">
+                        <p></p>
+                        <a onclick="handlePage(this,'userHowToRun')"> How to Run Each Node</a>
+                      </li>
+                      <li class="deviceScroll">
+                        <p></p>
+                        <a onclick="handlePage(this,'userMFGUploader')"> Upload the File (Result) to MFG Uploader</a>
+                      </li>
+                      <li class="deviceScroll">
+                        <p></p>
+                        <a onclick="handlePage(this,'userNodeREDExecution')"> Troubleshooting Flows/Node-Red Execution</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="sub-content">
+                    <input type="checkbox" id="userToolFlows" class="checkBox" />
+                    <label for="userToolFlows">
+                      <p>
+                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                      </p>
+                      <b>Tool Flows</b>
+                    </label>
+                    <ul>
+                      <!-- <li class="deviceScroll"><p></p><a>Overview of the Station Flows</a></li><li class="deviceScroll"><p></p><a>Developed Tools</a></li> -->
+                      <li class="deviceScroll">
+                        <div class="sub-content">
+                          <input type="checkbox" id="developmentWorkflowDeployment" class="checkBox" />
+                          <label for="developmentWorkflowDeployment">
+                            <p>
+                              <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                            </p>
+                            <b> TIS Flow</b>
+                          </label>
+                          <ul>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="handlePage(this,'userTISOverview')">Overview</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('TISExecution', 0,'userTISOverview',this)">Step-by-step flow Execution</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('TISExpectedResults', 0,'userTISOverview',this)">Expected Results</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToBottom('TISTroubleshooting', 0,'userTISOverview',this)">Troubleshooting TIS Flow Issues</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <p></p>
+                      <a onclick="handlePage(this,'TISreleaseVersion')" class="">
+                        <b>TIS release version 1.0</b>
+                      </a>
+                      <li class="deviceScroll">
+                        <div class="sub-content">
+                          <input type="checkbox" id="userSABFlow" class="checkBox" />
+                          <label for="userSABFlow">
+                            <p>
+                              <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                            </p>
+                            <b>SAB Flow</b>
+                          </label>
+                          <ul>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="handlePage(this,'userSABOverview')">Overview</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('SABExecution', 0,'userSABOverview',this)">Step-by-step flow Execution</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('SABExpectedResults', 0,'userSABOverview',this)">Expected Results</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToBottom('SABTroubleshooting', 0,'userSABOverview',this)">Troubleshooting SAB Flow Issues</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="deviceScroll">
+                        <div class="sub-content">
+                          <input type="checkbox" id="userCBGFlow" class="checkBox" />
+                          <label for="userCBGFlow">
+                            <p>
+                              <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                            </p>
+                            <b>CBG Flow</b>
+                          </label>
+                          <ul>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="handlePage(this,'userCBGOverview')">Overview</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('CBGExecution', 0,'userCBGOverview',this)">Step-by-step flow Execution</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('CBGExpectedResults', 0,'userCBGOverview',this)">Expected Results</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToBottom('CBGTroubleshooting', 0,'userCBGOverview',this)">Troubleshooting SAB Flow Issues</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="deviceScroll">
+                        <div class="sub-content">
+                          <input type="checkbox" id="userCIBFlow" class="checkBox" />
+                          <label for="userCIBFlow">
+                            <p>
+                              <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                            </p>
+                            <b>CBI Flow</b>
+                          </label>
+                          <ul>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="handlePage(this,'userCBIOverview')">Overview</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('CBIExecution', 0,'userCBIOverview',this)">Step-by-step flow Execution</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('CBIExpectedResults', 0,'userCBIOverview',this)">Expected Results</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToBottom('CBITroubleshooting', 0,'userCBIOverview',this)">Troubleshooting CBI Flow Issues</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="sub-content">
+                    <input type="checkbox" id="checkUserSafetyOperationalNotes" class="checkBox" />
+                    <label for="checkUserSafetyOperationalNotes">
+                      <p>
+                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                      </p>
+                      <b>Safety & Operational Notes</b>
+                    </label>
+                    <ul>
+                      <li class="deviceScroll">
+                        <p></p>
+                        <a onclick="handlePage(this,'userWarningsOperational')"> Warnings or operational guidelines during tool usage</a>
+                      </li>
+                      <p></p>
+                      <a onclick="handlePage(this,'userEmergencyStop')">
+                        <b> Emergency stop or recovery process</b>
+                      </a>
+                </li>
               </ul>
             </div>
-            <div>
+            </li>
+            <li>
               <div class="sub-content">
-                <a target="_blank" href="#">Quick Links</a>
+                <input type="checkbox" id="UserPostDeployment" class="checkBox" />
+                <label for="UserPostDeployment">
+                  <p>
+                    <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                  </p>
+                  <b>Post-Deployment Monitoring & Maintenance</b>
+                </label>
+                <ul>
+                  <li class="deviceScroll">
+                    <p></p>
+                    <a onclick="handlePage(this,'userSystemHealth')">System Health Checks & Log Monitoring and Alerts</a>
+                  </li>
+                </ul>
               </div>
+            </li>
+            <li>
               <div class="sub-content">
-                <a target="_blank" href="#">Help</a>
+                <p></p>
+                <a onclick="handlePage(this,'WaymoQueryResolution')">
+                  <b>FAQs/Waymo Query Resolution</b>
+                </a>
               </div>
-            </div>
+            </li>
+            <li>
+              <div class="sub-content">
+                <p></p>
+                <a onclick="handlePage(this,'userFeatureRequestDocument')">
+                  <b>Feature Request Document</b>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="sub-content">
+                <p></p>
+                <a onclick="handlePage(this,'userBugFixRequests')">
+                  <b>Bug Fix Requests/Escalations</b>
+                </a>
+              </div>
+            </li>
+            </ul>
+          </div>
+          <div class="sub-content">
+            <input type="checkbox" id="developerGuideDocument" class="checkBox" />
+            <label for="developerGuideDocument">
+              <p>
+                <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+              </p>
+              <b style="padding-left: 36px">
+                <img src="https://raw.githubusercontent.com/umeshb-creative/waymo-documentation/refs/heads/main/DocumentImages/NewImages/developerguide.png" alt="UserGuide" /> Techincal & Developer Guide </b>
+            </label>
+            <ul style="margin-left: 15px;">
+              <li>
+                <div class="sub-content" style="">
+                  <p></p>
+                  <a onclick="handlePage(this,'developerOverview')">
+                    <b>Document Overview</b>
+                  </a>
+                  <a onclick="handlePage(this,'developerIntroduction')">
+                    <b>Introduction</b>
+                  </a>
+                  <a onclick="handlePage(this,'developerStationSetup')">
+                    <b> Initial Setup / Station Setup</b>
+                  </a>
+                  <ul>
+                    <li>
+                      <div class="sub-content">
+                        <input type="checkbox" id="developerSystemArchitecture" class="checkBox" />
+                        <label for="developerSystemArchitecture">
+                          <p>
+                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                          </p>
+                          <b>System Architecture </b>
+                        </label>
+                        <ul>
+                          <li class="deviceScroll">
+                            <p></p>
+                            <a onclick="handlePage(this,'TroubleShootingBarCodeReader')">High-Level Architecture Overview</a>
+                          </li>
+                          <li class="deviceScroll">
+                            <p></p>
+                            <a> Software Architecture Flow</a>
+                          </li>
+                          <li class="deviceScroll">
+                            <p></p>
+                            <a> Data Flow and Integration</a>
+                          </li>
+                          <li class="deviceScroll">
+                            <p></p>
+                            <a>Design Choices</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="sub-content">
+                        <p>
+                          <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                        </p>
+                        <a>Driver Development </a>
+                        <ul>
+                          <li class="deviceScroll">
+                            <input type="checkbox" id="checkBoxTroubleShootingBarCodeReader" class="checkBox" onclick="handlePage(this,'TroubleShootingBarCodeReader')" />
+                            <label for="checkBoxTroubleShootingBarCodeReader">
+                              <p></p>
+                              <a>Driver Development Overview</a>
+                            </label>
+                          </li>
+                          <li class="deviceScroll">
+                            <div class="sub-content">
+                              <input type="checkbox" id="deviceSpecificDriverDetails" class="checkBox" />
+                              <label for="deviceSpecificDriverDetails">
+                                <p>
+                                  <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                </p>
+                                <b>Device Specific Driver Details</b>
+                              </label>
+                              <ul>
+                                <li>
+                                  <div class="sub-content" style=" ">
+                                    <input type="checkbox" id="3D_Sensor" class="checkBox" />
+                                    <label for="3D_Sensor">
+                                      <p>
+                                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                      </p>
+                                      <b>3D Sensors</b>
+                                    </label>
+                                    <ul>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxCL3000" class="checkBox" onclick="handlePage(this,'CL3000')" />
+                                        <label for="checkBoxCL3000">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Keyence CL3000</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionCL3000', -80,'CL3000')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewCL3000', -80,'CL3000')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentCL3000', -80,'CL3000')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APICL3000', -80,'CL3000')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugCL3000', -80,'CL3000')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksCL3000', -80,'CL3000')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxLJV7020" class="checkBox" onclick="handlePage(this,'LJV7020')" />
+                                        <label for="checkBoxLJV7020">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Keyence LJV7020</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionLJV7020', -80,'LJV7020')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewLJV7020', -80,'LJV7020')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentLJV7020', -80,'LJV7020')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APILJV7020', -80,'LJV7020')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugLJV7020', -80,'LJV7020')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksLJV7020', -80,'LJV7020')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxLMIGocator" class="checkBox" onclick="handlePage(this,'LMIGocator')" />
+                                        <label for="checkBoxLMIGocator">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>LMI Gocator 2530 &amp; 3506 </a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionLMIGocator', -80,'LMIGocator')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewLMIGocator', -80,'LMIGocator')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentLMIGocator', -80,'LMIGocator')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APILMIGocator', -80,'LMIGocator')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugLMIGocator', -80,'LMIGocator')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksLMIGocator', -80,'LMIGocator')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-content" style=" ">
+                                    <input type="checkbox" id="Camera" class="checkBox" />
+                                    <label for="Camera">
+                                      <p>
+                                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                      </p>
+                                      <b>Cameras</b>
+                                    </label>
+                                    <ul>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxBaslerCamera" class="checkBox" onclick="handlePage(this,'BaslerCamera')" />
+                                        <label for="checkBoxBaslerCamera">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Basler Camera (acA2500-14gm and a2A2448-23gm PRO)</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionBaslerCamera', -80,'BaslerCamera')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewBaslerCamera', -80,'BaslerCamera')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentBaslerCamera', -80,'BaslerCamera')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIBaslerCamera', -80,'BaslerCamera')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugBaslerCamera', -80,'BaslerCamera')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksBaslerCamera', -80,'BaslerCamera')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxOptoCamera" class="checkBox" onclick="handlePage(this,'OptoCamera')" />
+                                        <label for="checkBoxOptoCamera">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Opto Camera(coe-050-m-poe-050ir-c)</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionOptoCamera', -80,'OptoCamera')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewOptoCamera', -80,'OptoCamera')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentOptoCamera', -80,'OptoCamera')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIOptoCamera', -80,'OptoCamera')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugOptoCamera', -80,'OptoCamera')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksOptoCamera', -80,'OptoCamera')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxProsilica" class="checkBox" onclick="handlePage(this,'Prosilica')" />
+                                        <label for="checkBoxProsilica">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Prosilica Camera(GT6600)</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionProsilica', -80,'Prosilica')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewProsilica', -80,'Prosilica')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentProsilica', -80,'Prosilica')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIProsilica', -80,'Prosilica')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugProsilica', -80,'Prosilica')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksProsilica', -80,'Prosilica')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxTriton" class="checkBox" onclick="handlePage(this,'Triton')" />
+                                        <label for="checkBoxTriton">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Triton Camera (TRI0245S-MC)</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionTriton', -80,'Triton')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewTriton', -80,'Triton')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APITriton', -80,'Triton')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugTriton', -80,'Triton')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksTriton', -80,'Triton')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-content" style=" ">
+                                    <input type="checkbox" id="I_Os" class="checkBox" />
+                                    <label for="I_Os">
+                                      <p>
+                                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                      </p>
+                                      <b>I/O Devices</b>
+                                    </label>
+                                    <ul>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxBrainbox" class="checkBox" onclick="handlePage(this,'Brainbox')" />
+                                        <label for="checkBoxBrainbox">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>BrainBox ED588 &amp; ED527</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionBrainbox', -80,'Brainbox')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewBrainbox', -80,'Brainbox')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIBrainbox', -80,'Brainbox')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugBrainbox', -80,'Brainbox')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksBrainbox', -80,'Brainbox')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxDenkovi" class="checkBox" onclick="handlePage(this,'Denkovi')" />
+                                        <label for="checkBoxDenkovi">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Denkovi 5ch Ethernet Relay</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionDenkovi', -80,'Denkovi')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewDenkovi', -80,'Denkovi')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentDenkovi', -80,'Denkovi')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIDenkovi', -80,'Denkovi')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugDenkovi', -80,'Denkovi')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksDenkovi', -80,'Denkovi')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxEX250" class="checkBox" onclick="handlePage(this,'EX250')" />
+                                        <label for="checkBoxEX250">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>EX250-SEN1 Ethernet Pneumatic Manifold</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionEX250', -80,'EX250')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewEX250', -80,'EX250')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentEX250', -80,'EX250')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIEX250', -80,'EX250')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugEX250', -80,'EX250')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksEX250', -80,'EX250')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-content" style=" ">
+                                    <input type="checkbox" id="Motion_Stage" class="checkBox" />
+                                    <label for="Motion_Stage">
+                                      <p>
+                                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                      </p>
+                                      <b>Motion Stages</b>
+                                    </label>
+                                    <ul>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxAlio" class="checkBox" onclick="handlePage(this,'Alio')" />
+                                        <label for="checkBoxAlio">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Alio Single and Three Axis ACS Controller</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionAlio', -80,'Alio')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewAlio', -80,'Alio')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIAlio', -80,'Alio')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugAlio', -80,'Alio')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksAlio', -80,'Alio')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxAnimaticMotor" class="checkBox" onclick="handlePage(this,'AnimaticMotor')" />
+                                        <label for="checkBoxAnimaticMotor">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a> Animatic Smart Motor</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionAnimaticMotor', -80,'AnimaticMotor')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewAnimaticMotor', -80,'AnimaticMotor')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentAnimaticMotor', -80,'AnimaticMotor')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIAnimaticMotor', -80,'AnimaticMotor')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugAnimaticMotor', -80,'AnimaticMotor')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksAnimaticMotor', -80,'AnimaticMotor')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxDenso" class="checkBox" onclick="handlePage(this,'Denso')" />
+                                        <label for="checkBoxDenso">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Denso 6 axis Robot</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionDenso', -80,'Denso')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewDenso', -80,'Denso')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIDenso', -80,'Denso')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugDenso', -80,'Denso')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksDenso', -80,'Denso')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxJanome" class="checkBox" onclick="handlePage(this,'Janome')" />
+                                        <label for="checkBoxJanome">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Janome JR3304 &amp; JR3403</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionJanome', -80,'Janome')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewJanome', -80,'Janome')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIJanome', -80,'Janome')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugJanome', -80,'Janome')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksJanome', -80,'Janome')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-content" style=" ">
+                                    <input type="checkbox" id="PLC" class="checkBox" />
+                                    <label for="PLC">
+                                      <p>
+                                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                      </p>
+                                      <b>Safety PLC</b>
+                                    </label>
+                                    <ul>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxSC10" class="checkBox" onclick="handlePage(this,'SC10')" />
+                                        <label for="checkBoxSC10">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Banner SC10 Safety PLC</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionSC10', -80,'SC10')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewSC10', -80,'SC10')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentSC10', -80,'SC10')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APISC10', -80,'SC10')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugSC10', -80,'SC10')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksSC10', -80,'SC10')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-content" style=" ">
+                                    <input type="checkbox" id="Scanner" class="checkBox" />
+                                    <label for="Scanner">
+                                      <p>
+                                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                      </p>
+                                      <b>Scanner</b>
+                                    </label>
+                                    <ul>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxBarcodeReader" class="checkBox" onclick="handlePage(this,'BarcodeReader')" />
+                                        <label for="checkBoxBarcodeReader">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>BarCode Reader(DM262X and DM282X)</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionBarcodeReader', -80,'BarcodeReader')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewBarcodeReader', -80,'BarcodeReader')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentBarcodeReader', -80,'BarcodeReader')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIBarcodeReader', -80,'BarcodeReader')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugBarcodeReader', -80,'BarcodeReader')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksBarcodeReader', -80,'BarcodeReader')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="sub-content">
+                        <input type="checkbox" id="developerIntegrationGuide" class="checkBox" />
+                        <label for="developerIntegrationGuide">
+                          <p>
+                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                          </p>
+                          <b>Integration Guide </b>
+                        </label>
+                        <ul>
+                          <li class="deviceScroll">
+                            <p></p>
+                            <a>Node-RED Flow and XML file creation</a>
+                          </li>
+                          <li class="deviceScroll">
+                            <p></p>
+                            <a> C# Integration Guide & gRPC API Guide</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="sub-content">
+                        <input type="checkbox" id="developerConfigurationGuide" class="checkBox" />
+                        <label for="developerConfigurationGuide">
+                          <p>
+                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                          </p>
+                          <b>Configuration Guide </b>
+                        </label>
+                        <ul>
+                          <li class="deviceScroll">
+                            <p></p>
+                            <a>System Tray Configuration Guide</a>
+                          </li>
+                          <li class="deviceScroll">
+                            <p></p>
+                            <a>RBAC Instructions</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="sub-content">
+                        <input type="checkbox" id="developerTroubleShooting" class="checkBox" />
+                        <label for="developerTroubleShooting">
+                          <p>
+                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                          </p>
+                          <b>Trouble Shooting and Support</b>
+                        </label>
+                        <ul>
+                          <li class="deviceScroll">
+                            <div class="sub-content" style=" ">
+                              <input type="checkbox" id="TroubleshootingGuide" class="checkBox" />
+                              <label for="TroubleshootingGuide">
+                                <p>
+                                  <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                </p>
+                                <b>Hardware Troubleshooting Guide</b>
+                              </label>
+                              <ul>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Alio Single and Three Axis ACS Controller</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Animatic Smart Motor</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Basler Camera (acA2500-14gm and a2A2448-23gm PRO)</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Banner SC10 Safety PLC</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>BarCode Reader(DM262X and DM282X)</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>BrainBox ED588 & ED527</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Denkovi 5ch Ethernet Relay</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Denso 6 axis Robot</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>EX250-SEN1 Ethernet Pneumatic Manifold</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Janome JR 3304 & JR 3403</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>LMI Gocator</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Keyence LJV7020</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Keyence CL3000</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Opto Camera(coe-050-m-poe-050ir-c)</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Prosilica Camera(GT6600)</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Triton Camera (TRI0245S-MC)</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="sub-content">
+                        <input type="checkbox" id="developerProductionProcess" class="checkBox" />
+                        <label for="developerProductionProcess">
+                          <p>
+                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                          </p>
+                          <b>Deployment and Production Process</b>
+                        </label>
+                        <ul>
+                          <li class="deviceScroll">
+                            <div class="sub-content" style=" ">
+                              <input type="checkbox" id="TroubleshootingGuide" class="checkBox" />
+                              <label for="TroubleshootingGuide">
+                                <p>
+                                  <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                </p>
+                                <b>Deployment Strategy</b>
+                              </label>
+                              <ul>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Development vs Staging vs Production Environments</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Build & Release Process</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="sub-content">
+                        <input type="checkbox" id="developerMonitoringMaintenance" class="checkBox" />
+                        <label for="developerMonitoringMaintenance">
+                          <p>
+                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                          </p>
+                          <b>Post-Deployment Monitoring & Maintenance</b>
+                        </label>
+                        <ul>
+                          <li class="deviceScroll">
+                            <p></p>
+                            <a> System Health Checks & Log Monitoring and Alerts</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="sub-content">
+                        <input type="checkbox" id="developerCodeManagement" class="checkBox" />
+                        <label for="developerCodeManagement">
+                          <p>
+                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                          </p>
+                          <b>Version Control and Code Management</b>
+                        </label>
+                        <ul>
+                          <li class="deviceScroll">
+                            <div class="sub-content" style="">
+                              <input type="checkbox" id="developmentWorkflowDeployment" class="checkBox" />
+                              <label for="developmentWorkflowDeployment">
+                                <p>
+                                  <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                </p>
+                                <b> GitHub/Gerrit WorkflowDeployment Strategy </b>
+                              </label>
+                              <ul>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Code Review Process</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Branching Strategy (main, devTest2, release)</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Commit & Merge Guidelines</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Tagging & Release Notes</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Development vs Staging vs Production Environments</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="sub-content">
+                        <p></p>
+                        <a onclick="handlePage(this,'no')">
+                          <b>Waymo Query Resolution</b>
+                        </a>
+                        <br />
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
+      </div>
      <div class="container" id="introductionWaymo">
              
                 <section class="content" id="Setup">
@@ -1378,21 +2588,176 @@ font-weight: 400;
                   </ol>
                 </section>
               </div>
-  </main>
-
-  <footer></footer>
-  <script>
-    function scrollToElement(id, position) {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-        const scrollY = element.offsetTop + position;
-        window.scrollTo({ top: scrollY, behavior: "smooth" });
-      } else {
-        console.warn(`Element with id '${id}' not found.`);
+    </main>
+     <footer></footer>
+    <script>
+      function handlePage(thisAttr,page) {
+        // Device Open / Close
+        let elements = document.getElementsByClassName("container");
+        for (let i = 0; i < elements.length; i++) {
+          elements[i].style.display = "none";
+        }
+        document.getElementById(page).style.display = "block";
+          // Active Link
+          const links = document.querySelectorAll('.leftbar a');
+          for (let i = 0; i < links.length; i++) {
+            links[i].classList.remove('active');
+        }
+        thisAttr.classList.add('active');
+          // for (const link of links) {
+          //   link.addEventListener('click', function () {
+          //     this.classList.add('active'); // adds 'active' to the clicked link
+          //   });
+          // }
+       
+        document.getElementById("menuCheckbox").checked = false;
+        document.documentElement.scrollTop = 0;
+        handleMoveTop();
+        searchLinks.style.display = "none";
+        searchInput.value = "";
       }
-    }
-  </script>
-</body>
+      function handleMoveTop() {
+        window.scrollTo(0, 0);
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
 
+      function scrollToElement(id, position, section,thisAttr) {
+        //Section CLose / Open
+        let elements = document.getElementsByClassName("container");
+        for (let i = 0; i < elements.length; i++) {
+          elements[i].style.display = "none";
+        }
+        document.getElementById(section).style.display = "block";
+         // Active Link starts
+         const links = document.querySelectorAll('.leftbar a');
+          for (let i = 0; i < links.length; i++) {
+            links[i].classList.remove('active');
+        }
+        thisAttr.classList.add('active');
+  // Active Link Ends
+        const element = document.getElementById(id);
+
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+          });
+          const scrollY = element.offsetTop + position;
+
+          window.scrollTo({
+            top: scrollY,
+            behavior: "smooth",
+          });
+        } else {
+          console.warn(`Element with id '${id}' not found.`);
+        }
+      }
+      // Resource Link - Bottom scroll fix
+      function scrollToBottom(id, position, section,thisAttr) {
+        //Section CLose / Open
+        let elements = document.getElementsByClassName("container");
+        for (let i = 0; i < elements.length; i++) {
+          elements[i].style.display = "none";
+        }
+        document.getElementById(section).style.display = "block";
+        // Active Link starts
+        const links = document.querySelectorAll('.leftbar a');
+          for (let i = 0; i < links.length; i++) {
+            links[i].classList.remove('active');
+        }
+        thisAttr.classList.add('active');
+  // Active Link Ends
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
+      }
+      // Search Nav 
+     // Search Nav 
+      const searchInput = document.getElementById('searchInput');
+      const links = document.querySelectorAll('#navlinks .sub-contents li');
+      const searchLinks = document.getElementById('searchLinks');
+
+      searchInput.addEventListener('input', function () {
+      searchLinks.style.display = "block";
+        searchLinks.innerHTML = "";
+        const filter = this.value.toLowerCase();
+        // Filter and map the links to HTML
+        // const htmlContent = Array.from(links)
+        //   .filter(link => link.textContent.toLowerCase().includes(filter))
+        //   .textContent.trim().toLowerCase().includes(filter)
+        //   .join('');
+        // Inject into the searchLinks container
+        //searchLinks.innerHTML = htmlContent;
+
+         // Filter by Label
+         const htmlContent = Array.from(links).filter(link => {
+          if (link.querySelector('label')!=null ) {
+            if( link.querySelector('label').textContent.trim().toLowerCase().includes(filter)){
+              //console.log(link.querySelector('label').textContent.trim().toLowerCase().includes(filter)).map(labels => `<li>${labels.outerHTML}</li>`).join('');
+            }
+          } 
+         })
+
+         /// 
+         const labelSearch = Array.from(links).filter(link=>{
+          if (link.querySelector('label')!=null ) {
+            if(link.querySelector('label').textContent.trim().toLowerCase().includes(filter)==true && link.querySelectorAll('.sub-content')==null){
+               return link.querySelector('label').textContent.trim().toLowerCase().includes(filter)
+            }
+            else{
+                 return Array.from(link.querySelectorAll('li a')).filter(aTag=>aTag.textContent.trim().toLowerCase().includes(filter))
+            }
+          }
+        }).map(link => {
+           if (link.querySelector('label').textContent.trim().toLowerCase().includes(filter)) {
+           return `<li>
+            <label>
+            ${splitJoinFunc(filter,link.querySelector('label').textContent.trim().toLowerCase())}
+            </label>
+            ${
+            Array.from(link.querySelectorAll('li a')).map(tag => {
+              // if(tag.textContent.trim().toLowerCase().includes(filter)){
+              //   return  `<li>${tag.outerHTML}</li>`}
+              return  `<b>${tag.outerHTML}</b>`
+              }).join('')
+            }
+          </li>`
+          } else {
+          //   return `<li>
+          //   <label>
+          //   ${splitJoinFunc(filter,link.querySelector('label').textContent.trim().toLowerCase())}
+          //   </label>
+          //   ${
+          //   Array.from(link.querySelectorAll('li a')).map(tag => {
+          //     if(tag.textContent.trim().toLowerCase().includes(filter)){
+          //       return  `<b>${tag.outerHTML}</b>`}
+          //     }).join('')
+          //   }
+          // </li>`
+          }
+        }).join('');
+
+          function splitJoinFunc(keyword,label){
+            const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp(`(${escapedKeyword})`, "gi");
+            return label.replace(regex, '<strong>$1</strong>');
+          }
+        //const linkSearch = Array.from(links).filter(link=>{
+        //   if (link.querySelector('label')!=null ) {
+        //   //.filter((tag=>tag.textContent.trim().toLowerCase().includes(filter)))
+        //   return  link.querySelectorAll('ul li a')
+        // }
+        // })
+        searchLinks.innerHTML = labelSearch;
+        //console.log(labelSearch);
+      });
+      document.addEventListener('click', function(event) {
+       
+          searchLinks.classList.remove('active');
+          searchLinks.innerHTML = '';
+        
+      })
+    </script>
+  </body>undefined
 </html>

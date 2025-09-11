@@ -2153,58 +2153,61 @@ height: 2;
       </div>
     </main>
     <footer></footer>
+     
     <script>
-      function handlePage(thisAttr, page) {
+      function handlePage(thisAttr,page) {
         // Device Open / Close
         let elements = document.getElementsByClassName("container");
         for (let i = 0; i < elements.length; i++) {
           elements[i].style.display = "none";
         }
         document.getElementById(page).style.display = "block";
-        // Active Link
-        const links = document.querySelectorAll('.leftbar a');
-        for (let i = 0; i < links.length; i++) {
-          links[i].classList.remove('active');
+          // Active Link
+          const links = document.querySelectorAll('.leftbar a');
+          for (let i = 0; i < links.length; i++) {
+            links[i].classList.remove('active');
         }
         thisAttr.classList.add('active');
-        // for (const link of links) {
-        //   link.addEventListener('click', function () {
-        //     this.classList.add('active'); // adds 'active' to the clicked link
-        //   });
-        // }
+          // for (const link of links) {
+          //   link.addEventListener('click', function () {
+          //     this.classList.add('active'); // adds 'active' to the clicked link
+          //   });
+          // }
+       
         document.getElementById("menuCheckbox").checked = false;
         document.documentElement.scrollTop = 0;
         handleMoveTop();
         searchLinks.style.display = "none";
         searchInput.value = "";
       }
-
       function handleMoveTop() {
         window.scrollTo(0, 0);
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
       }
 
-      function scrollToElement(id, position, section, thisAttr) {
+      function scrollToElement(id, position, section,thisAttr) {
         //Section CLose / Open
         let elements = document.getElementsByClassName("container");
         for (let i = 0; i < elements.length; i++) {
           elements[i].style.display = "none";
         }
         document.getElementById(section).style.display = "block";
-        // Active Link starts
-        const links = document.querySelectorAll('.leftbar a');
-        for (let i = 0; i < links.length; i++) {
-          links[i].classList.remove('active');
+         // Active Link starts
+         const links = document.querySelectorAll('.leftbar a');
+          for (let i = 0; i < links.length; i++) {
+            links[i].classList.remove('active');
         }
         thisAttr.classList.add('active');
-        // Active Link Ends
+  // Active Link Ends
         const element = document.getElementById(id);
+
         if (element) {
           element.scrollIntoView({
             behavior: "smooth",
           });
           const scrollY = element.offsetTop + position;
+
           window.scrollTo({
             top: scrollY,
             behavior: "smooth",
@@ -2214,7 +2217,7 @@ height: 2;
         }
       }
       // Resource Link - Bottom scroll fix
-      function scrollToBottom(id, position, section, thisAttr) {
+      function scrollToBottom(id, position, section,thisAttr) {
         //Section CLose / Open
         let elements = document.getElementsByClassName("container");
         for (let i = 0; i < elements.length; i++) {
@@ -2223,23 +2226,24 @@ height: 2;
         document.getElementById(section).style.display = "block";
         // Active Link starts
         const links = document.querySelectorAll('.leftbar a');
-        for (let i = 0; i < links.length; i++) {
-          links[i].classList.remove('active');
+          for (let i = 0; i < links.length; i++) {
+            links[i].classList.remove('active');
         }
         thisAttr.classList.add('active');
-        // Active Link Ends
+  // Active Link Ends
         window.scrollTo({
           top: document.body.scrollHeight,
           behavior: "smooth",
         });
       }
       // Search Nav 
-      // Search Nav 
+     // Search Nav 
       const searchInput = document.getElementById('searchInput');
       const links = document.querySelectorAll('#navlinks .sub-contents li');
       const searchLinks = document.getElementById('searchLinks');
-      searchInput.addEventListener('input', function() {
-        searchLinks.style.display = "block";
+
+      searchInput.addEventListener('input', function () {
+      searchLinks.style.display = "block";
         searchLinks.innerHTML = "";
         const filter = this.value.toLowerCase();
         // Filter and map the links to HTML
@@ -2249,69 +2253,60 @@ height: 2;
         //   .join('');
         // Inject into the searchLinks container
         //searchLinks.innerHTML = htmlContent;
-        // Filter by Label
-        const htmlContent = Array.from(links).filter(link => {
-          if (link.querySelector('label') != null) {
-            if (link.querySelector('label').textContent.trim().toLowerCase().includes(filter)) {
-              //console.log(link.querySelector('label').textContent.trim().toLowerCase().includes(filter)).map(labels => `
-              < li > $ {
-                labels.outerHTML
-              } < /li>`).join('');
+
+         // Filter by Label
+         const htmlContent = Array.from(links).filter(link => {
+          if (link.querySelector('label')!=null ) {
+            if( link.querySelector('label').textContent.trim().toLowerCase().includes(filter)){
+              //console.log(link.querySelector('label').textContent.trim().toLowerCase().includes(filter)).map(labels => `<li>${labels.outerHTML}</li>`).join('');
             }
-          }
-        })
-        /// 
-        const labelSearch = Array.from(links).filter(link => {
-          if (link.querySelector('label') != null) {
-            if (link.querySelector('label').textContent.trim().toLowerCase().includes(filter) == true && link.querySelectorAll('.sub-content') == null) {
-              return link.querySelector('label').textContent.trim().toLowerCase().includes(filter)
-            } else {
-              return Array.from(link.querySelectorAll('li a')).filter(aTag => aTag.textContent.trim().toLowerCase().includes(filter))
+          } 
+         })
+
+         /// 
+         const labelSearch = Array.from(links).filter(link=>{
+          if (link.querySelector('label')!=null ) {
+            if(link.querySelector('label').textContent.trim().toLowerCase().includes(filter)==true && link.querySelectorAll('.sub-content')==null){
+               return link.querySelector('label').textContent.trim().toLowerCase().includes(filter)
+            }
+            else{
+                 return Array.from(link.querySelectorAll('li a')).filter(aTag=>aTag.textContent.trim().toLowerCase().includes(filter))
             }
           }
         }).map(link => {
-            if (link.querySelector('label').textContent.trim().toLowerCase().includes(filter)) {
-              return `
-		<li>
-			<label>
+           if (link.querySelector('label').textContent.trim().toLowerCase().includes(filter)) {
+           return `<li>
+            <label>
             ${splitJoinFunc(filter,link.querySelector('label').textContent.trim().toLowerCase())}
             </label>
             ${
             Array.from(link.querySelectorAll('li a')).map(tag => {
               // if(tag.textContent.trim().toLowerCase().includes(filter)){
-              //   return  `
-			<li>${tag.outerHTML}</li>`}
-              return  ` < b > $ {
-                tag.outerHTML
-              } < /b>`
-            }).join('')
-        } < /li>`
-      } else {
-        //   return `
-        < li >
-          //   
-          < label >
+              //   return  `<li>${tag.outerHTML}</li>`}
+              return  `<b>${tag.outerHTML}</b>`
+              }).join('')
+            }
+          </li>`
+          } else {
+          //   return `<li>
+          //   <label>
           //   ${splitJoinFunc(filter,link.querySelector('label').textContent.trim().toLowerCase())}
           //   </label>
           //   ${
           //   Array.from(link.querySelectorAll('li a')).map(tag => {
           //     if(tag.textContent.trim().toLowerCase().includes(filter)){
-          //       return  `
-          < b > $ {
-            tag.outerHTML
-          } < /b>`}
+          //       return  `<b>${tag.outerHTML}</b>`}
           //     }).join('')
           //   }
-          // 
-          < /li>`
-      }
-      }).join('');
+          // </li>`
+          }
+        }).join('');
 
-      function splitJoinFunc(keyword, label) {
-        const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        const regex = new RegExp(`(${escapedKeyword})`, "gi");
-        return label.replace(regex, ' < strong > $1 < /strong>');
-        }
+          function splitJoinFunc(keyword,label){
+            const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp(`(${escapedKeyword})`, "gi");
+            return label.replace(regex, '<strong>$1</strong>');
+          }
         //const linkSearch = Array.from(links).filter(link=>{
         //   if (link.querySelector('label')!=null ) {
         //   //.filter((tag=>tag.textContent.trim().toLowerCase().includes(filter)))
@@ -2322,9 +2317,11 @@ height: 2;
         //console.log(labelSearch);
       });
       document.addEventListener('click', function(event) {
-        searchLinks.classList.remove('active');
-        searchLinks.innerHTML = '';
+       
+          searchLinks.classList.remove('active');
+          searchLinks.innerHTML = '';
+        
       })
     </script>
-  </body>undefined
+  </body>
 </html>
