@@ -2104,396 +2104,78 @@ height: 2;
         </div>
       </div>
       </div>
-  <div class="container" id="TroubleshootingKeyenceLJV7020">
+  <div class="container" id="TroubleshootingLMIGocator">
                 <div class="title">
-                    <h1>Troubleshooting Guide for Keyence LJV7020</h1>
-                </div>     
-                
-                    
-                    <article>                 
-                      
-                      <p>​This guide provides comprehensive solutions for diagnosing and resolving common issues related to hardware, desktop applications, connectivity, network configurations, and driver installations associated with Keyence LJV7020. By following the troubleshooting steps outlined, users can effectively address and rectify challenges encountered during the setup and operation of these 3D Lasers.</p>                     
-                                    
-                     
-                  </article>
+                    <h1>Troubleshooting Guide for Gocator 2530 and 3506</h1>
+                </div>  
+                <article>                 
+                <p>This guide provides comprehensive solutions for diagnosing and resolving common issues related to hardware, desktop applications, connectivity, network configurations, and driver installations associated with Gocator 2530 and 3506. By following the troubleshooting steps outlined, users can effectively address and rectify challenges encountered during the setup and operation of these 3D Lasers.</p>                     
+                </article>
                   <article>   
                     <h2>
-                      Hardware-Trouble Shooting Guide
+                    Trouble Shooting Connection and Laser Profiling
                     </h2>
-                    <h3>Troubleshooting guide for power and connectivity Issues:</h3>
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>
-                            Indicator
-                          </th><th>
-                            Status
-                          </th><th>
-                            Possible Cause
-                            </th><th>
-                            Trouble Shooting Steps
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td rowspan="3">
-                            LINC/ACT LED
-                          </td>
-                          <td>
-                            OFF
-                          </td>
-                          <td> No network connection or<br> 
-                            No power supplied.
-                            </td>
-                            <td>Check power supply and ensure the device is powered on.<br> 
-                              Verify the network cable is properly connected.                              
-                              </td>
-                          <td>                            
-                          </td>                       
-                        </tr>
-                        <tr>
-                          <td> Blinks Green</td>
-                          <td> Normal operation; data is being sent and received.</td>
-                          <td> No action needed.</td>
-                        </tr>
-                        <tr>
-                          <td> Lights Green</td>
-                          <td> Device is linked to the network but not actively transmitting data.</td>
-                          <td>No action needed.</td>
-                        </tr>
-                        <tr>
-                          <td rowspan="4">
-                            MS LED
-                          </td>
-                          <td>
-                            OFF
-                          </td>
-                          <td> No power to the EtherNet/IP unit.
-                            </td>
-                            <td>Check power supply and connections.
-                              </td>
-                          <td>                            
-                          </td>                       
-                        </tr>
-                        <tr>
-                          <td>Lights Green</td>
-                          <td> Normal operation.</td>
-                          <td> No action needed.</td>
-                        </tr>
-                        <tr>
-                          <td>Blinks Red</td>
-                          <td>Duplicated IP address. <br>
-                            Controller error.
-                            </td>
-                          <td>Check the IP settings and resolve conflicts.<br> 
-                            Check controller status and error logs.
-                            </td>
-                            </tr>
-                            <tr>
-                            <td> Lights Red</td>
-                          <td>System error.
-                            </td>
-                          <td>Restart the device.<br> 
-                            Check logs for error details. <br>
-                            Contact support if the issue persists.                            
-                          </td>
-                        </tr>
-                        <tr>
-                          <td rowspan="4">
-                            NS LED
-                          </td>
-                          <td>
-                            OFF
-                          </td>
-                          <td>No IP address set. <br>
-                            No power supplied.                            
-                            </td>
-                            <td>Ensure the device is powered on.<br> 
-                              Assign a valid IP address.                              
-                            </td>
-                          <td>                            
-                          </td>                       
-                        </tr>
-                        <tr>
-                          <td>Blinks Green</td>
-                          <td> IP address assigned, but no active connection.<br> 
-                             
-                          </td>
-                          <td> Verify network settings and ensure proper configuration.</td>
-                        </tr>
-                        <tr>
-                          <td>Blinks Red</td>
-                          <td>Monitor data/External input" connection has not timed out.
-                            </td>
-                          <td>Check network stability. <br>
-                            Restart the device and re-establish the connection.                            
-                            </td>
-                            </tr>
-                            <tr>
-                            <td> Lights Red</td>
-                          <td>Assigned IP address is already in use.
-                            </td>
-                          <td>Change the device’s IP address to avoid conflicts.</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    </article>
-                    <article>
-                      <h3>Troubleshooting guide for power and connectivity Issues:</h3>
-                    
+                                       
                         <table>
                             <tr>
-                                <td style="width: 23%;"><b>Issue</b></td>
+                                <td style="width: 20%;"><b>Issue</b></td>
                                 <td style="width: 30%;"><b>Possible Cause</b></td>
-                                <td style="width: 57%;"><b>Solution</b></td>
+                                <td style="width: 50%;"><b>Solution</b></td>
                             </tr>
-                         
                           <tr>
-                            <td>The POWER ON LED and ERROR LED do not light after switching ON the power of the controller.</td>
-                            <td>1Is the power cable connected properly?<br>2.Power supply that not meeting the specification range?</td>
-                            <td>1.Connect the power cable properly..<br>2.Be sure to use a power supply that meets the specification range.</td>
+                            <td><b>Gocator Sensor not detected</b></td>
+                            <td>When connecting with a web browser, the sensor is not found (page does not load). </td>
+                            <td>1.Verify the sensor power is on. This will be indicated by an illuminated POWER LED.<br>2.Verify the Power & Ethernet cordset is connected to the Power/LAN connector and the Ethernet RJ45 plug is connected to the Ethernet switch. <br>3.Verify that the client computer’s network settings are properly configured. See Getting Started > Network Setup in the Gocator user manual or your computer’s documentation on configuring a network adapter. <br>4.Download the Gocator Tools package from the downloads area of LMI’s website at www.lmi3D.com. Unzip and run the Sensor Discovery Tool [Discovery>kDiscovery.exe] to verify that the sensor has the correct network settings.</td>
                           </tr>
                           <tr>
-                            <td>The power to the controller drops suddenly.</td>
-                            <td>Instantaneous power interruptions occurring?</td>
-                            <td>Use a stable power supply with no instantaneous power interruptions.</td>
+                            <td><b>Not able to login</b></td>
+                            <td>When attempting to log in, the password is not accepted.</td>
+                            <td>Download the Gocator Tools package from from the downloads area of LMI’s website at www.lmi3D.com. Unzip and run the Sensor Discovery Tool [Discovery>kDiscovery.exe] to find the sensor on the network and click Factory Restore. <br>WARNING: Performing a factory restore resets configuration settings to their original values. These settings can be recovered from backup files if you have previously saved them.</td>
+                          </tr>
+                          
+                          <tr>
+                            <td><b>When the Play button is pressed, the sensor does not emit laser light.</b></td>
+                            <td>Power Failure / LAN Connector Issue</td>
+                            <td>1.Ensure that the decal covering the laser emitter window, normally affixed to new sensors, has been removed.<br>2.Verify that the LASER LED on the Gocator is illuminated. If not, the laser safety input signal is off. To determine the correct solution for your application, see Specifications > Gocator Power/LAN Connector > Laser Safety Input in the user manual. <br>3.The exposure setting may be too low. For more information, see Gocator Web Interface > Scan Setup and Alignment > Sensor > Exposure in the user manual.</td>
                           </tr>
                           <tr>
-                            <td>The power to the controller drops suddenly.</td>
-                            <td>Capacity of the power supply not meeting the specification range?</td>
-                            <td>If the capacity of the power supply is insufficient, replace it with a power supply with a greater capacity.</td>
+                            <td><b>The sensor emits laser light, but the Range Indicator does not illuminate and/or points are not displayed in the data viewer</b></td>
+                            <td>Measurement Target is out of range or Exposure Time is not reasonable</td>
+                            <td>1.Verify that the measurement target is within the sensor’s field of view and measurement range. The RANGE LED on the Gocator will illuminate when the target is in range.<br>2.Check that the exposure time is set to a reasonable level. For more information, see Gocator Web Interface > Scan Setup and Alignment > Sensor > Exposure in the user manual.</td>
                           </tr>
                           <tr>
-                            <td>Nothing appears on the monitor</td>
-                            <td>Monitor switched OFF?</td>
-                            <td>Make sure that the monitor is on and use a power supply that meets the specification range of the monitor.</td>
-                          </tr>
-                          <tr>
-                            <td>Nothing appears on the monitor.</td>
-                            <td>Monitor cable not connected properly?</td>
-                            <td>Connect the monitor cable properly.</td>
-                          </tr>
-                          <tr>
-                            <td>Nothing appears on the monitor.</td>
-                            <td>Monitor cable broken?</td>
-                            <td>Try using another monitor cable.</td>
-                          </tr>
-                          <tr>
-                            <td>Nothing appears on the monitor.</td>
-                            <td>Monitor adjusted properly?</td>
-                            <td>Adjust the brightness and hue of the monitor</td>
-                          </tr>
-                          <tr>
-                            <td>Nothing appears on the monitor.</td>
-                            <td>Are the display unit and the controller connected properly using a cable?</td>
-                            <td>Switch the power OFF, check the connection between the display unit and the controller, and then switch the power back ON.</td>
-                          </tr>   
-                          <tr>
-                            <td>An error is displayed on the screen.</td>
-                            <td></td>
-                            <td>Take the necessary measures by following the instructions in the displayed error message</td>
-                          </tr>
-                          <tr>
-                            <td>The POWER ON LED of the controller does not light, but the ERROR LED is lit.</td>
-                            <td>Error message appear when using LJ-Navigator2 for communication? Error message appear on the monitor screen?</td>
-                            <td>Take the necessary measures by following the instructions in the displayed error message.</td>
-                          </tr> 
-                          <tr>
-                            <td>The laser emitting LED of the head does not light.</td>
-                            <td>Error message appear when using LJ-Navigator2 for communication? Error message appear on the monitor screen?</td>
-                            <td>Take the necessary measures by following the instructions in the displayed error message. </td>
-                          </tr> 
-                          <tr>
-                            <td>Laser beam is not emitted.</td>
-                            <td>Error message appear when using LJ-Navigator2 for communication? Error message appear on the monitor screen?</td>
-                            <td>Take the necessary measures by following the instructions in the displayed error message.</td>
-                          </tr>   
-                          <tr>
-                            <td>Laser beam is not emitted.</td>
-                            <td>Are the laser remote interlock and the laser OFF inputs being input correctly?</td>
-                            <td>Ensure that they are input correctly.</td>
-                          </tr>
-                          <tr>
-                            <td>Laser beam is not emitted.</td>
-                            <td>Is the emission being controlled correctly according to the trigger mode setting?</td>
-                            <td>If the trigger mode setting is other than “Continuous trigger”, an external trigger input will be necessary.</td>
-                          </tr>
-                          <tr>
-                            <td>The console cannot be operated.</td>
-                            <td>Is the console connected properly?</td>
-                            <td>Connect the console properly</td>
-                          </tr> 
-                          <tr>
-                            <td>The console cannot be operated.</td>
-                            <td>Is the console operation in locked state?</td>
-                            <td>Release the console operation lock.</td>
-                          </tr> 
-                          <tr>
-                            <td>The console cannot be operated.</td>
-                            <td>Is a PC or a PLC communicating with the controller? If multiple commands are input to the controller, only either of the commands will be accepted. (Console operation may be ignored.)</td>
-                            <td>Try operating the console again after making sure that no commands are being input from other instruments.</td>
-                          </tr> 
-                          <tr>
-                            <td>The PC freezes while using LJNavigator2.</td>
-                            <td>Does the system environment of the PC meet the specification range?</td>
-                            <td>Be sure to use it under a system environment that meets the specification range.</td>
-                          </tr> 
-                          <tr>
-                            <td>The profile is not displayed correctly.</td>
-                            <td>Is the target object located within the measurement range?</td>
-                            <td>Place the target object in the measurement range.</td>
-                          </tr> 
-                          <tr>
-                            <td>The profile is not displayed correctly.</td>
-                            <td>Is the laser beam being emitted?</td>
-                            <td>Place the target object in the measurement range.</td>
-                          </tr>   
-                          <tr>
-                            <td>The profile is not displayed correctly.</td>
-                            <td>Is the laser beam being emitted?</td>
-                            <td>Take the necessary measures by following the instructions in the displayed error message.</td>
-                          </tr>   
-                          <tr>
-                            <td>The profile is not displayed correctly.</td>
-                            <td>Is the laser beam being emitted?</td>
-                            <td>If the trigger mode setting is other than “Continuous trigger”, an external trigger input will be necessary.</td>
-                          </tr> 
-                          <tr>
-                            <td>The profile is not displayed correctly.</td>
-                            <td>If the averaging and median (time axis) are set to other than OFF, the profile will not appear until the specified number of triggers has been input.</td>
-                            <td>Enter a greater number of triggers than set for the averaging and median (time axis) counts.</td>
-                          </tr> 
-                          <tr>
-                            <td>The profile is not displayed correctly.</td>
-                            <td>Is the measurement being affected by a dead zone?</td>
-                            <td>Install the target object to a different location.</td>
-                          </tr> 
-                          <tr>
-                            <td>The profile is not displayed correctly.</td>
-                            <td>Is the measurement being affected by stray light caused by the ambient environment?</td>
-                            <td>1.Install the target object to a different location or different angle.<br>2.Utilize the W polarization function.<br>3.Adjust the image setting correctly.<br>4.Utilize the image mask function.</td>
-                          </tr> 
-                          <tr>
-                            <td>The profile is not displayed correctly.</td>
-                            <td>Is the image setting adjusted properly?</td>
-                            <td>Adjust the image setting correctly.</td>
-                          </tr> 
-                          <tr>
-                            <td>The profile is not displayed correctly.</td>
-                            <td>Are the smoothing, averaging and median set correctly?</td>
-                            <td>Set the smoothing, averaging and median correctly.</td>
-                          </tr> 
-                          <tr>
-                            <td>The profile is not displayed correctly.</td>
-                            <td>Is the image mask area set correctly?</td>
-                            <td>Set the image mask area correctly.</td>
-                          </tr> 
-                          <tr>
-                            <td>The profile is not displayed correctly.</td>
-                            <td>Is there any dust, dirt, water or oil on the cover glass?</td>
-                            <td>Remove the dust, dirt, water or oil.</td>
-                          </tr> 
-                          <tr>
-                            <td>The profile is not displayed correctly.</td>
-                            <td>Are there water and/or oil droplets in the operating ambient environment?</td>
-                            <td>Remove the droplets using an air purge, etc.</td>
-                          </tr>
-                          <tr>
-                            <td>The profile is not displayed correctly.</td>
-                            <td>Are there any scratches or cracks on the cover glass?</td>
-                            <td>The glass cover must be replaced. Contact your nearest KEYENCE office for repair.</td>
-                          </tr> 
-                          <tr>
-                            <td>The measurement value display does not change from decision standby data (“------”).</td>
-                            <td>Is trigger control being performed correctly according to the trigger mode setting?</td>
-                            <td>Perform trigger control according to the trigger mode setting.</td>
-                          </tr> 
-                          <tr>
-                            <td>The measurement value display does not change from decision standby data (“------”).</td>
-                            <td>Is timing control being performed correctly according to the hold mode setting?</td>
-                            <td>Perform timing control according to the hold mode setting.</td>
-                          </tr> 
-                          <tr>
-                            <td>The measurement value display does not change from decision standby data (“------”).</td>
-                            <td>Are the averaging count and the average number of times set correctly?</td>
-                            <td>Set the averaging count and the average number of times to appropriate values.</td>
+                            <td><b>The sensor CPU level is near 100%.</b></td>
+                            <td>Memory Full or
+                                High Trigger Speed/Profiling Resolution
+                                </td>
+                            <td>1.Review the active measurements and remove any that are unnecessary.<br> 
+                                2.Consider reducing the trigger speed. <br>
+                                3.Consider reducing the laser profiling resolution.
+                                </td>
                           </tr>  
+                          </table> 
+                                          
+                          <h2>Troubleshooting Driver Related Issues</h2>
+                                             
+                        <table>                        
+                            <tr>
+                                <td style="width: 20%;"><b>Issue</b></td>
+                                <td style="width: 30%;"><b>Possible Cause</b></td>
+                                <td style="width: 50%;"><b>Solution</b></td>
+                            </tr>
                           <tr>
-                            <td>The measurement value is displayed as “ALARM”.</td>
-                            <td>Is the measurement mode set correctly?</td>
-                            <td>Set the measurement mode correctly.</td>
-                          </tr>  
-                          <tr>
-                            <td>The measurement value is displayed as “ALARM”.</td>
-                            <td>Is the position correction set correctly?</td>
-                            <td>Set the position correction correctly. If the position correction fails, the measurement values of all related OUTs will be ALARM values.</td>
-                          </tr>  
-                          <tr>
-                            <td>The measurement value is not output correctly.</td>
-                            <td>Is the position correction set correctly?</td>
-                            <td>Set the position correction correctly. If the position correction fails, the measurement values of all related OUTs will be ALARM values.</td>
+                            <td><b>Gocator Not Connecting</b></td>
+                            <td>Problem with Calling OpenDevice API</td>
+                            <td>1.Verify Gocator connection using GoSDK.<br>2.Ensure the connection is closed before calling OpenDevice API through gRPC.<br>3.Refer to Error Codes and Descriptions for further troubleshooting.<br>3.Close the Connection before calling OpenDevice API through gRPC.<br>4.Refer to Error Codes and Descriptions for further troubleshooting</td>
                           </tr>
                           <tr>
-                            <td>The measurement value is not output correctly.</td>
-                            <td>IAre the scaling, offset and ZERO standard value set correctly?</td>
-                            <td>Set the scaling, offset and ZERO standard value correctly.</td>
-                          </tr>  
-                          <tr>
-                            <td>The measurement value is not output correctly.</td>
-                            <td>Is the target object tilted or displaced?</td>
-                            <td>1.Place the target object in the measurement range.<br>2.Set the tilt and height corrections.<br>3.Set the position correction.</td>
-                          </tr>
-                          <tr>
-                            <td>Auto zero does not function correctly.</td>
-                            <td>Is the ZERO terminal allocation set correctly?</td>
-                            <td>Allocate the OUT correctly to the used ZERO terminal.</td>
-                          </tr>
-                          <tr>
-                            <td>The measurement value is not output correctly.</td>
-                            <td>Is the auto zero key lock ON?</td>
-                            <td>Set the auto zero key lock to OFF.</td>
-                          </tr>
-                          <tr>
-                            <td>Program No. cannot be changed.</td>
-                            <td>Is the program switching set correctly in the environment setting?</td>
-                            <td>Set it correctly according to the switching method.</td>
-                          </tr>
-                          <tr>
-                            <td>Program No. cannot be changed.</td>
-                            <td>Is the key lock ON?</td>
-                            <td>Switch the key lock to OFF.</td>
-                          </tr>
-                          <tr>
-                            <td>The judgement output is not output correctly.</td>
-                            <td>Is the wiring correct?</td>
-                            <td>On the terminal operation screen, check whether the ON/OFF state is correct. If the ON/OFF state is correct, check the output circuit and the wiring and connect them correctly.</td>
-                          </tr> 
-                          <tr>
-                            <td>The judgement output is not output correctly.</td>
-                            <td>Are the tolerance and judgement output terminal settings set correctly?</td>
-                            <td>On the terminal operation screen, check whether the ON/OFF state is correct. If the ON/OFF state is incorrect, set the tolerance and judgement output terminal settings correctly..</td>
-                          </tr> 
-                          <tr>
-                            <td>The judgement output is not output correctly.</td>
-                            <td>Is the import timing correct?</td>
-                            <td>Import it in the correct timing using the strobe output.</td>
-                          </tr> 
-                         
-                          <tr>
-                            <td>The analog output is not output correctly.</td>
-                            <td>Has the voltage exceeded +10.8 V or fallen below -10.8 V?</td>
-                            <td>Set the analog scaling correctly according to the measurement value.</td>
-                          </tr> 
-
-                                                                            
-                        </table>
-                    </article>
-                        
-                        
-                        
-                        
-
+                            <td><b>Gocator Not Accessible via IP.</b></td>
+                            <td>IP conflict or wrong subnet. </td>
+                            <td>Use ipconfig or ping to verify the assigned IP address.
+                              </td>
+                          </tr>                        
+                                               
+                          </table>
 
                             
 
