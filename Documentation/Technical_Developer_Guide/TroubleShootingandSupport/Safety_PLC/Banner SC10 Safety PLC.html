@@ -2104,15 +2104,15 @@ height: 2;
         </div>
       </div>
       </div>
-      <div class="container" id="TroubleshootingJanomeJR3304">
+     <div class="container" id="TroubleshootingSC10">
                 <div class="title">
-                    <h1>Troubleshooting Guide for Janome JR3304/JR3303</h1>
+                    <h1>Troubleshooting Guide for Banner SC10- Safety PLC</h1>
                 </div>     
                 
                     
                     <article>                 
                       
-                      <p>​This guide provides comprehensive solutions for diagnosing and resolving common issues related to hardware, desktop applications, connectivity, network configurations, and driver installations associated with Janome JR3304/JR3303. By following the troubleshooting steps outlined, users can effectively address and rectify challenges encountered during the setup and operation of these controllers.</p>                     
+                      <p>This guide helps diagnose and resolve common hardware, desktop application, and driver issues with the Banner SC10- Safety PLC</p>                     
                                     
                      
                   </article>
@@ -2120,177 +2120,164 @@ height: 2;
                     <h2>
                       Hardware-Trouble Shooting Guide
                     </h2>
-                    <h3>Troubleshooting guide for power and connectivity Issues:</h3>
-                    <p>The LED indicators on the Janome JR3203N-AC robot provide important status information regarding operation, errors, and start inhibition conditions. Below are the possible LED statuses, their meanings, associated issues, and troubleshooting steps.</p>
+                    <h3>Understanding LED Indicators and Troubleshooting Power Issues:</h3>
                         <table>
-                            <tr>
-                                <td style="width: 20%;"><b>Issue</b></td>
-                                <td style="width: 30%;"><b>Possible Cause</b></td>
-                                <td style="width: 50%;"><b>Solution</b></td>
-                            </tr>
-                         
                           <tr>
-                            <td><b>Red–Blinking: Start to Inhibit</b></td>
-                            <td>1.Start inhibition signal is ON (#sysIn2, #sysIn14) <br>2.Robot is in a stopped state (#sysOut2 ON) <br>3.I/O-S Interlock is set</td>
-                            <td>1.Check and disable the start inhibition signal.<br>2.Ensure the robot is not in a stopped state.<br>3.Verify I/O-S function settings in TP Menu.</td>
+                            <td><b>Issue</b></td>
+                            <td><b>Possible Cause</b></td>
+                            <td><b>Solution</b></td>
                           </tr>
                           <tr>
-                            <td><b>Green - Blinking</b></td>
-                            <td>The robot is waiting for an external start signal</td>
-                            <td>Send a Start instruction from the start channel</td>
+                            <td><b>All LEDs Off</b></td>
+                            <td>1.Safety Controller is powered off.<br>2.Initialization mode active.</td>
+                            <td>1.Ensure 24V DC power is properly connected.<br>2.Wait for the initialization sequence to complete.</td>
                           </tr>
                           <tr>
-                            <td><b>Green - Slow Blinking</b></td>
-                            <td>External Start signal detected, but execution has not begun</td>
-                            <td>Ensure the start channel signal is active and correct</td>
+                            <td><b>Power/Fault LED (Green, Flashing)</b></td>
+                            <td>Configuration or Manual Power-Up mode active.</td>
+                            <td>If using SC-XM3 for configuration, cycle power to apply changes.</td>
                           </tr>
                           <tr>
-                            <td><b>Green - Solid (Lit)</b></td>
-                            <td>The robot is operating normally</td>
-                            <td>No action needed</td>
+                            <td><b>Power/Fault LED (Red, Flashing)</b></td>
+                            <td>Non-operating Lockout condition</td>
+                            <td>Check for safety lockout conditions and resolve them before restarting</td>
                           </tr>
                           <tr>
-                            <td><b>Red & Green - Alternate Blinking</b></td>
-                            <td>An emergency stop is in progress</td>
-                            <td>1.Check the emergency stop button and reset if necessary <br>2.Verify safety circuits and restart</td>
+                            <td><b>Inputs (Green, Solid)</b></td>
+                            <td>24V DC power is supplied with no faults</td>
+                            <td>Set the camera to a Static IP using Pylon IP Configurator.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Inputs (Red, Solid)/b></td>
+                            <td>1.0V DC is supplied with no faults<br>2.Input configured as status output and inactive </td>
+                            <td>1.Check if the correct voltage is applied to the input.<br>2. Check if the correct voltage is applied to the input.</td>
+                          </tr>   
+                          <tr>
+                            <td><b>RO1, RO2 Relay Outputs (Green, Solid)</b></td>
+                            <td>Contacts closed (relay output is on)</td>
+                            <td>No action needed (normal operation)</td>
+                          </tr>
+                          <tr>
+                            <td><b>RO1, RO2 Relay Outputs (Red, Solid)</b></td>
+                            <td>1.Contacts open (relay output is off)<br>2.Output not configured </td>
+                            <td>Verify relay output configuration in the Safety Controller settings</td>
                           </tr> 
-                                                                            
-                        </table>
-                        </article>                     
-                        <article>
-                        <h3>Troubleshooting Hardware & Connection Issues</h3> 
-                       
-                        <table>                        
-                            <tr>
-                                <td style="width: 20%;"><b>Issue</b></td>
-                                <td style="width: 30%;"><b>Possible Cause</b></td>
-                                <td style="width: 50%;"><b>TroubleShooting Steps</b></td>
-                            </tr>
                           <tr>
-                            <td><b>Janome Robot not Recognized in Windows Device Manager.</b></td>
-                            <td>Driver not installed.</td>
-                            <td>Install or update JR C-Points II from the official website.</td>
-                          </tr>
+                            <td><b>RO1, RO2 Relay Outputs (Red, Flashing)</b></td>
+                            <td>1.Safety Output fault detected<br>2.EDM (External Device Monitoring) fault detected <br>3.AVM (Automatic Verification Monitoring) fault detected </td>
+                            <td>Inspect connected devices for faults Check EDM and AVM settings for errors </td>
+                          </tr> 
                           <tr>
-                            <td><b>Robot Stops Unexpectedly During Operation</b></td>
-                            <td>Overheating or low supply voltage.A Sudden interruption in the power supply.
-                                Internal system fault.
-                            </td>
-                            <td>Check for error codes on the display or logs.
-                                Ensure a stable power supply is connected.
-                                Restart the robot and retry.
-                                </td>                                
-                          </tr>
+                            <td><b>Ethernet Diagnostic LEDs (Amber LED On, Green LED varies with traffic)</b></td>
+                            <td>Normal operation</td>
+                            <td>No action needed</td>
+                          </tr>  
                           <tr>
-                            <td><b>Emergency Stop Switch Does Not Release</b></td>
-                            <td>1.A mechanical issue with the Emergency Stop switch.<br>2.The switch is not turned correctly to release mode.</td>
-                            <td>1.Press down firmly and turn the switch clockwise to release.<br>2.If the switch remains stuck, check for physical damage or replace it.</td>
-                          </tr>                          
-                        </table>
-                        </article>                                 
-                        <h2>Troubleshooting Desktop Application(JR C-Points)Related Issues:</h2>                                             
-                        <table>                        
-                            <tr>
-                                <td style="width: 20%;"><b>Issue Category</b></td>
-                                <td style="width: 80%;"><b>Possible Cause</b></td>                                
-                            </tr>                          
+                            <td><b>Ethernet LEDs (Both Off)</b></td>
+                            <td>Hardware failure</td>
+                            <td>1.Inspect network cables and ensure proper connectivity<br>2.Restart the controller and check again </td>
+                          </tr> 
                           <tr>
-                            <td><b>Difficulty installing JR C-Points II on a PC</b></td>
-                            <td>1.Ensure administrator account rights during installation.<br>2.If JR C-Points II Limited Edition is already installed, uninstall it before proceeding with the new installation</td>
-                            
-                            </td>
-                          </tr>
+                            <td><b>Ethernet LEDs (5 Flashes Followed by Several Rapid Flashes)</b></td>
+                            <td>Normal power-up sequence</td>
+                            <td>No action needed (expected behaviour)</td>
+                          </tr> 
                           <tr>
-                            <td><b>Driver Installation</b></td>
-                            <td>1.Verify that the JR C-Points II and drivers are installed and up to date. Check for driver conflicts in Device Manager (Windows).<br>2.Reinstall drivers and restart the system</td>
-                           
-                            
-                          </tr>
+                            <td><b>Ethernet LEDs (1 Flash Every 3 Seconds)</b></td>
+                            <td>Possible hardware issue</td>
+                            <td>Contact Banner Engineering for support</td>
+                          </tr> 
                           <tr>
-                            <td><b>Connection Problems Between PC and Robot: The PC fails to connect with the robot via Ethernet.</b></td>
-                            <td>1.Confirm the Ethernet cable is securely connected to both the PC and the robot's Ethernet port.<br>2.Disconnect the teaching pendant before using JR C-Points II, as the robot doesn't support simultaneous connections<br>3.Ethernet Settings Configuration:<ul><li>In JR C-Points II, navigate to [Robot] > [Ethernet Settings].<li>Input the correct IP address and port settings matching the robot's configuration.</li></ul></td>
-                            
-                          </tr>
+                            <td><b>Ethernet LEDs (2 Flash Repeating Sequence)</b></td>
+                            <td>A cable was unplugged while active in the last 60 seconds</td>
+                            <td>Check Ethernet cable connections and reconnect if needed</td>
+                          </tr>                      
                           <tr>
-                            <td><b>Commands issued from JR C-Points II don't execute on the robot.</b></td>
-                            <td>1.Confirm the robot is in the correct mode to receive commands from the PC.<br>2.Ensure the emergency stop isn't engaged. If it is, release it and reinitialize the robot.<br>3.After powering on or releasing an emergency stop, perform mechanical initialization:<ul><li> In JR C-Points II, go to [Robot] > [Initialize].<li>Follow on-screen prompts to complete the process.</li></ul></td>
-                            
-                          </table>                          
-                          <h2>Troubleshooting Driver Related Issues</h2>
-                                             
-                        <table>                        
-                            <tr>
-                                <td style="width: 20%;"><b>Issues</b></td>
-                                <td style="width: 30%;"><b>Possible Cause</b></td>
-                                <td style="width: 50%;"><b>Troubleshooting Steps</b></td>
-                                
-                            </tr> 
+                            <td><b>Ethernet LEDs (3 Flash Repeating Sequence)</b></td>
+                            <td>A cable is unplugged</td>
+                            <td>Reconnect the cable and check for proper network function</td>
+                          </tr> 
                           <tr>
-                            <td><b>Janome Not Connecting</b></td>
-                            <td>Problem with Calling OpenDevice API</td>
-                            <td>1.Ensure the Janome robot is responding via ping command<br>2.Close any existing connections before calling the OpenDevice API via gRPC. <br>3.Check for timeout errors or specific error codes returned by OpenDevice.<br>4.Always close the connection properly before reattempting OpenDevice via gRPC. <br>5.Make sure right C&T file is uploaded</td>
-                          </tr>
+                            <td><b>Ethernet LEDs (4 Flash Repeating Sequence)</b></td>
+                            <td>The network is not enabled in the configuration</td>
+                            <td>Enable network settings in the Safety Controller configuration</td>
+                          </tr> 
                           <tr>
-                            <td><b>Mechanical Initialization Does Not Start
-                                </b></td>
-                            <td>1.Incorrect Start Channel selected.<br>2.Incorrect command/signal format from the external device.<br>3.Emergency Stop is active, preventing initialization.
-                                </td>
-                            <td>1.Release the Emergency Stop before attempting initialization.<br>2.Verify the Start Channel is correctly configured:TP PC MODE → Administration → Administration Settings Mode → Start Channel → Robot.<br>3.If initializing via Ethernet, send the command "Initialize R0" from an external device (e.g., PC).<br>4.Run the CLI command: MechaInitialization or perform Mechanical Initialization from JR-C Points Desktop Application<br>5.Confirm in JR C-Points II Software that the robot is in external RUN mode.
-                              </td>
-                          </tr>
-                          <tr>
-                            <td><b>The Robot Does Not Restart After Releasing the Emergency Stop
-                                </b></td>
-                            <td>1.Mechanical Initialization was not executed after E-Stop release.<br>2.A safety fault is detected, preventing restart.</td>
-                            <td>1.Perform Mechanical Initialization using the correct Start Channel (Ethernet).<br>2.Check for safety system faults and reset them if necessary
-                              </td>
-                          </tr>
-                          <tr>
-                            <td><b>Unable to Select the program</b></td>
-                            <td>Problem with Calling SelectProgram API</td>
-                            <td>Verify if the program exists on the controller by using the ListProgram API.
-                              </td>
-                          </tr>
-                          <tr>
-                            <td><b>Program not running</b></td>
-                            <td>Problem with Calling RunProgram API</td>
-                            <td>1.Ensure a valid program is selected before running.<br>2.If the controller has undergone a power cycle, follow these steps:<ul><li>Perform Mechanical Initialization.</li><li>Select the program using SelectProgram.</li><li> Run the program using RunProgram.</li></ul><br>3.Verify if another program is already running, which may prevent execution.
-                              </td>
-                          </tr>
-                          <tr>
-                            <td><b>PTP Movements not working</b></td>
-                            <td>AbsolutePtpMovementControl and 
-                                RelativePtpMovementControl
-                                </td>
-                            <td>1.If the controller has undergone a power cycle, Perform Mechanical Initialization.<br>2.Check for non-zero velocity and acceleration<br>3.Verify if the robo is in External Mode<br>4.Check if any errors are there<br>5.Do not try running motion APIs when robot is busy or in a cycle and software is busy or performing other functions
-                              </td>
-                          </tr>
-                          <tr>
-                            <td><b>Unable to Add positions in program</b></td>
-                            <td>Problem with Calling AddPosition API</td>
-                            <td>1.Verify is the program exists to which positions needs to be added<br>2.To add a position to a program, the position to be added should be less than/ equal/one greater than the current position
-                              </td>
-                          </tr>
-                          <tr>
-                            <td><b>Unable to Add a program using AddPositon</b></td>
-                            <td>Problem with Calling AddPosition API</td>
-                            <td>1.Verify is the program exists to which positions needs to be added<br>2.To add a position to a program, the position to be added should be less than/ equal/one greater than the current position
-                              </td>
-                          </tr>
-                          <tr>
-                            <td><b>Unable to Add positions in program</b></td>
-                            <td>Problem with Calling AddPosition API</td>
-                            <td>Verify the sequential order of the program (For Ex, a position cannot be added</td>
-                          </tr>
-                          <tr>
-                            <td><b>Unable to Set IO</b></td>
-                            <td>Problem with Calling ReturnHome API</td>
-                            <td>If the controller has undergone a power cycle, Perform Mechanical Initialization. </td>
-                          </tr>                   
-                        </table>                          
-                          
+                            <td><b>PROFINET Flash Command (All LEDs Flashing Twice per Second for 4s)</b></td>
+                            <td>"Flash LED" command received from PROFINET network</td>
+                            <td>No action needed (normal response to PROFINET flash command)</td>
+                          </tr> 
 
+                        </table>
+                        </article>
+                        <article>
+                        <h3>Troubleshooting Connection and Network Issues :</h3>                        
+                        <table>                        
+                          <tr>
+                            <td><b>Issue</b></td>
+                            <td><b>Possible Cause</b></td>
+                            <td><b>Solution</b></td>
+                          </tr>
+                          <tr>
+                            <td><b>SC10 not Recognized in Windows Device Manager.</b></td>
+                            <td>Driver not installed.</td>
+                            <td>Install or update the Driver from <a href="https://www.bannerengineering.com/in/en/products/machine-safety/software/machine-safety-software.html?srsltid=AfmBOorbsA6cMY4RR9dJ14p-ZO4e545uDy0w2UmfHtfXKisOxfjuluJe">Here</a> </td>
+                          </tr>
+                          <tr>
+                            <td><b>Network Connection Lost </b></td>
+                            <td>No GigE connection.</td>
+                            <td>Connect SC10 directly to the PC to rule out switch issues. Check for firewall restrictions.</td>
+                          </tr>
+                          <tr>
+                            <td><b>SC10 Not Accessible via IP.</b></td>
+                            <td>IP conflict or wrong subnet.</td>
+                            <td>1.Use ipconfig or ping to verify the assigned IP address.<br>2.Ensure the device and PC are on the same subnet.</td>
+                          </tr>
+                                                                   
+                        </table>
+                      </article>
+                      <article>
+                        <h3>Troubleshooting Desktop Application Related Issues:</h3>                        
+                        <table>                        
+                          <tr>
+                            <td><b>Issue</b></td>                            
+                            <td><b>Solution</b></td>
+                          </tr>
+                          <tr>
+                            <td><b>Live Mode button is unavailable (greyed out)</b></td>
+                            <td>1.Make sure the SC-Ethernet cable is plugged into both the computer and the Safety Controller.<br>2.Verify that the Safety controller is installed properly<br>3.Exit the Software<br>4.Unplug the Safety controller and plug it back in.<br>5.Start the Software </td>
+                         </tr>
+                          <tr>
+                            <td><b>Unable to read from the Safety Controller or send the configuration to the Safety Controller (buttons greyed out)</b></td>
                             
+                            <td>1.Make sure Live Mode is disabled <br>2.Verify that the Safety Controller is installed properly<br>3.Exit the SoftwareClean the lens carefully with a microfiber cloth. Remove the lens cap before use.<br>4. Unplug the Safety Controller and plug it back in.<br>5.Start the Software</td>
+                          </tr>                                                                 
+                        </table>
+                      </article>
+                      <article>                  
+                         
+                            <h2>Troubleshooting Driver-Related Issues:</h2>
+                            <p>Below Table shows the Challenges, Function Calls, and Troubleshooting Steps for Basler Camera Driver Development.</p>                        
+                        <table>                        
+                          <tr>
+                            <td><b>Issue</b></td>
+                            <td><b>API/Function name</b></td>
+                            <td><b>Solution</b></td>
+                            
+                          </tr>
+                          <tr>
+                            <td><b>SC10 Not Connected</b></td>
+                            <td>OpenDevice</td>
+                            <td>1.Verify SC10 connection using Banner Software<br>
+                              2.Ensure the connection is closed before calling OpenDevice API through gRPC<br>
+                              3.Check for OpenDevice API timeout errors or specific error codes<br>                             
+                              4.Refer to Error Codes and Descriptions for further troubleshooting<br>
+                              5.Close the Connection before calling OpenDevice API through gRPC<br>
+                              </td>
+                          </tr>
+                          </table>  
+                          </article>
+                          
 
             </div>
     </main>
