@@ -2104,325 +2104,235 @@ height: 2;
         </div>
       </div>
       </div>
-    <div class="container" id="TroubleshootingAnimaticMotor">
+     <div class="container" id="TroubleshootingDenso6axis">
                 <div class="title">
-                    <h1>Troubleshooting Guide for Animatic Motor (sm23165d-cds7)</h1>
+                    <h1>Troubleshooting Guide for Denso 6-axis RC7 Controller</h1>
                 </div>     
                 
                     
-                    <article>                 
+                    <article>                     
                       
-                      <p>This guide provides comprehensive solutions for diagnosing and resolving common issues related to hardware, desktop applications, connectivity, network configurations, and driver installations associated with Animatic Motor(sm23165d-cds7). By following the troubleshooting steps outlined, users can effectively address and rectify challenges encountered during the setup and operation of these smart motors.</p>                     
-                                    
+                      <p>This guide helps diagnose and resolve common hardware, desktop application, and driver issues with the Denso 6-axis RC7 Controller</p>
+                     
+                      <p>Follow the steps below to check for power, connection, overheating, and network-related problems.</p>
+                    
                      
                   </article>
                   <article>   
-                    <h2>
-                      Hardware-Trouble Shooting Guide
-                    </h2> </p>
-     
-                    <h3>Understanding LED Indicators and Troubleshooting Power Issues:</h3>
-                    <p>​The Animatic SmartMotor features three status LEDs (LED0, LED1, and LED2) that provide insights into the motor's operational state and assist in diagnosing issues. Below is a table detailing common LED indications, their possible causes, and recommended troubleshooting steps:​</p> 
-                    <table>
+                    <h2>Troubleshooting Connection with RobotController</h2>
+                      
+                    
+                    <h3>TroubleShooting on RC7 Controller</h3>
+                        <table>
                           <tr>
-                            <td style="width: 20%;"><b>Issues</b></td>
-                            <td style="width: 30%;"><b>Possible Cause</b></td>
-                            <td style="width: 50%;"><b>Troubleshooting Steps</b></td>
+                            <td><b>Check</b></td>
+                            <td><b>Action</b></td>                            
+                          </tr>
+                          <tr>
+                            <td><b>Is the NetwoRC ROM version higher than V2.330? </b></td>
+                            <td>If the version is below v.2330, please update the controller ROM Image to v2.330 or above.</td>                            
+                          </tr>
+                          <tr>
+                            <td><b>Is the cable, RS232C, or Ethernet cable connected properly?<br></b></td>
+                            <td>Ensure that the cable is not loose on the connector.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Is the type of cable such as Straight and Cross correct?</b></td>
+                            <td>Check the cable.</td>
                             
-                        </tr> 
-                          <tr>
-                            <td><b>LED 0 is Off (No Power)</b></td>
-                            <td>The power adapter is not connected or is faulty.</td>
-                            <td>1.Ensure the power adapter is properly plugged in and working.<br>2.Ensure proper voltage is provided.<br>3.Try a different adapter.</td>
                           </tr>
                           <tr>
-                            <td><b>LED 0 is Solid Green (Drive On, but motor not moving).</b></td>
-                            <td>The Motor is enabled but no trajectory command is given.</td>
-                            <td>Send a motion command via SMI software or controller.</td>
+                            <td><b>In the case of Ethernet, is the address correctly set?</b></td>
+                            <td>Check the address setting.</td>
+                            
                           </tr>
                           <tr>
-                            <td><b>LED 0 is Flashing Green (Drive Off)</b></td>
-                            <td>Motor is disabled</td>
-                            <td>Enable the motor using SMI software or the appropriate API command.</td>
+                            <td><b>In the case of the ethernet connection over the segment, is the default gateway correctly set?</b></td>
+                            <td>Make sure that the Controller IP address in the COM settings is the same between the application and the controller. Make sure that the IP address of the client PC and the IP address of the ext. run on the controller are the same..</td>
+                          </tr> 
+                          <tr>
+                            <td><b>Is the communication permission on the communication menu correctly set?</b></td>
+                            <td>Check the communication permission.</td>
+                           </tr> 
+                          <tr>
+                            <td><b>Is the ORiN extension set?</b></td>
+                            <td>Add the ORiN option.</td>
+                          </tr>
+                          </table>
+                          <h3>Trouble in accessing variables of a robot controller</h3> 
+                          <table>
+                          <tr>
+                            <td><b>Check</b></td>
+                            <td>Action</td>
                           </tr>
                           <tr>
-                            <td><b>LED 0 is Flashing Red (Watchdog Fault).</b></td>
-                            <td>The system watchdog detected an error.</td>
-                            <td>Power cycle the motor and controller. If issue persists, check system logs for errors.</td>
+                            <td><b>Is the communication permission correctly set? ("Read/Write" or "Read-only")</b></td>
+                            <td>Check the communication settings in TP.</td>
                           </tr>
                           <tr>
-                            <td><b>LED 0 is Solid Red (Major Fault).</b></td>
-                            <td>Overcurrent, overheating, or other serious fault.</td>
-                            <td>Check motor temperature, power connections, and controller fault logs.</td>
-                          </tr>   
-                          <tr>
-                            <td><b>LED 0 Alternating Red/Green (Boot Load Mode).</b></td>
-                            <td>Motor firmware needs to update or is corrupt.</td>
-                            <td>Reflash the firmware using manufacturer tools.</td>
+                            <td><b>Is any edit dialogue displayed in the teach pendant?</b></td>
+                            <td>Close the dialogue.</td>
                           </tr>
                           <tr>
-                            <td><b>LED 1 is Off (Not Busy, No Motion).</b></td>
-                            <td>No trajectory command given.</td>
-                            <td>Send a motion command using SMI software or API.</td>
-                          </tr> 
+                            <td><b>Is any error message displayed in the teach pendant?</b></td>
+                            <td>Clear the error.</td>
+                          </tr>
                           <tr>
-                            <td><b>LED 1 is Solid Green (Trajectory in Progress but no movement).</b></td>
-                            <td>Motion parameters might be incorrect.</td>
-                            <td>Verify target position, speed, and acceleration settings. </td>
-                          </tr> 
+                            <td><b>Is the ORiN extension set?</b></td>
+                            <td>Add the ORiN option.</td>
+                          </tr>
                           <tr>
-                            <td><b>LED 2 (CAN Bus Fault Red LED) - Single Flash.</b></td>
-                            <td>At least one error exceeded limit.</td>
-                            <td>Check CAN wiring, baud rate, and ensure all devices on the network are properly configured.</td>
-                          </tr>  
+                            <td><b>Is the variable name correctly set?</b></td>
+                            <td>Check the variable name.</td>
+                          </tr>
                           <tr>
-                            <td><b>LED 2 (CAN Bus Fault Red LED) - Double Flash.</b></td>
-                            <td>Heartbeat or guard error</td>
-                            <td>Check if the CANopen master is running and correctly monitoring the motor.</td>
-                          </tr> 
+                            <td><b>In case of writing, is not the variable read-only?</b></td>
+                            <td>Check the variable and I/O attribute.</td>
+                          </tr>
                           <tr>
-                            <td><b>LED 2 (CAN Bus Fault Red LED) - Solid.</b></td>
-                            <td>CAN bus communication is off</td>
-                            <td>Ensure correct termination resistors and check network integrity.</td>
-                          </tr> 
-                          <tr>
-                            <td><b>LED 3 (CAN Bus Status Green LED) - Blinking.</b></td>
-                            <td>Pre-operational state (Boot-up)</td>
-                            <td>Wait for the system to finish initialization. If stuck, check firmware and CAN settings.</td>
-                          </tr> 
-                          <tr>
-                            <td><b>LED 3 (CAN Bus Status Green LED) - Solid.</b></td>
-                            <td>Normal operation</td>
-                            <td>No action is required, the system is running correctly.</td>
-                          </tr>                      
-                          <tr>
-                            <td><b>LED 3 (CAN Bus Status Green LED) - Single Flash.</b></td>
-                            <td>The Device is in stop state.</td>
-                            <td>Restart the device or send a start command.</td>
-                          </tr>                           
+                            <td><b>Is the range of index correctly specified?</b></td>
+                            <td>Check the range.</td>
+                          </tr>
                         </table>
-                        </article>
-                        
-                        <p><b>Note:</b>For Class 5 D-style AD1 option motors, at no time should the voltage to any input exceed the level on the I/O power input (Pin 11). Doing so could cause immediate damage to the expanded I/O hardware.</p>
-                        
-                        <article>
-                        <h3>Troubleshooting Port and Connection Issues</h3>                        
+                          <h3>Trouble in Robot Moving</h3>
+                          <table>
+                          <tr>
+                            <td><b>Check</b></td>
+                            <td>Action</td>
+                          </tr>
+                          <tr>
+                            <td><b>Is the "Executable token" for a robot correctly set? (ANSI: Single point of control)</b></td>
+                            <td>Check the settings.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Is the "RobSlave" program running?</b></td>
+                            <td>Check the condition.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Does RobSlave.pac match the version of "NetwoRC Provider"?</b></td>
+                            <td>Use the modules included in the same ORiN Package.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Are the command names and parameters correctly specified?</b></td>
+                            <td>Check the command (function) specification</td>
+                          </tr>                    
+                        </table>                                   
+                        </article>                        
+                      <article>
+                        <h3>How to write data in an error state</h3>                        
                         <table>                        
                           <tr>
-                            <td style="width: 20%;"><b>Issues</b></td>
-                            <td style="width: 30%;"><b>Possible Cause</b></td>
-                            <td style="width: 50%;"><b>Troubleshooting Steps</b></td>
-                            
-                        </tr> 
-                          <tr>
-                            <td><b>The motor control power light does not illuminate.</b></td>
-                            <td>1.Control power is off, disconnected, or incorrectly wired.<br>2.The motor has routed drive power through drive enable pins.<br>3.The motor is equipped with the DE option.</td>
-                            <td>1.Check that the control power is connected to the proper pins and turned on.<br>2.Ensure cabling is correct and drive power is not being delivered through the 15-pin connector.<br>3.To energize control power, apply 24-48 VDC to pin 15 and ground to pin 14. </td>
+                            <td><b>Issue</b></td>
+                            <td><b>Possible Cause</b></td>
+                            <td><b>Solution</b></td>
                           </tr>
                           <tr>
-                            <td><b>The motor does not communicate with SMI.</b></td>
-                            <td>1.Transmit, receive or ground pins are not connected correctly.<br>2.The motor program is stuck in a continuous loop or is disabling communications.</td>
-                            <td>1.Ensure that transmit, receive and ground are all connected properly to the host PC.<br>2.To prevent the program from running on power up, use the Communications Lockup Wizard located and clear EEPROM on the SMI software Communications menu.
-                                If stuck in bootloader, contact Moog Animatics</td>
-                                
+                            <td><b>NetwoRC controller rejects all writing data request (ex. Variable, I/O) when an error occurred because of safety reason</b></td>
+                            <td>The controller restricts write operations in an error state for safety reasons..</td>
+                            <td>1.Enable a supervisory task (PAC) at controller startup.<br>2.Create a supervisory task program (TSR1, TSR2, etc.) that allows writing during an error state.<br>3.Invoke the supervisory task in the controller.<br>4.Send a notification from an external PC to the supervisory task to trigger the write operation.<br>5.Ensure the supervisory task is correctly defined and active before an error occurs.</td>
                           </tr>
-                          <tr>
-                            <td><b>Motor disconnects from SMI sporadically.</b></td>
-                            <td>1.COM port buffer settings are too high.<br>2.Poor connection on the serial cable.<br>3.Power supply unit (PSU) brownout.</td>
-                            <td>1.Adjust the COM port buffer settings to their lowest values.<br>2.Check the serial cable connections and/or replace it.<br>3.PSU may be too high-precision and/or undersized for the application, which causes it to brown out during motion. Make moves less aggressive, increase PSU size or change to a linear unregulated power supply.</td>
-                          </tr>
-                          <tr>
-                            <td><b>The motor stops communicating after power reset, and requires re-detection.</b></td>
-                            <td>The motor does not have its address set in the user program. <br><b>NOTE:</b> Serial addresses are lost when motor power is off or reset.</td>
-                            <td>Use the SADDR or ADDR= command within the program to set the motor address.</td>
-                          </tr>
-                          <tr>
-                            <td><b>Red PWR SERVO light illuminated.</b></td>
-                            <td>Critical fault.</td>
-                            <td>To discover the source of the fault, use the Motor View tool located on the SMI software Tools menu.</td>
-                          </tr>
-                                                                   
+                                                                  
                         </table>
                       </article>
                       <article>
-                        <h3>Troubleshooting Desktop Application Related Issues:</h3>                        
+                        <h3>Troubleshooting Hardware Issues:</h3>                        
                         <table>                        
                           <tr>
-                            <td style="width: 20%;"><b>Issues</b></td>
-                            
-                            <td style="width: 80%;"><b>Troubleshooting Steps</b></td>
-                            
-                        </tr> 
+                            <td><b>Issue</b></td>
+                            <td><b>Possible Cause</b></td>
+                            <td><b>Solution</b></td>
+                          </tr>
                           <tr>
-                            <td><b>Live Mode button is unavailable (greyed out)</b></td>
-                            <td>1.Make sure the SC-Ethernet cable is plugged into both the computer and the Safety Controller.<br>2.Verify that the Safety controller is installed properly<br>3.Exit the Software<br>4.Unplug the Safety controller and plug it back in.<br>5.Start the Software </td>
-                         </tr>
+                            <td><b>Unable to communicate with the Robot Controller<b></td>
+                            <td>Incorrect communication device selected (other than Ethernet).</td>
+                            <td>1.Open System Manager in WinCAPS III.<br>2.Click on Set Communication and select the correct device.</td>
+                          </tr>
                           <tr>
-                            <td><b>Unable to read from the Safety Controller or send the configuration to the Safety Controller (buttons greyed out)</b></td>
-                            
-                            <td>1.Make sure Live Mode is disabled <br>2.Verify that the Safety Controller is installed properly<br>3.Exit the SoftwareClean the lens carefully with a microfiber cloth. Remove the lens cap before use.<br>4. Unplug the Safety Controller and plug it back in.<br>5.Start the Software</td>
-                          </tr>                                                                 
+                            <td><b>Timeout error while communicating with the controller</b></td>
+                            <td>The timeout value is too low, or network latency is high.</td>
+                            <td>1.Go to Communication Settings.<br>2.Increase the Timeout value (default is 4000 ms).<br>3.Check network stability and try again.<br>4.Increase the Retry count (default is 5).<br>5.Check Error Log</td>
+                          </tr>                                                                
                         </table>
                       </article>
-                      <article>                  
-                         
-                        <h2>Troubleshooting Common Faults:</h2>
-                                             
-                        <table>                        
+                    <article>
+                          <h2>TroubleShooting Desktop Application(WinCAPS III)Issues:</h2>                        
+                          <table>                        
+                            <tr>
+                              <td><b>Issue Category</b></td>  
+                              <td><b>Possible Cause</b></td>                          
+                              <td><b>Troubleshooting Steps</b></td>
+                            </tr>
+                            <tr>
+                              <td><b>WinCAPS III not opening</b></td> 
+                              <td>Expired licence</td>                           
+                              <td>1.Ensure your PC has an active internet connection.<br>2.	Check if you have a valid and unused WinCAPS III license key<br>3.If the license has expired, reactivate it using your license key.<br>Download the latest version of WinCAPS III, <a  href="https://www.denso-wave.com/en/robot/download/application/j1w3.html">Click Here </a> </td>
+                            </tr>
+                            <tr>
+                              <td><b>Error message on the screen when opening WinCAPS III: "Cannot Support with this WinCAPS III"</b></td>
+                              <td>Trying to open a project file created in a newer version of WinCAPS III.</td>                            
+                              <td>Check the version of WinCAPS III installed on your system.For more info <a  href="https://www.denso-wave.com/en/robot/download/application/">Click Here </a> 
+                                </td>
+                            </tr> 
+                            </table>                           
+                            <h2>Troubleshooting Driver-Related Issues:</h2>
+                            <p>Below Table shows the Challenges, Function Calls, and Troubleshooting Steps for Denso 6-axis RC7 Controller Driver Development.</p>                        
+                       </article>
+                       <article>
+                            <table>                        
                           <tr>
-                            <td style="width: 20%;"><b>Issues</b></td>
-                            <td style="width: 30%;"><b>Possible Cause</b></td>
-                            <td style="width: 50%;"><b>Troubleshooting Steps</b></td>
-                            
-                        </tr> 
-                          <tr>
-                            <td><b>Bus voltage fault.</b></td>
-                            <td>Bus voltage is either too high or too low for operation. </td>
-                            <td>Check servo bus voltage. If the motor uses the DE power option, ensure that both drive and control power are connected.
-                              </td>
+                            <td><b>Issue</b></td>
+                            <td><b>Possible Causes</b></td>
+                            <td><b>TroubleShooting Solution</b></td>                            
                           </tr>
                           <tr>
-                            <td><b>Overcurrent occurred. </b></td>
-                            <td>The motor intermittently drew more than its rated level of current. Does not cease motion.  </td>
-                            <td>Consider making motion less abrupt with softer tuning parameters or acceleration profiles. 
-                              </td>
+                            <td><b>Error is Connecting Denso</b></td>
+                            <td>Failed in Connection</td>
+                            <td>1. Ensure the Janome robot is properly connected using RobMaster.<br>
+                              2.Close any existing connections before calling the OpenDevice API via gRPC.<br>
+                              3.Check for timeout errors or specific error codes returned by OpenDevice.<br>                          
+                              4.Always close the connection properly before reattempting OpenDevice via gRPC<br>
+                            </td>
                           </tr>
                           <tr>
-                            <td><b>Excessive temperature fault.</b></td>
-                            <td>The motor has exceeded the temperature limit of 85°C. The motor will remain unresponsive until it cools down below 80°C. </td>
-                            <td>The motor may be undersized or the ambient temperature is too high. Consider adding heat sinks or forced air cooling to the system.
-                              </td>
-                          </tr>
+                            <td><b>The Motor Not Moving after power Cycle Reset/Restarting  the Device</b></td>
+                            <td>RobSlave.pac and configurations are all lost in the controller</td>
+                            <td>Upload RobSlave.pac, UserExtension.pac, logmessage.pac, persistence.pac, waitforinput.pac using RobMaster</td>
+                              
+                          </tr>                            
                           <tr>
-                            <td><b>Excessive position error.</b></td>
-                            <td>The motor's commanded position and actual position differ by more than the user-supplied error limit. </td>
-                            <td>Increase error limit, decrease load or make movement less aggressive.
-                              </td>
-                          </tr>
+                            <td><b>Return Home Function giving an error</b></td>
+                            <td>2.The Homing Variable is  Executed other than P10.<br>2. Check if P10 is altered in the program and restore it to its default state.</td>
+                            <td>Do not modify or use the P10 variable for user purposes, as it is reserved for homing</tr> 
                           <tr>
-                            <td><b>Historical positive/negative hardware limit faults.</b></td>
-                            <td>1.A limit switch was tripped in the past<br>2.The motor does not have limit switches attached.</td>
-                            <td>1.Clear errors with the ZS command.<br>2.Configure the motor to be used without limit switches by setting their inputs as general use.
-                              </td>
-                          </tr>
-                          </table>
-                          <h2>TroubleShooting FlowChart:Animatic Smart Motor </h2>
-                          <div class="image-container">
-                            <a href="./images/C/Pic_8.JPG" target="_blank">
-                              <img src="./images/C/Pic_8.JPG" alt="error-loading" />
-                            </a>
-              
-                            <div class="description">
-                              <p>Description text</p>
-                            </div>
-                          </div>
-                          <h2>Troubleshooting Desktop Application(SMI Interface)-Issues</h2>
-                                             
-                        <table>                        
-                          <tr>
-                            <td style="width: 20%;"><b>Issues</b></td>
-                            <td style="width: 30%;"><b>Possible Cause</b></td>
-                            <td style="width: 50%;"><b>Troubleshooting Steps</b></td>
-                            
-                        </tr> 
-                          <tr>
-                            <td><b>SMI Software Not Detecting Animatic Motor</b></td>
-                            <td>The Computer not configured properly for RS-232 communication</td>
-                            <td>1.Restart the computer before launching SMI.<br>2.Ensure SmartMotor is powered on.<br>3.Check the COM port settings in SMI and manually select the correct port. <br>4.Try using a different computer if the issue persists.</td>
-                          </tr>
-                          <tr>
-                            <td><b>No Communication with Smart Motor.</b></td>
-                            <td>Incorrect cable connection or damaged cable. </td>
-                            <td>1. Verify the RS-232 connection using SMI Interface <br>2.Try a different serial cable and port.<br>3.Ensure the correct baud rate and communication settings in SMI.
-                              </td>
-                          </tr>
-                          <tr>
-                            <td><b>Motor Not Powering On</b></td>
-                            <td>No power supply or faulty connection.</td>
-                            <td>1.Check the power supply voltage (match specifications). <br>2.Inspect power cable connections.<br>3.Try a different power source to rule out power issues.
-                              </td>
-                          </tr>
-                          <tr>
-                            <td><b>Motor Not Moving After Detection.</b></td>
-                            <td>Motor disabled or in an error state </td>
-                            <td>1.Use SMI to check for error messages or faults.<br>2.Issue the EN (Enable Motor) command. <br>3.Reset and power cycle the motor.
-                              </td>
-                          </tr>
-                          <tr>
-                            <td><b>Unresponsive Motor After Command Execution</b></td>
-                            <td>Corrupt firmware or incorrect settings</td>
-                            <td>1.Perform a factory reset of the SmartMotor.<br>2.Reflash the firmware using SMI.<br>3.Ensure the command format is correct in SMI.
-                              </td>
-                          </tr>
-                          <tr>
-                            <td><b>RS-232 / RS-485 Not Responding</b></td>
-                            <td>The wrong COM port was selected in the software</td>
-                            <td>1.. Open Device Manager (Windows) and find the active COM port.<br>2.Match the COM port in SMI settings.<br>3.Try different baud rate settings (e.g., 9600, 115200).
-                              </td>
-                          </tr>
-                          <tr>
-                            <td><b>Positioning Error / Loss of Steps</b></td>
-                            <td>Encoder feedback issues or misalignment</td>
-                            <td>1.Check encoder feedback wiring. <br>2.Verify the encoder resolution settings.<br>3.Recalibrate motor positioning.
-                              </td>
-                          </tr>
-                          </table>
-                          </article>
-                          <article>
-                          <p><b>Note:</b> For D-style SmartMotors, pins 14 and 15 of the 15-pin D-sub port are intended for use with DE series motors for control power only.<br> Attempts to power a non-DE motor through those pins as main servo drive power could result in immediate damage to the electronics and will void the warranty.<br>Do not use the Address Motors feature. Doing so will overwrite the existing motor addresses.</p>
-                          <h2>Troubleshooting Driver Related Issues</h2>
-                                             
-                        <table>                        
-                          <tr>
-                            <td style="width: 20%;"><b>Issues</b></td>
-                            <td style="width: 30%;"><b>Possible Cause</b></td>
-                            <td style="width: 50%;"><b>Troubleshooting Steps</b></td>
-                            
-                        </tr> 
-                          <tr>
-                            <td><b>Animatic Smart Motor Not Connecting</b></td>
-                            <td>Problem with Calling OpenDevice API</td>
-                            <td>1.Ensure the Animatic Motor is properly connected using SMI Interface.<br>2.Close any existing connections before calling the OpenDevice API via gRPC.<br>3.Check for timeout errors or specific error codes returned by OpenDevice API. <br>4.Always close the connection properly before reattempting OpenDevice via gRPC.</td>
-                          </tr>
-                          <tr>
-                            <td><b>Several commands not recognized during compiling.</b></td>
-                            <td>Compiler default firmware version set incorrectly. </td>
-                            <td>Use the Compiler default firmware version option in the SMI software Compile menu to select a default firmware version closest to the motor's firmware version. In the SMI software, view the motor's firmware version by right-clicking the motor and selecting Properties.
-                              </td>
-                          </tr>
-                          <tr>
-                            <td><b>Motor not connecting</b></td>
-                            <td>1.Wrong port number or incorrect motor selected<br>2.Faulty or loose cable connection</td>
-                            <td>1.Ensure the correct COM port number is selected in SMI software. Verify that the correct motor ID is being accessed. <br>2.Inspect all communication cables (RS-232) and reconnect if needed.</td>
-                          </tr>
-                          <tr>
-                            <td><b>The Motor Not Moving</b></td>
-                            <td>The Limit Switch has been Set (Positive or Negative limit switch).</td>
-                            <td>Clear All Flags and Clear Fault Bits by calling Enable Motor and Home the Motor using Return Home API.
-                              </td>
-                          </tr>
-                          <tr>
-                            <td><b>The motor moves but the direction is reversed</b></td>
-                            <td>Incorrect direction configuration</td>
-                            <td>Provide the correct directions and velocity
-                              </td>
-                          </tr>
-                          <tr>
-                            <td><b>The homing method involves stepwise movement</b></td>
-                            <td>The homing method involves stepwise movement</td>
-                            <td>Do not modify the Homing.smx
-                              </td>
-                          </tr>
-                          <tr>
-                            <td><b>Return Home Function giving error</b></td>
-                            <td> Homing.smx file might be Modified</td>
-                            <td>Verify the Homing.smx program</td>
-                          </tr>
-                          </table>
-                        </article>
-                          
+                            <td><b>Error in Velocity and Acceleration Configuration</b></td>
+                            <td>Previous Error Logged</td>
+                            <td>1.Clear the Error using ClearError API<br>2.Ensure the Robo is in External Auto Mode, If not, Configure the Denso for Auto Mode using Teach Pendant.<br>3.Ensure to verify “RobSlave.pac” is running on denso.</td>
 
-                            
+                          </tr> 
+                          <tr>
+                            <td><b>Error in Upload program </b></td>
+                            <td>1.The motor may be ONSet Pixel Format<br>2.Buffer is Full<br>3.The device is not connected properly</td>
+                            <td>1.Turn OFF the Motor by executing MotorConnection API or Turn Off the motor by using RobMaster<br>2.Ensure the Robo is in External Auto Mode, If not, Configure the Denso for Auto Mode using Teach Pendant.<br>3.Check the device connection using RobMaster</td>
+                          </tr>
+                          <tr>
+                            <td><b>Unable to Start a task</b></td>
+                            <td>Previous Error Logged </td>
+                            <td>1.Clear the Error using ClearError API.<br>2.Ensure the Robo is in External Auto Mode, If not, Configure the Denso for Auto Mode using Teach Pendant.<br>3.Ensure to verify “RobSlave.pac” is running on denso Previous Error Logged.
+                                Check if the program’s availability is in the controller.                                
+                            </td>                            
+                          </tr>  
+                          <tr>
+                            <td><b>Robot arm not moving, unable to perform operations in Auto mode</b></td>
+                            <td>A serious Level 5+ error has occurred.</td>
+                            <td>1.The controller is in an error state and requires recovery.Identify the specific Level 5+ error causing the issue.On the teach pendant, navigate to Error Log Data to review error details. <br>                               
+                                2.Supported troubleshooting video Can be found:<a  href="https://support.densorobotics.com/support/solutions/articles/60000698230-not-executable-due-to-fatal-error-27a6"> Here </a> <br>
+                                                 
+                            </td>                            
+                          </tr>
+                            </table>
+                          </article>                                  
+                           
+                        
 
             </div>
     </main>
