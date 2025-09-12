@@ -1,0 +1,3301 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --color-base: #202122;
+        --color-black: #000;
+      }
+
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        /* font-family: sans-serif; */
+        font-family: "Roboto", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      /* Height Issuse */
+      body {
+        height: 100vh;
+      }
+
+      body {
+        width: 100%;
+        font-size: 0.875rem;
+        line-height: 1.5714285;
+        /* padding: 10px 60px; */
+        color: var(--color-base, #202122);
+        /* background-color: #fcfcfc; */
+        overflow-x: hidden;
+        text-align: justify;
+      }
+
+      main {
+        display: flex;
+        position: absolute;
+      }
+
+      header {
+        padding: 0px 10px 40px 10px;
+      }
+
+      a {
+        display: inline !important;
+        cursor: pointer;
+        pointer-events: auto;
+      }
+
+      i {
+        padding-left: 16px;
+      }
+
+      .profile {
+        float: right;
+      }
+
+      .logo svg {
+        width: 36px;
+      }
+
+      .leftbar {
+        width: 530px;
+        height: 100vh;
+        color: #fff;
+        background-color: rgb(5, 131, 255);
+        overflow-x: visible;
+        overflow-y: auto;
+        padding: 36px 12px 0px 12px;
+        position: sticky;
+        top: 0px;
+        font-size: 12px;
+      }
+
+      .leftbar ul {
+        padding-left: 10px;
+        margin: 0px 0px 0px 5px;
+        border-left: 1px dotted rgb(255 255 255 / 60%);
+      }
+
+      .leftbar ul li {
+        list-style: none;
+        text-align: left;
+        /* margin-top: 6px; */
+        position: relative;
+      }
+
+      .leftbar ul li:first-child {
+        margin-top: 6px;
+      }
+
+      /* .leftbar ul li:last-child::after{
+display: block;
+content: "";
+background-color: #07f;
+width: 100px;
+height: 2;
+      } */
+      .leftbar h5 {
+        color: rgb(234, 236, 240, 0.4);
+        border-bottom: 1px dotted rgb(255 255 255 / 60%);
+        padding-bottom: 6px;
+        margin-bottom: 16px;
+        text-indent: 15px;
+      }
+
+      .leftbar input {
+        visibility: hidden;
+        display: none;
+      }
+
+      /* .leftbar span{
+      text-indent: 0px !important;
+      } */
+      .leftbar label {
+        width: 100%;
+        display: block;
+        position: relative;
+        text-align: left;
+        /* padding-right: 25px; */
+      }
+
+      .leftbar label b {
+        /* height: 36px; */
+        display: block;
+        border-radius: 4px;
+        /* color: #07f;
+    background-color: rgb(255 255 255 / 100%); */
+        color: #fff;
+        background-color: transparent;
+        line-height: 36px;
+        font-weight: 500;
+        padding-left: 15px;
+        position: relative;
+        padding: 0px 28px 0px 5px;
+      }
+
+      .leftbar label b::before,
+      .leftbar a.active::before {
+        display: block;
+        content: "";
+        width: 2px;
+        height: 70%;
+        position: absolute;
+        left: 1px;
+        top: 5px;
+        background-color: transparent;
+        border-radius: 0px 66px 56px 0px;
+        z-index: 9;
+        display: block;
+      }
+
+      .leftbar a.active {
+        background-color: #fff;
+        position: relative;
+        color: #07f;
+      }
+
+      .leftbar a.active::before {
+        background-color: #07f;
+      }
+
+      .leftbar label p {
+        position: absolute;
+        top: 10%;
+        right: 6px;
+        /* background-color: red; */
+        width: 24px;
+        height: 24px;
+        z-index: 9;
+        transition: all 0.6s;
+        transform: rotatez(90deg);
+      }
+
+      .leftbar label p::after {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 2px;
+        background-color: #fff;
+        transform: rotatez(45deg);
+        border-radius: 50px;
+        top: 9px;
+        position: absolute;
+        left: 5px;
+      }
+
+      .leftbar label p::before {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 2px;
+        background-color: #fff;
+        transform: rotatez(-45deg);
+        border-radius: 50px;
+        top: 15px;
+        position: absolute;
+        left: 5px;
+      }
+
+      .leftbar label img {
+        width: 20px;
+        position: absolute;
+        top: 6px;
+        left: 8px;
+      }
+
+      .container {
+        width: 100%;
+        padding: 0px 16px 0px 36px;
+        /* height: 100vh;
+              overflow-y: auto; */
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        /* color: var(--color-black, #000); */
+        font-weight: bold;
+      }
+
+      h1,
+      h2 {
+        font-size: 1.8em;
+        font-family: "Linux Libertine", "Georgia", "Times", "Source Serif Pro",
+          serif;
+        font-weight: normal;
+      }
+
+      h5 {
+        font-size: 0.875rem;
+      }
+
+      hr {
+        margin: 10px 0px 16px 0px;
+        border-color: #eaecf0;
+      }
+
+      p,
+      span {
+        font-size: 0.875rem;
+        line-height: 1.5714285;
+      }
+
+      table {
+        text-align: left;
+      }
+
+      /* table td p{
+             text-indent: 0px !important;
+            } */
+      table {
+        width: 100%;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #e3e3e3;
+        border-collapse: collapse;
+      }
+
+      table,
+      th,
+      td {
+        padding: 6px 10px;
+      }
+
+      ol,
+      ul {
+        margin-bottom: 16px;
+      }
+
+      ul,
+      ol {
+        /* list-style: none; */
+        padding-left: 30px;
+      }
+
+      a {
+        color: #36c;
+        padding: 6px 0px;
+        display: block;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      code {
+        background-color: #e6e6e6;
+        display: block;
+        padding: 16px 16px;
+        border-radius: 2px 2px;
+        margin-bottom: 26px;
+        box-shadow: rgb(232 232 232) 3.2px 3.2px 8px 0px inset,
+          rgb(226 226 226) -3.2px -3.2px 8px 0px inset;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .checkBox:checked~label {
+        /* background-color: red; */
+      }
+
+      .checkBox:checked~ul {
+        height: 0px;
+        overflow: hidden;
+        margin: 0px;
+      }
+
+      .checkBox:checked~ul li {
+        margin: 0px;
+      }
+
+      .checkBox:checked~label .btn-min {
+        display: block;
+      }
+
+      .checkBox:checked~label .btn {
+        display: none;
+      }
+
+      .checkBox:checked~label b {
+        /* background-color: rgb(255 255 255 / 80%) */
+        background-color: transparent;
+      }
+
+      .checkBox:checked~label b::after {
+        display: none;
+      }
+
+      .checkBox:checked~label p {
+        transform: rotatez(0deg);
+        transition: all 0.6s;
+      }
+
+      .btn,
+      .btn-min {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: -18px;
+        top: 0px;
+        /* border: 2px solid rgb(248, 249, 250, 0.5); */
+        color: #07f;
+        /* border-radius: 50px; */
+        line-height: 16px;
+        text-align: center;
+        font-size: 20px;
+      }
+
+      /* .btn:hover {
+        background-color: #eaecf0;
+      } */
+      .btn-min {
+        display: none;
+      }
+
+      .title {
+        margin-bottom: 26px;
+      }
+
+      .title h1,
+      h2 {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      h2 {
+        margin-bottom: 16px;
+      }
+
+      /* Contect Style Starts */
+      .content {
+        padding: 0px 0px 16px 0px;
+      }
+
+      .content ul {
+        list-style: circle;
+      }
+
+      .content ol {
+        counter-reset: section;
+        /* list-style-type: none;  */
+        position: relative;
+        padding: 0px 0px 0px 26px;
+        font-weight: normal;
+      }
+
+      .content ol>li {
+        counter-increment: section;
+        /* list-style: none; */
+        pointer-events: none;
+        padding: 2px 0px;
+        font-size: 0.875rem;
+        /* font-weight: bold; */
+      }
+
+      .content p,
+      .content span {
+        font-weight: normal;
+        /* text-indent: 24px; */
+      }
+
+      .content ol>li:before {
+        display: none;
+      }
+
+      .content ol>li:before {
+        content: counters(section, ".") " ";
+        font-weight: normal;
+      }
+
+      article {
+        margin-bottom: 16px;
+      }
+
+      article h3 {
+        font-size: 1.2em;
+      }
+
+      .sub-content {
+        position: relative;
+        /* padding: 10px 0px 10px 0px; */
+      }
+
+      .sub-content .sub-content {
+        font-weight: 200;
+      }
+
+      .sub-content p~a {
+        width: 100%;
+        font-weight: 300;
+        text-align: left;
+        /* color: rgb(255 255 255 / 66%); */
+        /* color: #07f; 
+        background-color: rgb(255 255 255 / 80%); */
+        color: #fff;
+        background-color: transparent;
+        display: block !important;
+        border-radius: 4px;
+        /* text-indent: 15px; */
+        padding: 10px 26px 10px 10px;
+        border-bottom: 1px;
+        position: relative;
+      }
+
+      .sub-content p~a::after {
+        display: block;
+        content: "";
+        width: 18px;
+        height: 6px;
+        position: absolute;
+        left: -12px;
+        top: 12px;
+        border-radius: 50px;
+        border-bottom: 1px dotted rgb(255 255 255 / 60%);
+      }
+
+      .flower-bracket {
+        border: 1px solid #ccc;
+        width: 100%;
+        height: 10px;
+        position: relative;
+        border-radius: 50px;
+        border-bottom: 0px;
+        margin: 4px 0px;
+      }
+
+      .bracket::before {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        right: 50%;
+        border: 9px solid transparent;
+        border-bottom-color: #ccc;
+      }
+
+      .bracket::after {
+        content: "";
+        position: absolute;
+        bottom: 99.3%;
+        right: 50.1%;
+        border: 8px solid transparent;
+        border-bottom-color: #fcfcfc;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .pos {
+        position: relative;
+        margin: 0 auto;
+      }
+
+      .scrollTop {
+        width: 56px;
+        height: 56px;
+        position: fixed;
+        bottom: 82px;
+        right: 10px;
+        background-color: #f5f5f5;
+        color: #2e3138;
+        transform: rotateZ(-90deg);
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+          0px 1px 18px 0px rgba(0, 0, 0, 0.12),
+          0px 3px 5px -1px rgba(0, 0, 0, 0.2);
+        /* padding-left: 16px; */
+        z-index: 99;
+      }
+
+      .scrollTop p {
+        font-size: 12px;
+        display: none;
+      }
+
+      .moveTop {
+        height: 40px;
+        width: 45px;
+        border-radius: 100%;
+        position: relative;
+        transform: rotateZ(90deg);
+        cursor: pointer;
+      }
+
+      .scrollTop:hover .moveTop:before,
+      .scrollTop:hover .moveTop:after {
+        top: 16px;
+        /* // transition: top 1s; */
+      }
+
+      .moveTop:before,
+      .moveTop:after {
+        /* transition: top 1s; */
+        border-radius: 50px;
+        content: "";
+        position: absolute;
+        top: 18px;
+        width: 12px;
+        border: 1.5px solid #2e3138;
+        transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+      }
+
+      .moveTop:before {
+        transform: rotateZ(45deg);
+        -webkit-transform: rotateZ(-45deg);
+        left: 10px;
+      }
+
+      .moveTop:after {
+        transform: rotateZ(-45deg);
+        -webkit-transform: rotateZ(45deg);
+        left: 19px;
+      }
+
+      .image-container img {
+        /* height: 250px;
+          margin: 0px auto;
+          display: flex; */
+      }
+
+      .image-container {
+        width: 100%;
+        position: relative;
+        pointer-events: auto;
+        margin-bottom: 6px;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .image-container img {
+        width: 100%;
+        /* max-height: 250px; */
+      }
+
+      .description {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,
+            0,
+            0,
+            0.7);
+        /* Adjust background color and opacity */
+        color: #fff;
+        /* Text color */
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+        border-radius: 4px;
+      }
+
+      .image-container:hover .description {
+        opacity: 1;
+        backdrop-filter: blur(4px);
+      }
+
+      #GRPC,
+      #ArchitectureDocument {
+        width: 80%;
+      }
+
+      .leftbar a:focus,
+      .leftbar a:visited,
+      .leftbar a:active,
+      .leftbar a:target,
+      .leftbar a:focus-within {
+        text-decoration: underline;
+      }
+
+      /* Menu Stylyling  */
+      #menuCheckbox {
+        width: 0px;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      @media screen and (max-width: 768px) {
+
+        /* #menuCheckbox{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      } */
+        .menu {
+          width: 30px;
+          height: 3px;
+          background-color: #414141;
+          position: absolute;
+          margin-top: 20px;
+          display: block;
+          z-index: 99;
+          cursor: pointer;
+        }
+
+        .menu::before,
+        .menu::after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 30px;
+          height: 3px;
+          background-color: #414141;
+        }
+
+        .menu::before {
+          top: -10px;
+          transform: rotateZ(0deg);
+        }
+
+        .menu::after {
+          top: 10px;
+          transform: rotateZ(0deg);
+        }
+
+        #menuCheckbox~label {
+          width: 30px;
+          height: 40px;
+          position: fixed;
+          left: 10px;
+          z-index: 99;
+        }
+
+        #menuCheckbox:checked~label .menu {
+          background-color: rgba(65, 65, 65, 0);
+        }
+
+        #menuCheckbox:checked~label .menu::before {
+          top: 0px;
+          transform: rotateZ(45deg);
+        }
+
+        #menuCheckbox:checked~label .menu::after {
+          top: 0px;
+          transform: rotateZ(-45deg);
+        }
+
+        .leftbar {
+          position: fixed;
+          width: 100%;
+          height: 100vh;
+          background-color: white;
+          z-index: 9;
+          text-align: center;
+          height: 0px;
+          overflow-x: hidden;
+          overflow-y: auto;
+          padding: 0px 0px;
+        }
+
+        .leftbar ul li {
+          text-align: center;
+          margin: 0px;
+        }
+
+        .leftbar p,
+        .leftbar span,
+        .deviceScroll ul {
+          display: none;
+        }
+
+        #menuCheckbox:checked~.leftbar {
+          height: 100vh;
+          padding: 46px 0px 0px 18px;
+        }
+      }
+
+      .deviceImg {
+        float: right;
+        width: 156px;
+        border: 1px solid #c8ccd1;
+        background-color: #f8f9fa;
+        padding: 4px;
+        margin-left: 22px;
+      }
+
+      .deviceImg img {
+        width: 100%;
+      }
+
+      .deviceImg p {
+        font-size: 13px;
+        text-align: center;
+        color: #414141;
+      }
+
+      .leftbar .searchBlock {
+        position: relative;
+        margin-bottom: 24px;
+      }
+
+      .leftbar .searchBlock .search {
+        display: block;
+        width: 100%;
+        border: 1px solid rgb(255, 255, 255);
+        visibility: visible;
+        height: 36px;
+        border-radius: 4px;
+        background-color: #ffff;
+        padding: 6px 12px 6px 36px;
+      }
+
+      .leftbar .searchBlock img {
+        width: 18px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
+
+      .linkContent {
+        background-color: rgb(255 255 255);
+        color: #000;
+        border-radius: 4px;
+        position: absolute;
+        width: 100%;
+        z-index: 999;
+      }
+
+      .linkContent ul {
+        padding: 0px;
+        margin: 0px;
+      }
+
+      .linkContent li {
+        background-color: rgb(230 230 230);
+        margin-bottom: 6px;
+        line-height: 30px;
+        text-indent: 16px;
+        border-radius: 4px
+      }
+
+      .linkContent li a {
+        width: 100%;
+        border-radius: 4px;
+        padding: 0px 10px;
+        display: block !important;
+        transition: all 0.5s;
+      }
+
+      .linkContent li a:hover {
+        background-color: #eee;
+        font-weight: 600;
+        transition: all 0.5s;
+      }
+
+      .linkContent li a b {
+        font-weight: 400;
+      }
+
+      /* linkContent{
+
+      } */
+    </style>
+  </head>
+  <body>
+    <main style="width: 100%">
+      <div class="scrollTop" onclick="handleMoveTop()">
+        <p>Move Top</p>
+        <div class="moveTop"></div>
+      </div>
+      <input type="checkbox" id="menuCheckbox" />
+      <label for="menuCheckbox">
+        <span class="menu"></span>
+      </label>
+      <div class="leftbar" id="navlinks">
+        <div class="searchBlock">
+          <img src="https://raw.githubusercontent.com/umeshb-creative/waymo-documentation/refs/heads/main/Icons/search.svg" alt="search" />
+          <input type="search" placeholder="search....." class="search" style="display: block;" id="searchInput" />
+          <div class="linkContent">
+            <ul id="searchLinks" style="display: none;">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+        <!-- <h5>Outline</h5> -->
+        <div class="content">
+          <div class="title">
+            <div class="sub-contents">
+              <input type="checkbox" id="userGuideDocument" class="checkBox" />
+              <label for="userGuideDocument">
+                <p>
+                  <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                </p>
+                <b style="padding-left: 36px">
+                  <img src="https://raw.githubusercontent.com/umeshb-creative/waymo-documentation/refs/heads/main/DocumentImages/NewImages/userguide.png" alt="UserGuide" /> User Guide </b>
+              </label>
+              <ul style="margin-left: 15px;">
+                <li>
+                  <div class="sub-content">
+                    <p></p>
+                    <a onclick="handlePage(this,'developerDocumentOverview')" class="active">
+                      <b>Document Overview</b>
+                    </a>
+                    <a onclick="handlePage(this,'introductionWaymo')">
+                      <b>Introduction</b>
+                    </a>
+                    <a onclick="handlePage(this,'userStationSetup')">
+                      <b>Initial Setup / Station Setup</b>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="sub-content">
+                    <input type="checkbox" id="UserSystemTrayGuide" class="checkBox" />
+                    <label for="UserSystemTrayGuide">
+                      <p>
+                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                      </p>
+                      <b>System Tray Guide</b>
+                    </label>
+                    <ul>
+                      <li class="deviceScroll">
+                        <p></p>
+                        <a onclick="handlePage(this,'SystemTray')"> System Tray Overview</a>
+                      </li>
+                      <li class="deviceScroll">
+                        <p></p>
+                        <a onclick="handlePage(this,'SystemTrayLaunching')">System Tray Features</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="sub-content">
+                    <input type="checkbox" id="UserInterfaceGuide" class="checkBox" />
+                    <label for="UserInterfaceGuide">
+                      <p>
+                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                      </p>
+                      <b>User Interface (UI) Guide</b>
+                    </label>
+                    <ul>
+                      <li class="deviceScroll">
+                        <p></p>
+                        <a onclick="handlePage(this,'userIntroductiontoUI')"> Introduction to UI Features</a>
+                      </li>
+                      <li class="deviceScroll">
+                        <p></p>
+                        <a onclick="handlePage(this,'userUIAccessperRoll')"> UI Access per Role</a>
+                      </li>
+                      <!-- <li class="deviceScroll"><p></p><a onclick="scrollToElement('loginDoc', 'loginDoc', 'userlaunchingUI')"> Launching the UI & Usage</a></li> -->
+                      <li class="deviceScroll">
+                        <div class="sub-content">
+                          <input type="checkbox" id="userlaunchingUIInput" class="checkBox" />
+                          <label for="userlaunchingUIInput">
+                            <p>
+                              <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                            </p>
+                            <b> Launching the UI & Usage</b>
+                          </label>
+                          <ul>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('loginDoc', 0,'userlaunchingUI',this)">Login and Security</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('userDoc', 0,'userlaunchingUI',this)">User Management</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('roleDoc', 0,'userlaunchingUI',this)">Role Management</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('deviceDoc', 0,'userlaunchingUI',this)">Device Management</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('deviceWork', 0,'userlaunchingUI',this)">Working with Devices</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="deviceScroll">
+                        <p></p>
+                        <a onclick="handlePage(this,'userTroubleshootingUIIssues')">
+                          <b> Troubleshooting UI Issues</b>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="sub-content">
+                    <input type="checkbox" id="userNode-RED-Flow" class="checkBox" />
+                    <label for="userNode-RED-Flow">
+                      <p>
+                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                      </p>
+                      <b>Node-RED Flow & XML File Creation</b>
+                    </label>
+                    <ul>
+                      <li class="deviceScroll">
+                        <p></p>
+                        <a onclick="handlePage(this,'userIntroductionNodeRED')"> Introduction to Node-RED</a>
+                      </li>
+                      <li class="deviceScroll">
+                        <p></p>
+                        <a onclick="handlePage(this,'userHowToRun')"> How to Run Each Node</a>
+                      </li>
+                      <li class="deviceScroll">
+                        <p></p>
+                        <a onclick="handlePage(this,'userMFGUploader')"> Upload the File (Result) to MFG Uploader</a>
+                      </li>
+                      <li class="deviceScroll">
+                        <p></p>
+                        <a onclick="handlePage(this,'userNodeREDExecution')"> Troubleshooting Flows/Node-Red Execution</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="sub-content">
+                    <input type="checkbox" id="userToolFlows" class="checkBox" />
+                    <label for="userToolFlows">
+                      <p>
+                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                      </p>
+                      <b>Tool Flows</b>
+                    </label>
+                    <ul>
+                      <!-- <li class="deviceScroll"><p></p><a>Overview of the Station Flows</a></li><li class="deviceScroll"><p></p><a>Developed Tools</a></li> -->
+                      <li class="deviceScroll">
+                        <div class="sub-content">
+                          <input type="checkbox" id="developmentWorkflowDeployment" class="checkBox" />
+                          <label for="developmentWorkflowDeployment">
+                            <p>
+                              <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                            </p>
+                            <b> TIS Flow</b>
+                          </label>
+                          <ul>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="handlePage(this,'userTISOverview')">Overview</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('TISExecution', 0,'userTISOverview',this)">Step-by-step flow Execution</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('TISExpectedResults', 0,'userTISOverview',this)">Expected Results</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToBottom('TISTroubleshooting', 0,'userTISOverview',this)">Troubleshooting TIS Flow Issues</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <p></p>
+                      <a onclick="handlePage(this,'TISreleaseVersion')" class="">
+                        <b>TIS release version 1.0</b>
+                      </a>
+                      <li class="deviceScroll">
+                        <div class="sub-content">
+                          <input type="checkbox" id="userSABFlow" class="checkBox" />
+                          <label for="userSABFlow">
+                            <p>
+                              <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                            </p>
+                            <b>SAB Flow</b>
+                          </label>
+                          <ul>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="handlePage(this,'userSABOverview')">Overview</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('SABExecution', 0,'userSABOverview',this)">Step-by-step flow Execution</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('SABExpectedResults', 0,'userSABOverview',this)">Expected Results</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToBottom('SABTroubleshooting', 0,'userSABOverview',this)">Troubleshooting SAB Flow Issues</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="deviceScroll">
+                        <div class="sub-content">
+                          <input type="checkbox" id="userCBGFlow" class="checkBox" />
+                          <label for="userCBGFlow">
+                            <p>
+                              <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                            </p>
+                            <b>CBG Flow</b>
+                          </label>
+                          <ul>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="handlePage(this,'userCBGOverview')">Overview</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('CBGExecution', 0,'userCBGOverview',this)">Step-by-step flow Execution</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('CBGExpectedResults', 0,'userCBGOverview',this)">Expected Results</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToBottom('CBGTroubleshooting', 0,'userCBGOverview',this)">Troubleshooting SAB Flow Issues</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="deviceScroll">
+                        <div class="sub-content">
+                          <input type="checkbox" id="userCIBFlow" class="checkBox" />
+                          <label for="userCIBFlow">
+                            <p>
+                              <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                            </p>
+                            <b>CBI Flow</b>
+                          </label>
+                          <ul>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="handlePage(this,'userCBIOverview')">Overview</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('CBIExecution', 0,'userCBIOverview',this)">Step-by-step flow Execution</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToElement('CBIExpectedResults', 0,'userCBIOverview',this)">Expected Results</a>
+                            </li>
+                            <li class="deviceScroll">
+                              <p></p>
+                              <a onclick="scrollToBottom('CBITroubleshooting', 0,'userCBIOverview',this)">Troubleshooting CBI Flow Issues</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="sub-content">
+                    <input type="checkbox" id="checkUserSafetyOperationalNotes" class="checkBox" />
+                    <label for="checkUserSafetyOperationalNotes">
+                      <p>
+                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                      </p>
+                      <b>Safety & Operational Notes</b>
+                    </label>
+                    <ul>
+                      <li class="deviceScroll">
+                        <p></p>
+                        <a onclick="handlePage(this,'userWarningsOperational')"> Warnings or operational guidelines during tool usage</a>
+                      </li>
+                      <p></p>
+                      <a onclick="handlePage(this,'userEmergencyStop')">
+                        <b> Emergency stop or recovery process</b>
+                      </a>
+                </li>
+              </ul>
+            </div>
+            </li>
+            <li>
+              <div class="sub-content">
+                <input type="checkbox" id="UserPostDeployment" class="checkBox" />
+                <label for="UserPostDeployment">
+                  <p>
+                    <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                  </p>
+                  <b>Post-Deployment Monitoring & Maintenance</b>
+                </label>
+                <ul>
+                  <li class="deviceScroll">
+                    <p></p>
+                    <a onclick="handlePage(this,'userSystemHealth')">System Health Checks & Log Monitoring and Alerts</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="sub-content">
+                <p></p>
+                <a onclick="handlePage(this,'WaymoQueryResolution')">
+                  <b>FAQs/Waymo Query Resolution</b>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="sub-content">
+                <p></p>
+                <a onclick="handlePage(this,'userFeatureRequestDocument')">
+                  <b>Feature Request Document</b>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="sub-content">
+                <p></p>
+                <a onclick="handlePage(this,'userBugFixRequests')">
+                  <b>Bug Fix Requests/Escalations</b>
+                </a>
+              </div>
+            </li>
+            </ul>
+          </div>
+          <div class="sub-content">
+            <input type="checkbox" id="developerGuideDocument" class="checkBox" />
+            <label for="developerGuideDocument">
+              <p>
+                <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+              </p>
+              <b style="padding-left: 36px">
+                <img src="https://raw.githubusercontent.com/umeshb-creative/waymo-documentation/refs/heads/main/DocumentImages/NewImages/developerguide.png" alt="UserGuide" /> Techincal & Developer Guide </b>
+            </label>
+            <ul style="margin-left: 15px;">
+              <li>
+                <div class="sub-content" style="">
+                  <p></p>
+                  <a onclick="handlePage(this,'developerOverview')">
+                    <b>Document Overview</b>
+                  </a>
+                  <a onclick="handlePage(this,'developerIntroduction')">
+                    <b>Introduction</b>
+                  </a>
+                  <a onclick="handlePage(this,'developerStationSetup')">
+                    <b> Initial Setup / Station Setup</b>
+                  </a>
+                  <ul>
+                    <li>
+                      <div class="sub-content">
+                        <input type="checkbox" id="developerSystemArchitecture" class="checkBox" />
+                        <label for="developerSystemArchitecture">
+                          <p>
+                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                          </p>
+                          <b>System Architecture </b>
+                        </label>
+                        <ul>
+                          <li class="deviceScroll">
+                            <p></p>
+                            <a onclick="handlePage(this,'TroubleShootingBarCodeReader')">High-Level Architecture Overview</a>
+                          </li>
+                          <li class="deviceScroll">
+                            <p></p>
+                            <a> Software Architecture Flow</a>
+                          </li>
+                          <li class="deviceScroll">
+                            <p></p>
+                            <a> Data Flow and Integration</a>
+                          </li>
+                          <li class="deviceScroll">
+                            <p></p>
+                            <a>Design Choices</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="sub-content">
+                        <p>
+                          <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                        </p>
+                        <a>Driver Development </a>
+                        <ul>
+                          <li class="deviceScroll">
+                            <input type="checkbox" id="checkBoxTroubleShootingBarCodeReader" class="checkBox" onclick="handlePage(this,'TroubleShootingBarCodeReader')" />
+                            <label for="checkBoxTroubleShootingBarCodeReader">
+                              <p></p>
+                              <a>Driver Development Overview</a>
+                            </label>
+                          </li>
+                          <li class="deviceScroll">
+                            <div class="sub-content">
+                              <input type="checkbox" id="deviceSpecificDriverDetails" class="checkBox" />
+                              <label for="deviceSpecificDriverDetails">
+                                <p>
+                                  <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                </p>
+                                <b>Device Specific Driver Details</b>
+                              </label>
+                              <ul>
+                                <li>
+                                  <div class="sub-content" style=" ">
+                                    <input type="checkbox" id="3D_Sensor" class="checkBox" />
+                                    <label for="3D_Sensor">
+                                      <p>
+                                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                      </p>
+                                      <b>3D Sensors</b>
+                                    </label>
+                                    <ul>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxCL3000" class="checkBox" onclick="handlePage(this,'CL3000')" />
+                                        <label for="checkBoxCL3000">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Keyence CL3000</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionCL3000', -80,'CL3000')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewCL3000', -80,'CL3000')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentCL3000', -80,'CL3000')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APICL3000', -80,'CL3000')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugCL3000', -80,'CL3000')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksCL3000', -80,'CL3000')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxLJV7020" class="checkBox" onclick="handlePage(this,'LJV7020')" />
+                                        <label for="checkBoxLJV7020">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Keyence LJV7020</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionLJV7020', -80,'LJV7020')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewLJV7020', -80,'LJV7020')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentLJV7020', -80,'LJV7020')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APILJV7020', -80,'LJV7020')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugLJV7020', -80,'LJV7020')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksLJV7020', -80,'LJV7020')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxLMIGocator" class="checkBox" onclick="handlePage(this,'LMIGocator')" />
+                                        <label for="checkBoxLMIGocator">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>LMI Gocator 2530 &amp; 3506 </a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionLMIGocator', -80,'LMIGocator')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewLMIGocator', -80,'LMIGocator')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentLMIGocator', -80,'LMIGocator')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APILMIGocator', -80,'LMIGocator')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugLMIGocator', -80,'LMIGocator')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksLMIGocator', -80,'LMIGocator')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-content" style=" ">
+                                    <input type="checkbox" id="Camera" class="checkBox" />
+                                    <label for="Camera">
+                                      <p>
+                                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                      </p>
+                                      <b>Cameras</b>
+                                    </label>
+                                    <ul>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxBaslerCamera" class="checkBox" onclick="handlePage(this,'BaslerCamera')" />
+                                        <label for="checkBoxBaslerCamera">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Basler Camera (acA2500-14gm and a2A2448-23gm PRO)</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionBaslerCamera', -80,'BaslerCamera')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewBaslerCamera', -80,'BaslerCamera')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentBaslerCamera', -80,'BaslerCamera')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIBaslerCamera', -80,'BaslerCamera')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugBaslerCamera', -80,'BaslerCamera')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksBaslerCamera', -80,'BaslerCamera')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxOptoCamera" class="checkBox" onclick="handlePage(this,'OptoCamera')" />
+                                        <label for="checkBoxOptoCamera">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Opto Camera(coe-050-m-poe-050ir-c)</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionOptoCamera', -80,'OptoCamera')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewOptoCamera', -80,'OptoCamera')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentOptoCamera', -80,'OptoCamera')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIOptoCamera', -80,'OptoCamera')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugOptoCamera', -80,'OptoCamera')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksOptoCamera', -80,'OptoCamera')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxProsilica" class="checkBox" onclick="handlePage(this,'Prosilica')" />
+                                        <label for="checkBoxProsilica">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Prosilica Camera(GT6600)</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionProsilica', -80,'Prosilica')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewProsilica', -80,'Prosilica')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentProsilica', -80,'Prosilica')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIProsilica', -80,'Prosilica')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugProsilica', -80,'Prosilica')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksProsilica', -80,'Prosilica')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxTriton" class="checkBox" onclick="handlePage(this,'Triton')" />
+                                        <label for="checkBoxTriton">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Triton Camera (TRI0245S-MC)</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionTriton', -80,'Triton')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewTriton', -80,'Triton')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APITriton', -80,'Triton')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugTriton', -80,'Triton')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksTriton', -80,'Triton')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-content" style=" ">
+                                    <input type="checkbox" id="I_Os" class="checkBox" />
+                                    <label for="I_Os">
+                                      <p>
+                                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                      </p>
+                                      <b>I/O Devices</b>
+                                    </label>
+                                    <ul>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxBrainbox" class="checkBox" onclick="handlePage(this,'Brainbox')" />
+                                        <label for="checkBoxBrainbox">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>BrainBox ED588 &amp; ED527</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionBrainbox', -80,'Brainbox')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewBrainbox', -80,'Brainbox')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIBrainbox', -80,'Brainbox')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugBrainbox', -80,'Brainbox')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksBrainbox', -80,'Brainbox')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxDenkovi" class="checkBox" onclick="handlePage(this,'Denkovi')" />
+                                        <label for="checkBoxDenkovi">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Denkovi 5ch Ethernet Relay</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionDenkovi', -80,'Denkovi')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewDenkovi', -80,'Denkovi')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentDenkovi', -80,'Denkovi')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIDenkovi', -80,'Denkovi')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugDenkovi', -80,'Denkovi')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksDenkovi', -80,'Denkovi')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxEX250" class="checkBox" onclick="handlePage(this,'EX250')" />
+                                        <label for="checkBoxEX250">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>EX250-SEN1 Ethernet Pneumatic Manifold</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionEX250', -80,'EX250')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewEX250', -80,'EX250')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentEX250', -80,'EX250')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIEX250', -80,'EX250')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugEX250', -80,'EX250')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksEX250', -80,'EX250')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-content" style=" ">
+                                    <input type="checkbox" id="Motion_Stage" class="checkBox" />
+                                    <label for="Motion_Stage">
+                                      <p>
+                                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                      </p>
+                                      <b>Motion Stages</b>
+                                    </label>
+                                    <ul>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxAlio" class="checkBox" onclick="handlePage(this,'Alio')" />
+                                        <label for="checkBoxAlio">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Alio Single and Three Axis ACS Controller</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionAlio', -80,'Alio')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewAlio', -80,'Alio')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIAlio', -80,'Alio')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugAlio', -80,'Alio')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksAlio', -80,'Alio')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxAnimaticMotor" class="checkBox" onclick="handlePage(this,'AnimaticMotor')" />
+                                        <label for="checkBoxAnimaticMotor">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a> Animatic Smart Motor</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionAnimaticMotor', -80,'AnimaticMotor')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewAnimaticMotor', -80,'AnimaticMotor')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentAnimaticMotor', -80,'AnimaticMotor')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIAnimaticMotor', -80,'AnimaticMotor')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugAnimaticMotor', -80,'AnimaticMotor')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksAnimaticMotor', -80,'AnimaticMotor')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxDenso" class="checkBox" onclick="handlePage(this,'Denso')" />
+                                        <label for="checkBoxDenso">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Denso 6 axis Robot</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionDenso', -80,'Denso')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewDenso', -80,'Denso')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIDenso', -80,'Denso')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugDenso', -80,'Denso')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksDenso', -80,'Denso')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxJanome" class="checkBox" onclick="handlePage(this,'Janome')" />
+                                        <label for="checkBoxJanome">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Janome JR3304 &amp; JR3403</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionJanome', -80,'Janome')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewJanome', -80,'Janome')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIJanome', -80,'Janome')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugJanome', -80,'Janome')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksJanome', -80,'Janome')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-content" style=" ">
+                                    <input type="checkbox" id="PLC" class="checkBox" />
+                                    <label for="PLC">
+                                      <p>
+                                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                      </p>
+                                      <b>Safety PLC</b>
+                                    </label>
+                                    <ul>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxSC10" class="checkBox" onclick="handlePage(this,'SC10')" />
+                                        <label for="checkBoxSC10">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>Banner SC10 Safety PLC</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionSC10', -80,'SC10')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewSC10', -80,'SC10')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentSC10', -80,'SC10')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APISC10', -80,'SC10')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugSC10', -80,'SC10')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksSC10', -80,'SC10')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-content" style=" ">
+                                    <input type="checkbox" id="Scanner" class="checkBox" />
+                                    <label for="Scanner">
+                                      <p>
+                                        <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                      </p>
+                                      <b>Scanner</b>
+                                    </label>
+                                    <ul>
+                                      <li class="deviceScroll">
+                                        <input type="checkbox" id="checkBoxBarcodeReader" class="checkBox" onclick="handlePage(this,'BarcodeReader')" />
+                                        <label for="checkBoxBarcodeReader">
+                                          <p>
+                                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                          </p>
+                                          <a>BarCode Reader(DM262X and DM282X)</a>
+                                        </label>
+                                        <ul>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('introductionBarcodeReader', -80,'BarcodeReader')">Introduction</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('deviceOverviewBarcodeReader', -80,'BarcodeReader')">Device Overview &amp; SDK Installation</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('driverDevelopmentBarcodeReader', -80,'BarcodeReader')">Driver Development</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('gRPC_APIBarcodeReader', -80,'BarcodeReader')">gRPC API’s Description</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToElement('testingDebugBarcodeReader', -80,'BarcodeReader')">Testing and Debugging</a>
+                                          </li>
+                                          <li>
+                                            <p></p>
+                                            <a onclick="scrollToBottom('resourcesLinksBarcodeReader', -80,'BarcodeReader')">Resources &amp; Links</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="sub-content">
+                        <input type="checkbox" id="developerIntegrationGuide" class="checkBox" />
+                        <label for="developerIntegrationGuide">
+                          <p>
+                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                          </p>
+                          <b>Integration Guide </b>
+                        </label>
+                        <ul>
+                          <li class="deviceScroll">
+                            <p></p>
+                            <a>Node-RED Flow and XML file creation</a>
+                          </li>
+                          <li class="deviceScroll">
+                            <p></p>
+                            <a> C# Integration Guide & gRPC API Guide</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="sub-content">
+                        <input type="checkbox" id="developerConfigurationGuide" class="checkBox" />
+                        <label for="developerConfigurationGuide">
+                          <p>
+                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                          </p>
+                          <b>Configuration Guide </b>
+                        </label>
+                        <ul>
+                          <li class="deviceScroll">
+                            <p></p>
+                            <a>System Tray Configuration Guide</a>
+                          </li>
+                          <li class="deviceScroll">
+                            <p></p>
+                            <a>RBAC Instructions</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="sub-content">
+                        <input type="checkbox" id="developerTroubleShooting" class="checkBox" />
+                        <label for="developerTroubleShooting">
+                          <p>
+                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                          </p>
+                          <b>Trouble Shooting and Support</b>
+                        </label>
+                        <ul>
+                          <li class="deviceScroll">
+                            <div class="sub-content" style=" ">
+                              <input type="checkbox" id="TroubleshootingGuide" class="checkBox" />
+                              <label for="TroubleshootingGuide">
+                                <p>
+                                  <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                </p>
+                                <b>Hardware Troubleshooting Guide</b>
+                              </label>
+                              <ul>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Alio Single and Three Axis ACS Controller</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Animatic Smart Motor</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Basler Camera (acA2500-14gm and a2A2448-23gm PRO)</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Banner SC10 Safety PLC</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>BarCode Reader(DM262X and DM282X)</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>BrainBox ED588 & ED527</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Denkovi 5ch Ethernet Relay</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Denso 6 axis Robot</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>EX250-SEN1 Ethernet Pneumatic Manifold</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Janome JR 3304 & JR 3403</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>LMI Gocator</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Keyence LJV7020</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Keyence CL3000</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Opto Camera(coe-050-m-poe-050ir-c)</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Prosilica Camera(GT6600)</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Triton Camera (TRI0245S-MC)</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="sub-content">
+                        <input type="checkbox" id="developerProductionProcess" class="checkBox" />
+                        <label for="developerProductionProcess">
+                          <p>
+                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                          </p>
+                          <b>Deployment and Production Process</b>
+                        </label>
+                        <ul>
+                          <li class="deviceScroll">
+                            <div class="sub-content" style=" ">
+                              <input type="checkbox" id="TroubleshootingGuide" class="checkBox" />
+                              <label for="TroubleshootingGuide">
+                                <p>
+                                  <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                </p>
+                                <b>Deployment Strategy</b>
+                              </label>
+                              <ul>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Development vs Staging vs Production Environments</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Build & Release Process</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="sub-content">
+                        <input type="checkbox" id="developerMonitoringMaintenance" class="checkBox" />
+                        <label for="developerMonitoringMaintenance">
+                          <p>
+                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                          </p>
+                          <b>Post-Deployment Monitoring & Maintenance</b>
+                        </label>
+                        <ul>
+                          <li class="deviceScroll">
+                            <p></p>
+                            <a> System Health Checks & Log Monitoring and Alerts</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="sub-content">
+                        <input type="checkbox" id="developerCodeManagement" class="checkBox" />
+                        <label for="developerCodeManagement">
+                          <p>
+                            <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                          </p>
+                          <b>Version Control and Code Management</b>
+                        </label>
+                        <ul>
+                          <li class="deviceScroll">
+                            <div class="sub-content" style="">
+                              <input type="checkbox" id="developmentWorkflowDeployment" class="checkBox" />
+                              <label for="developmentWorkflowDeployment">
+                                <p>
+                                  <!-- <span class="btn">-</span><span class="btn-min">+</span> -->
+                                </p>
+                                <b> GitHub/Gerrit WorkflowDeployment Strategy </b>
+                              </label>
+                              <ul>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Code Review Process</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Branching Strategy (main, devTest2, release)</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Commit & Merge Guidelines</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Tagging & Release Notes</a>
+                                </li>
+                                <li class="deviceScroll">
+                                  <p></p>
+                                  <a>Development vs Staging vs Production Environments</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="sub-content">
+                        <p></p>
+                        <a onclick="handlePage(this,'no')">
+                          <b>Waymo Query Resolution</b>
+                        </a>
+                        <br />
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </div>
+     <div class="container" id="DriverDetailBarCodeReader">
+                <div class="title">
+                    <h1>Barcode Reader (DM262X and DM282X) Driver Development Guide</h1>
+                </div>
+                <section class="content" id="introduction">
+                    <h2>Introduction</h2>
+                    <article>
+                        <h3>Brief overview of the project</h3>
+                        <p>This project focuses on developing drivers for Barcode Reader (DM262X and DM282X) to be utilized in automation applications, 
+                          with a particular emphasis on integrating them with a user interface (UI) application for future use. The project aims to create software components that 
+                          enable seamless communication between barcode reader and the UI application, allowing for the, capture of images, and acquiring the barcode data. Through this integration, 
+                          the project seeks to enhance the usability and functionality of barcode reader within automated processes, contributing to increased efficiency and productivity in various industrial settings.</p>
+                    </article>
+                    <article>
+                        <h3>Purpose of the document</h3>
+                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the Barcode Reader (DM262X and DM282X). 
+                          The driver will enable communication between the device and external software application (Data man tool), allowing to capture an Image, Acquire barcode and many more. 
+                          It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, and integrating the driver with the Barcode Reader.</p>
+                        <p>The primary objective of the document is to provide a comprehensive guide for developed drivers for Barcode Reader (DM262X and DM282X) used in automation using a UI application. 
+                          This includes detailed instructions, software installation guide, a device description with its features, and best practices to ensure the successful development and integration of drivers with the devices.</p>
+                    </article>
+                    <article>
+                        <h3>Scope and objectives</h3>
+                        <ol>
+                            <li><b>Driver Development:</b> <span>The document focuses on the development of a driver for Barcode Reader using industry-standard protocols.</span></li>
+                            <li><b>Technical Information:</b> <span>It includes technical specifications of the device, hardware and software requirements, and information about the Software Development Kit (SDK) provided for the device.  </span></li>
+                            <li><b>SDK Overview:</b> <span>Introduction to Data Man tool and its Installation.</span></li>
+                            <li><b>Driver Implementation:</b> <span>It covers the development process, including the choice of programming language, information on APIs, how to use APIs, 
+                              limitations of the driver, precautions to take before execution, and the actual implementation of the driver.  </span></li>
+                            <li><b>Testing and Debugging:</b> <span>The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver for real-time application</span></li>
+                            <li><b>Documentation and Support:</b> <span>Lastly, the document includes information on documentation standards and support resources available for developers.</span></li>
+                        <span>	Overall, the aim is to facilitate the successful development and implementation of the Barcode Reader, ensuring it meets the required standards and serves its intended purpose effectively. </span>
+                        </ol>
+                    </article>
+                    </li>
+                    </ol>
+                </section>
+                <section class="content" id="deviceOverview">
+                    <h2>Device Overview</h2>
+                    <article>
+                        <h3>Description of the device for which the driver is being developed</h3>
+                        <p> The Cognex DataMan DM282x and DM262x is fixed -mount barcode reader, specially designed for tough manufacturing and logistics applications. 
+                          It features premium decoding technology with modular options for both hardware and software. </p>
+                    </article>
+                    <article><i>Some of the applications of the Barcode Reader includes:</i>
+                        <ul>
+                            <li><span>Manutfacturing and Prodiction lines </span></li>
+                            <li><span>Logistics and supply chain</span></li>
+                            <li><span>Retail and E-Commerce</span></li>
+                            <li><span>Healthcar and Pharmaceuticals </span></li>
+                            <li><span>Agriculture and Farming</span></li>
+                        </ul>
+                      </article>
+                    <article>
+                        <h3>Technical Specifications of Cognex Barcode Reader DM262X</h3>
+                         <table>
+                          <tbody>
+                            <tr>
+                              <td><b>Type</b></td>
+                              <td>Barcode Reader</td>
+                            </tr>
+                            <tr>
+                              <td><b>Model</b></td>
+                              <td>Cognex DataMan DM262x</td>
+                            </tr>
+                            <tr>
+                              <td><b>Weight</b></td>
+                              <td>142g</td>
+                            </tr>
+                            <tr>
+                              <td><b>Operating Temperature</b></td>
+                              <td>0 degree celcius to 40 degree celcius</td>
+                            </tr>
+                            <tr>
+                              <td><b>Maximum Humidity</b></td>
+                              <td> below 95% non-condensing</td>
+                            </tr>
+                            <tr>
+                              <td><b>Environmental</b></td>
+                              <td>IP65</td>
+                            </tr>
+                            <tr>
+                              <td><b>LED Safety</b></td>
+                              <td>IEC 62471: Exempt risk group, no further labelling is required.</td>
+                            </tr>
+                            <tr>
+                              <td><b>Codes</b></td>
+                              <td><b>1-D Barcode:</b> Codabar, code 39, code 128 and Code 93, Code 25, Interleaved 2 of 5, Pharma, GS1 DataBar, Postal, Code UPC/EAN/JAN, MSI <br> <b>2-D Barcode:</b>Data Matrix (IDMax and IDQuick: ECC0,50,80,100,140 and 200) QR Code and microQR Code, RSS/CS, PDF 417, MicroPDF 417, AztecCode, DotCode, MaxiCode.</td>
+                            </tr>
+                            <tr>
+                              <td><b>Power Consumption</b></td>
+                              <td>3.84 W (PoE Class 1) <br> 5 W (average, externally powered at +24 V).</td>
+                            </tr>
+                            <tr>
+                              <td><b>Ethernet Speed</b></td>
+                              <td>10/100</td>
+                            </tr>
+                            <tr>
+                              <td><b>Duplex Mode</b></td>
+                              <td>Full duplex or Half Duplex</td>
+                            </tr>
+                            <tr>
+                              <td><b>Image Sensor</b></td>
+                              <td><p>1/3-inch CMOS</p>
+                            </tr>
+                            <tr>
+                              <td><b>Image Sensor Properties</b></td>
+                              <td>4.8 mm x 3.6 mm (W x H), 3.75 um square pixels </td>
+                            </tr>
+                            <tr>
+                              <td><b>Image Resolution</b></td>
+                              <td>1280 x 960</td>
+                            </tr>
+                            <tr>
+                              <td><b>Lens Type</b></td>
+                              <td>S-mount 6.2mm F:5(with optional liquid lens) with IR Blocking filter<br>S-mount 16mm F:7(with optional liquid lens) with IR blocking filter</td>
+                            </tr>
+                          </tbody>
+                         </table>
+                    </article>
+                    <article>
+                      <h3>Technical Specifications of Cognex Barcode Reader DM282X</h3>
+                       <table>
+                        <tbody>
+                          <tr>
+                            <td><b>Type</b></td>
+                            <td>Barcode Reader</td>
+                          </tr>
+                          <tr>
+                            <td><b>Model</b></td>
+                            <td>Cognex DataMan DM282x</td>
+                          </tr>
+                          <tr>
+                            <td><b>Weight</b></td>
+                            <td>290g</td>
+                          </tr>
+                          <tr>
+                            <td><b>Operating Temperature</b></td>
+                            <td>32 to 104 F</td>
+                          </tr>
+                          <tr>
+                            <td><b>Maximum Humidity</b></td>
+                            <td> below 95% non-condensing</td>
+                          </tr>
+                          <tr>
+                            <td><b>Environmental</b></td>
+                            <td>IP65</td>
+                          </tr>
+                          <tr>
+                            <td><b>LED Safety</b></td>
+                            <td>IEC 62471: Exempt risk group, no further labelling is required.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Codes</b></td>
+                            <td><b>1-D Barcode:</b> Codabar, code 39, code 128 and Code 93, Code 25, Interleaved 2 of 5, Pharma, GS1 DataBar, Postal, Code UPC/EAN/JAN, MSI <br> <b>2-D Barcode:</b>Data Matrix (IDMax and IDQuick: ECC0,50,80,100,140 and 200) QR Code and microQR Code, RSS/CS, PDF 417, MicroPDF 417, AztecCode, DotCode, MaxiCode.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Power Consumption</b></td>
+                            <td>3.84 W (PoE Class 1) <br> 5 W (average, externally powered at +24 V).</td>
+                          </tr>
+                          <tr>
+                            <td><b>Ethernet Speed</b></td>
+                            <td>10/100</td>
+                          </tr>
+                          <tr>
+                            <td><b>Duplex Mode</b></td>
+                            <td>Full duplex or Half Duplex</td>
+                          </tr>
+                          <tr>
+                            <td><b>Image Sensor</b></td>
+                            <td><p>1/2.8 CMOS</p>
+                          </tr>
+                          <tr>
+                            <td><b>Image Sensor Properties</b></td>
+                            <td>Diagonal 6.17 mm, 2.8 um square pixels </td>
+                          </tr>
+                          <tr>
+                            <td><b>Image Resolution</b></td>
+                            <td>1920 x 1080 pixels</td>
+                          </tr>
+                          <tr>
+                            <td><b>Lens Type</b></td>
+                            <td>S-mount 6.2mm F:5(with optional liquid lens) with IR Blocking filter<br>S-mount 16mm F:7(with optional liquid lens) with IR blocking filter</td>
+                          </tr>
+                        </tbody>
+                       </table>
+                  </article>
+                    <article>
+                      <p><b>Software Requirement</b></p>
+                      <p>The Cognex DataMan software ecosystem provides robust tools for configuring, testing, and deploying DataMan industrial barcode readers. 
+                        It allows users to optimize barcode reading performance, integrate with existing systems, and monitor devices in real-time.</p>
+                      <ul>
+                        <li>Microsoft Visual Studio for C# for development</li>
+                        <li>Additional software or libraries required by the SDK or application</li>
+                      </ul>
+                      <p><b>Software Overview</b></p>
+                      <p><span>The Cognex DataMan SDK is a software development kit designed to interact with Cognex DataMan barcode readers.The SDK provides tools, libraries, 
+                        and APIs to integrate the functionality of DataMan device into custom applications, allowing developers to configure control, and retrive data from DataMan barcode readers programmatically.</span><p>
+                    </article>
+                    
+                </section>
+                <section id="driverDevelopment">
+                  <h2>Driver Development and SDK Installation</h2>
+                  <p><b>Introduction to driver development for the device</b></p>
+                  <p>The driver development consists of three key components:</p>
+                  <ul>
+                    <li>barcode.cs</li>
+                    <p>barcode.cs plays a crucial role in establishing communication between the software and Barcode Reader devices. 
+                       It provides APIs to connect to the device, send and receive packets, and encode/decode data according to the Barcode Reader protocol. 
+                       This code enables the minimum functionalities of the API.</p>
+                  </ul>
+                  <p><b>Choice of Programing Language</b></p>
+                  <p>For developing the driver we have used C#.</p>
+                  </article>
+                  <article>
+                    <h3>Driver Implementation</h3>
+                      <ol>
+                        <li>GetDeviceDetails</li>
+                        <li>OpenDevice</li>
+                        <li>CloseDevice</li>
+                        <li>ChangeAlias</li>
+                        <li>AcquireBarcode</li>
+                        <li>GetImage</li>
+                      </ol>
+
+                  </article>
+                 
+                </section>
+                <section id="gRPC_API">
+                  
+                    <h2>gRPC API’s Description for Barcode Reader Device</h2>
+                    
+                    <ol>
+                      <li>
+                         <article>
+                          <h3>GetDeviceDetails</h3>
+                          <p><b>Description for GetDeviceDetails API:</b>Retrieves detailed information about the connected Barcode Reader, including its configuration and status.</p>
+                          <p><b>RPC Command : </b>rpc GetDeviceDetails(.generic. CommandRequest) returns (.generic.GenericDeviceModel) {}</p>
+                        </article>
+                                            
+                      <article>
+                          <b> Request:</b>                 
+                          <code>
+                          message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>device_alias</td>
+                                <td>Unique alias of the device</td>
+                              </tr>
+                            </tbody>
+
+                          </table>
+                      </article>
+                      <article>
+                        <b> Response:</b>
+                        <br>
+                        <code>
+                          message GenericDeviceModel{<br>
+                            string instance_id = 1; <br>
+                            string device_alias = 2; <br>
+                            DeviceType device_type = 3;<br>
+                            DeviceModel device_model_name = 4; <br>
+                            optional DeviceStatus device_status = 5;<br>
+                            string ipaddr = 6;<br>
+                            string mac_addr = 7;<br>
+                            google.protobuf.Value conn_handle=8;<br>
+                            string port_name = 9; <br>
+                            int64 port_address = 10; <br>
+                            string file_path =11;<br>
+                            CommandResponse cmd_response = 12; <br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Parameter </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>instance_id</td>
+                              <td>New instance for the device in the enumeration</td>
+                            </tr>
+                            <tr>
+                              <td>device_alias</td>
+                              <td>Unique identifier (alphanumeric) for every device in the enumeration</td>
+                            </tr>
+                            <tr>
+                              <td>device_type</td>
+                              <td>Indicates the type of device  like Motion stage, Safety Controller etc (defined below in the DeviceType enum)</td>
+                            </tr>
+                            <tr>
+                              <td>device_model_name</td>
+                              <td>Indicate the model name for each device (define below in the DeviceModel enum)</td>
+                            </tr>
+                            <tr>
+                              <td>device_status</td>
+                              <td>Indicate whether the device is online , offline or not reachable (define below in the device status enum)
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>ipaddr</td>
+                              <td>Indicate the ipaddress of the device</td>
+                            </tr>
+                            <tr>
+                              <td>mac_addr</td>
+                              <td>Indicate the mac address of the device</td>
+                            </tr>
+                            <tr><td>Conn_handle</td>
+                            <td>Handle object to keep the device open</td></tr>
+                            <tr>
+                              <td>port_name</td>
+                              <td>Port name </td>
+                            </tr>
+                            <tr>
+                              <td>port_address</td>
+                              <td>Port address</td>
+                            </tr>
+                            <tr>
+                              <td>cmd_response</td>
+                              <td>Indicates command response that describes API response code and its description (Defined below in CommandResponse)</td>
+                            </tr>
+                             <tr>
+                              <td>file_path</td>
+                              <td>Indicates file name with current its current location(file path)</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </article>
+                        <article>
+                          <code>
+                            enum DeviceType{<br>
+                              NONE = 0;<br>
+                              SENSOR_3D = 1;<br>
+                              MOTION_STAGE = 2;<br>
+                              CAMERA = 3;<br>
+                              IO_MODULE = 4;<br>
+                              SAFETY_CONTROLLER = 5;<br>
+                              ANIMATIC_MOTOR=6;<br>
+                          }<br>
+                          enum DeviceModel{<br>
+                              DUMMY_MODEL = 0;<br>
+                              ED527 = 1;<br>
+                              ED588 = 2 ;<br>
+                              JR3000 = 3;<br>
+                              OPTOE = 4;<br>
+                              BASLER = 5;<br>
+                              SPiiPlusEC=6;<br>
+                              GT6600 = 7;<br>
+                              MOTOR = 8;<br>
+                          }<br>
+                          enum DeviceStatus{<br>
+                              OFFLINE = 0;<br>
+                              ONLINE = 1;<br>
+                              NOT_REACHABLE =2;<br>
+                          }<br>
+                          message CommandResponse{<br>
+                              int32 resp_code = 1;<br>
+                              string resp_message = 2;<br>
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>resp_code</td>
+                                <td>Response code from the device API</td>
+                              </tr>
+                              <tr>
+                                <td>resp_message</td>
+                                <td>Response message code</td>
+                              </tr>  
+                              </tbody>
+                              </table>
+                              </article>
+                          <p>CLI Command:<b> python denso.py GetDeviceDetails Barcode_1 </b></p>
+                        <article>
+                          <b>Description for CLI Command: </b>
+                          <ul>
+                            <li><b>GetDeviceDetails: </b>API called to the Denso through CLI Command</li>
+                            <li><b>Barcode_1: </b>Aliased Name for Barcode Reader </li>
+                          </ul>
+                        </article>
+                      </li>
+                        <li>
+                          <article>
+                          <h3>OpenDevice</h3>
+                          <p><b>Description for OpenDevice API: </b>This API establish the connection to Barcode Reader device. </p>
+                          <b>RPC Command :</b>
+                          
+                          rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
+                        
+                        </article>
+                        <article>
+                          <b>Request:</b><br>
+                          <code>
+                            message CommandIPRequest {<br>
+                              string ip_address = 1;<br>
+                              string com = 2;<br>
+                              int64 port_address = 3;<br>
+                              int32 device_id = 4;<br>
+                              string file_path = 5;<br>
+                              int64 device_model =6;<br>
+                              optional string device_alias=7;<br>
+                              int32 axis =8; <br>
+                              string user_name=9;<br>
+                              string password =10;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>device_alias </td>
+                                <td>The unique device_alias used to refer the device </td></tr>
+                                <tr><td>ip_address </td>
+                                  <td>Specifies the IP address of the device.</td></tr>
+                                  <tr><td>com </td>
+                              <td>Indicates the communication protocol or interface to be used</td></tr>
+                              <tr><td>port_address</td>
+                              <td>Denotes the specific port address for the device on the communication interface.</td></tr>
+                              <tr><td>device_id</td>
+                              <td>Unique identifier for the device, used to distinguish it from other devices in the system.</td></tr>
+                              <tr><td>file_path</td>
+                              <td>The path to the file, which may include configuration, program, or data files for the device.</td></tr>
+                              <tr><td>device_model</td>
+                              <td>Represents the model number or type of the device being communicated with.</td></tr>
+                              <tr><td>device_alias</td>
+                              <td>A user-defined alias for the device, providing a more descriptive or convenient reference.</td></tr>
+                              <tr><td>axis </td>
+                              <td>Specifies the axis number (e.g., X, Y, Z) on which the command or operation will be performed.</td></tr>
+                              <tr><td>user_name </td>
+                              <td>Specifies the user name </td></tr>
+                               <tr><td>password </td>
+                              <td>Specifies the password</td></tr>
+    
+                            </tbody>
+                          </table>
+                      </article>
+                      <article>
+                        <code>
+                          enum DeviceType{<br>
+                            NONE = 0;<br>
+                            SENSOR_3D = 1;<br>
+                            MOTION = 2;<br>
+                            CAMERA = 3;<br>
+                            IO_MODULE = 4;<br>
+                            SAFETY_PLC = 5;<br>
+                            BARCODE_READER=6;<br>
+                        }<br>
+                        enum DeviceModel{<br>
+                            DUMMY_MODEL = 0;<br>
+Brainbox_ED527 = 1;<br>
+Brainbox_ED588 = 2 ;<br>
+Janome_Jr3403 = 3;<br>
+Opto_OPTOE = 4;<br>
+Basler_AcA2500_14gm = 5;<br>
+Alio_SPiiPlusEC_1_Axis=6;<br>
+ProSilica_GT6600 = 7;<br>
+Animatic_SM23165D_CDS7 = 8;<br>
+Keyence_CL3000 =9;<br>
+Keyence_LJV7020 =10;<br>
+LMI_GOCATOR2530 = 11;<br>
+SafetyPLC_SC10=12;<br>
+SMC_EX250=13;<br>
+Denkovi_DENKOVI=14;<br>
+Denso_VP6242=15;<br>
+Lucid_TRI0245S_MC=16;<br>
+Janome_Jr3304=17;<br>
+Alio_SPiiPlusEC_3_Axis=18;<br>
+BarCode_DM262=19;<br>
+BarCode_DM282=20;<br>
+Basler_A2A2448_23gmPRO=21;<br>
+LMI_GOCATOR3056 = 22;<br>
+Keyence_LKG5000 = 23;<br>
+Denso_HS45352=24;<br>
+                            
+                        }<br>
+                        enum DeviceStatus{<br>
+                            OFFLINE = 0;<br>
+                            ONLINE = 1;<br>
+                            NOT_REACHABLE =2;<br>
+                        }<br>
+                        message CommandResponse{<br>
+                            int32 resp_code = 1;<br>
+                            string resp_message = 2;<br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_message</td>
+                              <td>Response message code</td>
+                            </tr>  
+                            </tbody>
+                            </table>
+                            
+                      <article>
+                        <b>Response</b><br>
+                        <code>
+                          message CommandResponse {<br>
+                            int32 resp_code = 1; <br>
+                            string resp_message = 2; <br>
+                          }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Parameter </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_message</td>
+                              <td>Response Message</td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            </article>
+                      
+                    
+                        <p>CLI Command: <b>python barcode.py OpenDevice 192.168.4.20 19 Barcode_1</b></p>
+                        <article>
+                          <b>Description for CLI Command</b>
+                          <ul>
+                            <li><b>OpenDevice: </b>OpenDevice is the name of the API  
+                              </li>
+                              <li> <b>192.168.4.20: </b>IP Address of the device </li>
+                              <li> <b>19: </b>Enum value of Model BarCode_DM262 and <b>20:</b>Enum value of Model BarCode_DM282 </li>
+                              <li> <b>Barcode_1: </b>Alias Name of the device</li>
+                          </ul>
+                        </article>
+                        </li>
+                        <li>
+                          <h3>CloseDevice</h3>
+                            <b>Description for CloseDevice API: </b> Disconnects from the BarCode Reader, releasing all resources and deleting associated handlers to ensure a clean shutdown. <br>
+                          <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
+                          <article>
+                            <b>Request:
+                             
+                              </b>
+                              <code> message CommandRequest {<br>
+                                string device_alias = 1;<br>
+                           }<br> 
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>device_alias</td>
+                                <td>Unique alias of the device</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          </article>
+                        <article>
+                          <b>Response:
+                            
+                            </b>
+                            <code>
+                              message CommandResponse {<br>
+                                int32 resp_code = 1;       <br>     
+                                string resp_description = 2;   <br> 
+                         }<br>
+                            </code>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>Parameter</th>
+                                  <th>Description</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>resp_code</td>
+                                  <td>Response code from the device API</td>
+                                </tr>
+                                <tr>
+<td>resp_description</td>
+<td>Description of the response code</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </article>
+                            <p>CLI Command: <b>python barcode.py CloseDevice 19 BarCode1</b></p>
+                        
+                        <article>
+                         <b> Description for CLI Command: </b>
+<ul>
+  <li>
+   <b> CloseDevice: </b>CloseDevice is the API called to the Barcode Reader through CLI Command 
+
+  </li>
+  <li>
+   <b> 19: </b>Enum value of Model BarCode_DM262 and <b>20:</b> Enum value of Model BarCode_DM282
+  </li>
+  <li>
+   <b> Barcode_1: </b>Aliased Name for Barcode Reader
+  </li>
+</ul>
+
+
+                        </article>
+
+                        </li>
+                        <li>
+                          <h3>ChangeAlias</h3>
+                          <article>
+                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device<br>
+                              <b>RPC Command: </b>rpc ChangeAlias(ChangeAliasRequest) returns (CommandResponse) {}
+                            </ul>
+                           <code>
+                          
+                            <b></b>  Request:  </b>
+                            message ChangeAliasRequest{	<br>
+                                string current_alias=1;<br> 		    
+                                string new_alias=2; 		<br>
+                            }<br>
+                           </code>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>current_alias</td>
+      <td>current_alias	The unique device alias used to refer the device</td>
+    </tr>
+    <tr>
+      <td>new_alias</td>
+      <td>The device alias to change to</td>
+    </tr>
+  </tbody>
+</table>
+
+                          </article>
+                          <article>
+                           <b> Response:</b>
+                           <code>
+message CommandResponse {<br>
+    int32 resp_code = 1; <br>           
+    string resp_description = 2;  <br>
+    }<br>
+  </code>
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>resp_code</td>
+        <td>Response code from the device API</td>
+      </tr>
+      <tr>
+        <td>resp_description</td>
+        <td>Description of the response code</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+  <p>CLI Command: <b>python barcode.py ChangeAlias current_alias new_alias </b></p>
+                          
+                          
+                            <b>Description for CLI Command:</b>
+                            <ul> 
+<li>
+  <b>ChangeAlias: </b>ChangeAlias is the name of the API  </li>
+  <li> <b>current_alias: </b>The unique device alias used to refer the device
+</li>
+<li>
+ <b> new_alias: </b>The device alias to change to
+</li>
+                             
+                            
+                              
+                          </ul>
+
+                        </li>
+                        <li>
+                          <h3>GetImage</h3>
+                            <b>Description for GetImage API: </b>To Capture Single Image from the device.<br>
+                            <b>RPC Command: </b>rpc GetImage(CaptureImageRequest) returns(stream CaptureImageResponse) {}
+                         <article>
+                          <b>Request:   </b>
+                          <code>
+                            message CaptureImageRequest {<br>
+                              string path = 1;<br>
+                              int32 format = 2;<br>
+                              int32 size = 3;<br>
+                              int32 quality = 4;<br>
+                              .genric.CommandRequest cmd_request = 5;<br>
+                              }<br>
+    
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            <tr>
+                              <td>Format</td>
+                              <td>The format of the image (0-Jpeg and 1-Bitmap)</td>
+                            </tr>
+                            <tr>
+                              <td>Size</td>
+                              <td>The size of the image.(0->Full, 1->quarter, 2->Sixteenth, 3->Sixforth)</td>
+                            </tr>
+                            <tr>
+                              <td>Quality</td>
+                              <td>The quality of the image.(0->Low, 1->Medium, 2->High)</td>
+                            </tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                          <b>Response: </b>
+<code>
+  message CaptureImageResponse {<br>
+    optional bytes image_data = 1;<br>
+    optional string file_name = 2;<br>
+    optional int64 file_size = 3;<br>
+   .generic.CommandResponse cmd_response = 4;<br>
+}<br>
+</code>
+<code>
+message CommandResponse {<br>
+    int32 resp_code = 1;      <br>      
+    string resp_description = 2;    <br>
+}<br>
+</code>
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>image_data</td>
+      <td>The image data </td>
+    </tr>
+    <tr>
+      <td>file_name</td>
+      <td>	File name of the image file</td>
+    </tr>
+    <tr>
+      <td>file_size</td>
+      <td>	The denotion of the file size</td>
+    </tr>
+  </tbody>
+</table>
+</article>
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>resp_code</td>
+      <td>Response code from the device API</td>
+    </tr>
+    <tr>
+      <td>resp_description</td>
+      <td>	Description of the response code</td>
+    </tr>
+  </tbody>
+</table>
+<p>CLI Command: <b>python barcode.py GetImage BarCode1 barcode.jpg 0 2 2</b></p>
+	
+
+  <b>Description for CLI Command: </b>
+  <ul>
+    <li>
+      <b>Barcode_1:</b> Alias of the Device</li>
+<li><b>barcode.jpg </b>User defined file name with format</li>
+<li><b>0: </b>The format of the image (0-Jpeg and 1-Bitmap)</li>
+<li><b>2: </b>The size of the image to be captured(0->Full, 1->quarter, 2->Sixteenth, 3->Sixforth)</li>
+<li><b>2: </b>The quality of the image.(0->Low, 1->Medium, 2->High)</li>
+</ul>
+
+                         </article>
+                        </li>
+                        <li>
+                          <h3>AquireBarcode</h3>
+                              <b>Description for AquireBarcode API: </b>Initiates a barcode scan using the connected vision system or scanner. Once the acquisition is complete, the API retrieves the decoded barcode data from the image or scan result.<br>
+                                <b>RPC Command : </b>rpc AcquireBarcode(.genric.CommandRequest) returns(AcquirebarcodeResponse) {}
+                          </ul>
+                         
+                          <article>
+                           <b> Request:  </b>
+                            <code>
+                            message CommandRequest { <br>
+                                string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Parameter	Description</th>
+
+                              </tr>
+                              <tr>
+                                <td>device_alias</td>
+                                <td>Unique alias of the device obtained from enumeration API</td>
+                              </tr>
+                            </thead>
+                          </table>
+                        </article>
+                        <article>
+                         <b>Response: </b>
+                         <code>
+                          message AcquirebarcodeResponse {<br>
+                            string decoded_data = 1;<br>
+                            .generic.CommandResponse cmd_response = 2;<br>
+                        }<br>
+                        
+                         </code>
+
+                         <table>
+                          <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                          </thead>
+                          <tbody>
+                        <tr>
+                          <td>decoded_data</td>
+                          <td>The decoded barcode data will be store</td>
+                        </tr>
+                          </tbody>
+                        </table>
+                        <b>Response: </b>
+                         <code>
+                          message CommandResponse  {<br>
+                            int32 resp_code  = 1;<br>         
+                            string resp_description = 2;<br>
+                        }<br>
+                         </code>
+<table>
+  <thead>
+<tr>
+  <th>Parameter</th>
+  <th>Description</th>
+</tr>
+  </thead>
+  <tbody>
+<tr>
+  <td>resp_code</td>
+  <td>Response code from the device API</td>
+</tr>
+<tr>
+  <td>resp_description</td>
+  <td>Description of the response code</td>
+</tr>
+  </tbody>
+</table>
+</article>
+    <p>CLI Command: <b>python barcode.py AcquireBarcode Barcode_1 </b></p>
+	
+	
+
+                        
+                        <article>
+                         <b> Description for CLI Command: </b>
+<ul>
+  <li><b>AcquireBarcode: </b>The API is used to scan the barcode and return the decoded response.
+  </li>
+  <li><b></b>Barcode_1: </b>Aliased Name for Barcode Reader</li>
+</ul>
+
+
+</article>
+
+<h2>Limitations of the driver</h2>
+<article>
+ 
+  <ul>
+    <li><b>Compatibility: </b>The driver may only be compatible with DM262x and DM282x versions of Cognex Barcode Reader, limiting its use with other devices.</li>
+    <li><b>Integration:</b>Integrating the driver with other systems or software may pose challenges, especially if there are compatibility issues or dependencies.</li>
+    <li>Modifying Environment may affect system connection.</li>
+   
+  </ul>
+</article>
+<h3>Precautions to take before executing the driver</h3>
+                  <article>
+                    <ul>
+                      <li>Make sure the Device is in connected with the station </li>
+                      <li>Ensure to giving the valid channel number and state.</li>
+                     
+                    </ul>
+                  </article>
+
+</section>
+                  
+                  </section>
+                            <section id="testingDebug">
+                                    <h2>TESTING AND DEBUGING:</h2>
+                                  <b>DMCC Commands</b>
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Commands</th>
+                                        <th>Description</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>TRIGGER</td>
+                                        <td>Triger to scan the barcode</td>
+                                      </tr>
+                                      <tr>
+                                        <td>RESULT</td>
+                                        <td>This command is retrieving the result data from the barcode reader. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>DEVICE.NAME</td>
+                                        <td>This command is to retrieving the Device name.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>DEVICE.SERIAL-NUMBER</td>
+                                        <td>This command is to retrieving the Serial Number.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>DEVICE.TYPE</td>
+                                        <td>This command is to retrieving the type. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>DEVICE.STATUS</td>
+                                        <td>This command is to give the status of the status..</td>
+                                      </tr>
+                                      <tr>
+                                        <td>REBOOT</td>
+                                        <td>This command is to reboot the robot.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>IMAGE.SEND</td>
+                                        <td>This command is to send the live image.</td>
+                                      </tr>
+                                      </tbody>
+                                      </table>
+                            </section>
+                                                    <section id="resourcesLinks">
+                                                      <h2>RESOURCES AND LINKS</h2>
+                                                      <ul>
+                                                        <li>DM280 series documents:  <a target="_blank" href="https://support.cognex.com/docs/dmst_2420/web/EN/DM280_Manual/Content/Topics/getting-started/getting-started.htm?tocpath=Getting%20Started%7C_____0">https://support.cognex.com/docs/dmst_2420/web/EN/DM280_Manual/Content/Topics/getting-started/getting-started.htm?tocpath=Getting%20Started%7C_____0</a></li>
+                                                        <li>DM260 series documents:<a target="_blank" href="https://support.cognex.com/docs/dmst_2430/web/EN/DM260_Manual/Content/Topics/DataMan/GettingStarted.htm">https://support.cognex.com/docs/dmst_2430/web/EN/DM260_Manual/Content/Topics/DataMan/GettingStarted.htm</a> </li>
+                                                          <li>DataMan Software Documents: <a target="_blank" href="https://support.cognex.com/docs/dmst_617/EN/SetupTool_Reference_Manual.pdf"> https://support.cognex.com/docs/dmst_617/EN/SetupTool_Reference_Manual.pdf</a></li>
+                                                          <li>SDK_Documents:  <a target="_blank" href="https://support.cognex.com/docs/dmst_616SR1/web/EN/Comms_Prog_Manual/Content/Topics/PDF/DMCAP/DMCCApplicationDevelopment.html"> https://support.cognex.com/docs/dmst_616SR1/web/EN/Comms_Prog_Manual/Content/Topics/PDF/DMCAP/DMCCApplicationDevelopment.html</a></li>
+                                                      </ul>
+                                                    </section>
+                                                    <section>
+                                                      <article>
+                                                      <h2>GLOSSARY</h2>
+                                                      <ul>
+                                                        <li><b>Driver:</b> A software component that enables communication between the operating system and a hardware device, in this case, a Barcode Reader.</li>
+                                                        <li><b>SDK (Software Development Kit): </b>A set of tools, libraries, and documentation that developers use to create software applications for a specific platform or framework.</li>
+                                                        <li><b>Command: </b>Instruction or directive sent to a Barcode Reader through the driver to perform specific actions such as movement, I/O control, or program execution.</li>
+                                                        <li><b>Response: </b>Feedback or acknowledgment received from the Barcode Reader I/O after executing a command, indicating the success or failure of the operation and providing relevant information or data.</li>
+                                                        <li><b>API (Application Programming Interface): </b> A set of rules and protocols that allow different software applications to communicate with each other.</li>
+                                                        <li><b>Firmware </b>Software that is embedded into a hardware device, such as a Barcode Reader, to control its operation.</li>
+                                                        <li><b>Size: </b> This denotes the size of the image ex. Full, quarter and half.</li>
+                                                        <li><b>Format: </b> This denotes the format of the image ex. Jpeg or Bitmap. </li>
+                                                      </ul>
+                                                    </article>
+                                                    </section>
+
+            </div>
+    </main>
+    <footer></footer>
+     
+    <script>
+      function handlePage(thisAttr,page) {
+        // Device Open / Close
+        let elements = document.getElementsByClassName("container");
+        for (let i = 0; i < elements.length; i++) {
+          elements[i].style.display = "none";
+        }
+        document.getElementById(page).style.display = "block";
+          // Active Link
+          const links = document.querySelectorAll('.leftbar a');
+          for (let i = 0; i < links.length; i++) {
+            links[i].classList.remove('active');
+        }
+        thisAttr.classList.add('active');
+          // for (const link of links) {
+          //   link.addEventListener('click', function () {
+          //     this.classList.add('active'); // adds 'active' to the clicked link
+          //   });
+          // }
+       
+        document.getElementById("menuCheckbox").checked = false;
+        document.documentElement.scrollTop = 0;
+        handleMoveTop();
+        searchLinks.style.display = "none";
+        searchInput.value = "";
+      }
+      function handleMoveTop() {
+        window.scrollTo(0, 0);
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+
+      function scrollToElement(id, position, section,thisAttr) {
+        //Section CLose / Open
+        let elements = document.getElementsByClassName("container");
+        for (let i = 0; i < elements.length; i++) {
+          elements[i].style.display = "none";
+        }
+        document.getElementById(section).style.display = "block";
+         // Active Link starts
+         const links = document.querySelectorAll('.leftbar a');
+          for (let i = 0; i < links.length; i++) {
+            links[i].classList.remove('active');
+        }
+        thisAttr.classList.add('active');
+  // Active Link Ends
+        const element = document.getElementById(id);
+
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+          });
+          const scrollY = element.offsetTop + position;
+
+          window.scrollTo({
+            top: scrollY,
+            behavior: "smooth",
+          });
+        } else {
+          console.warn(`Element with id '${id}' not found.`);
+        }
+      }
+      // Resource Link - Bottom scroll fix
+      function scrollToBottom(id, position, section,thisAttr) {
+        //Section CLose / Open
+        let elements = document.getElementsByClassName("container");
+        for (let i = 0; i < elements.length; i++) {
+          elements[i].style.display = "none";
+        }
+        document.getElementById(section).style.display = "block";
+        // Active Link starts
+        const links = document.querySelectorAll('.leftbar a');
+          for (let i = 0; i < links.length; i++) {
+            links[i].classList.remove('active');
+        }
+        thisAttr.classList.add('active');
+  // Active Link Ends
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
+      }
+      // Search Nav 
+     // Search Nav 
+      const searchInput = document.getElementById('searchInput');
+      const links = document.querySelectorAll('#navlinks .sub-contents li');
+      const searchLinks = document.getElementById('searchLinks');
+
+      searchInput.addEventListener('input', function () {
+      searchLinks.style.display = "block";
+        searchLinks.innerHTML = "";
+        const filter = this.value.toLowerCase();
+        // Filter and map the links to HTML
+        // const htmlContent = Array.from(links)
+        //   .filter(link => link.textContent.toLowerCase().includes(filter))
+        //   .textContent.trim().toLowerCase().includes(filter)
+        //   .join('');
+        // Inject into the searchLinks container
+        //searchLinks.innerHTML = htmlContent;
+
+         // Filter by Label
+         const htmlContent = Array.from(links).filter(link => {
+          if (link.querySelector('label')!=null ) {
+            if( link.querySelector('label').textContent.trim().toLowerCase().includes(filter)){
+              //console.log(link.querySelector('label').textContent.trim().toLowerCase().includes(filter)).map(labels => `<li>${labels.outerHTML}</li>`).join('');
+            }
+          } 
+         })
+
+         /// 
+         const labelSearch = Array.from(links).filter(link=>{
+          if (link.querySelector('label')!=null ) {
+            if(link.querySelector('label').textContent.trim().toLowerCase().includes(filter)==true && link.querySelectorAll('.sub-content')==null){
+               return link.querySelector('label').textContent.trim().toLowerCase().includes(filter)
+            }
+            else{
+                 return Array.from(link.querySelectorAll('li a')).filter(aTag=>aTag.textContent.trim().toLowerCase().includes(filter))
+            }
+          }
+        }).map(link => {
+           if (link.querySelector('label').textContent.trim().toLowerCase().includes(filter)) {
+           return `<li>
+            <label>
+            ${splitJoinFunc(filter,link.querySelector('label').textContent.trim().toLowerCase())}
+            </label>
+            ${
+            Array.from(link.querySelectorAll('li a')).map(tag => {
+              // if(tag.textContent.trim().toLowerCase().includes(filter)){
+              //   return  `<li>${tag.outerHTML}</li>`}
+              return  `<b>${tag.outerHTML}</b>`
+              }).join('')
+            }
+          </li>`
+          } else {
+          //   return `<li>
+          //   <label>
+          //   ${splitJoinFunc(filter,link.querySelector('label').textContent.trim().toLowerCase())}
+          //   </label>
+          //   ${
+          //   Array.from(link.querySelectorAll('li a')).map(tag => {
+          //     if(tag.textContent.trim().toLowerCase().includes(filter)){
+          //       return  `<b>${tag.outerHTML}</b>`}
+          //     }).join('')
+          //   }
+          // </li>`
+          }
+        }).join('');
+
+          function splitJoinFunc(keyword,label){
+            const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp(`(${escapedKeyword})`, "gi");
+            return label.replace(regex, '<strong>$1</strong>');
+          }
+        //const linkSearch = Array.from(links).filter(link=>{
+        //   if (link.querySelector('label')!=null ) {
+        //   //.filter((tag=>tag.textContent.trim().toLowerCase().includes(filter)))
+        //   return  link.querySelectorAll('ul li a')
+        // }
+        // })
+        searchLinks.innerHTML = labelSearch;
+        //console.log(labelSearch);
+      });
+      document.addEventListener('click', function(event) {
+       
+          searchLinks.classList.remove('active');
+          searchLinks.innerHTML = '';
+        
+      })
+    </script>
+  </body>
+</html>
