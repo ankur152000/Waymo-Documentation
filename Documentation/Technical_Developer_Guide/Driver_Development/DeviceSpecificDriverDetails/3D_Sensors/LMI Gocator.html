@@ -1,0 +1,1956 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <style>
+            :root {
+                --color-base: #202122;
+                --color-black: #000;
+            }
+
+            * {
+                padding: 0px;
+                margin: 0px;
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                font-family: sans-serif;
+                scroll-behavior: smooth;
+            }
+
+            body {
+              width: 100%;
+                font-size: 0.875rem;
+                line-height: 1.5714285;
+                padding: 10px 60px;
+                color: var(--color-base, #202122);
+                background-color: #fcfcfc;
+overflow-x: hidden;
+text-align: justify;
+
+            }
+
+            main {
+                display: flex;
+
+            }
+
+            header {
+                padding: 0px 10px 40px 10px;
+            }
+a{
+  display: inline !important;
+}
+i{
+padding-left: 16px;
+}
+            .profile {
+                float: right;
+            }
+
+            .logo svg {
+                width: 36px;
+            }
+
+            .leftbar {
+                width: 330px;
+                height: 100vh;
+                overflow-x: visible;
+                overflow-y: auto;
+                padding: 46px 0px 0px 18px;
+                position: sticky;
+                top: 0px;
+            }
+
+            .leftbar ul {
+                margin: 0px;
+                padding-left: 15px;
+            }
+
+            .leftbar ul li {
+                list-style: none;
+                text-align: left;
+            }
+
+            .leftbar h5 {
+                border-bottom: 1px solid #eaecf0;
+                padding-bottom: 6px;
+            }
+
+            .leftbar input {
+                visibility: hidden;
+                display: none;
+            }
+
+            /* .leftbar span{
+  text-indent: 0px !important;
+} */
+            .leftbar label {
+                position: relative;
+            }
+
+            .leftbar button {}
+
+            .container {
+                width: 100%;
+                padding: 0px 16px 0px 36px;
+                /* height: 100vh;
+          overflow-y: auto; */
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5 {
+                color: var(--color-black, #000);
+                font-weight: bold;
+            }
+
+            h1,
+            h2 {
+                font-size: 1.8em;
+                font-family: "Linux Libertine", "Georgia", "Times", "Source Serif Pro",
+                    serif;
+                font-weight: normal;
+            }
+
+            h5 {
+                font-size: 0.875rem;
+            }
+
+            hr {
+                margin: 10px 0px 16px 0px;
+                border-color: #eaecf0;
+            }
+
+            p,
+            span {
+                font-size: 0.875rem;
+                line-height: 1.5714285;
+            }
+
+            table {
+                text-align: left;
+            }
+
+            /* table td p{
+         text-indent: 0px !important;  
+        } */
+        table{
+          width: 100%;
+        }
+            table,
+            th,
+            td {
+                border: 1px solid #e3e3e3;
+                border-collapse: collapse;
+            }
+
+            table,
+            th,
+            td {
+                padding: 6px 10px;
+            }
+
+            ol,
+            ul {
+                margin-bottom: 16px;
+            }
+
+            ul,ol{
+                /* list-style: none; */
+                padding-left: 30px;
+            }
+
+            a {
+                color: #36c;
+                padding: 6px 0px;
+                display: block;
+                text-decoration: none;
+            }
+            code{
+              background-color: #e6e6e6;
+    display: block;
+    padding: 16px 16px;
+    border-radius: 2px 2px;
+    margin-bottom: 26px;
+    box-shadow: rgb(232 232 232) 3.2px 3.2px 8px 0px inset, rgb(226 226 226) -3.2px -3.2px 8px 0px inset;
+}
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            .checkBox:checked~label {
+                /* background-color: red; */
+            }
+
+            .checkBox:checked~ul {
+                height: 0px;
+                overflow: hidden;
+            }
+
+            .checkBox:checked~label .btn-min {
+                display: block;
+            }
+
+            .checkBox:checked~label .btn {
+                display: none;
+            }
+
+            .btn,
+            .btn-min {
+                position: absolute;
+                left: -22px;
+    top: 0px;
+                background-color: #f8f9fa;
+                padding: 0px 4px;
+            }
+
+            .btn:hover {
+                background-color: #eaecf0;
+            }
+
+            .btn-min {
+                display: none;
+            }
+
+            .title {
+                margin-bottom: 26px;
+            }
+
+            .title h1,
+            h2 {
+                padding-bottom: 10px;
+                border-bottom: 1px solid #ccc;
+            }
+
+            h2 {
+                margin-bottom: 16px;
+            }
+
+            /* Contect Style Starts */
+            .content {
+                padding: 0px 0px 16px 0px;
+            }
+
+            .content ul {
+                list-style: circle;
+            }
+
+            .content ol {
+                counter-reset: section;
+                /* list-style-type: none;  */
+                position: relative;
+                padding: 0px 0px 0px 26px;
+                font-weight: normal;
+            }
+
+            .content ol>li {
+                counter-increment: section;
+                /* list-style: none; */
+                pointer-events: none;
+                padding: 2px 0px;
+                font-size: 0.875rem;
+                /* font-weight: bold; */
+            }
+
+
+            .content p,
+            .content span {
+                font-weight: normal;
+                /* text-indent: 24px; */
+            }
+
+            .content ol>li:before {
+                display: none;
+            }
+
+            .content ol>li:before {
+                content: counters(section, ".") " ";
+                font-weight: normal;
+            }
+
+            article {
+                margin-bottom: 16px;
+            }
+
+            article h3 {
+                font-size: 1.2em;
+            }
+            .sub-content{
+              position: relative
+            }
+            .sub-content p~a{
+color: #202122;
+            }
+            .deviceScroll{
+
+            }
+            .deviceImg{
+      float: right;
+    width: 156px;
+    border: 1px solid #c8ccd1;
+    background-color:#f8f9fa;
+    padding: 4px;
+    margin-left: 22px;
+    }
+    .deviceImg img{
+      width: 100%;
+    }
+    .deviceImg p{
+font-size: 13px;
+text-align: center;
+color: #414141;
+    }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="logo"><svg width="49" height="42" viewBox="0 0 49 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.9297 2.93408L11.2207 19.8295L18.4947 24.0221L28.2037 7.12668L20.9297 2.93408Z" fill="#0583FF" />
+                    <path d="M40.3478 2.93408L30.6387 19.8295L37.9127 24.0221L47.6217 7.12668L40.3478 2.93408Z" fill="#0583FF" />
+                    <path d="M48.1807 5.02976C48.1807 5.86106 47.9346 6.67366 47.4735 7.36486C47.0123 8.05606 46.3569 8.59486 45.59 8.91296C44.8231 9.23106 43.9793 9.31426 43.1652 9.15216C42.3511 8.98996 41.6033 8.58966 41.0163 8.00186C40.4294 7.41396 40.0297 6.66506 39.8678 5.84976C39.7058 5.03446 39.789 4.18936 40.1066 3.42126C40.4242 2.65326 40.9622 1.99686 41.6523 1.53496C42.3425 1.07316 43.1539 0.82666 43.9839 0.82666C44.5351 0.82666 45.0808 0.935361 45.59 1.14656C46.0992 1.35776 46.5618 1.66736 46.9515 2.05766C47.3412 2.44796 47.6504 2.91136 47.8613 3.42126C48.0722 3.93126 48.1807 4.47776 48.1807 5.02976Z" fill="#00EBA7" />
+                    <path d="M14.8606 26.1291C14.1222 26.1299 13.3967 25.9355 12.7574 25.5655C12.1181 25.1956 11.5877 24.6632 11.2197 24.0221L1.51055 7.12656C0.95535 6.16056 0.80615 5.01316 1.09565 3.93696C1.38525 2.86076 2.08975 1.94376 3.05435 1.38776C4.01895 0.831865 5.16455 0.682363 6.23915 0.972363C7.31375 1.26226 8.22935 1.96796 8.78445 2.93396L18.4936 19.8295C18.8604 20.4683 19.0532 21.1923 19.0525 21.9292C19.0518 22.6661 18.8578 23.3898 18.4898 24.0279C18.1218 24.666 17.5928 25.196 16.9559 25.5647C16.3189 25.9335 15.5963 26.1281 14.8606 26.1291Z" fill="#00EBA7" />
+                    <path d="M34.2784 26.1291C33.5401 26.1299 32.8146 25.9355 32.1753 25.5655C31.536 25.1955 31.0056 24.6631 30.6376 24.0221L20.9285 7.12655C20.3734 6.16055 20.2241 5.01315 20.5137 3.93695C20.8032 2.86075 21.5077 1.94375 22.4723 1.38775C22.9499 1.11245 23.477 0.934153 24.0235 0.862853C24.5699 0.791553 25.125 0.828752 25.6571 0.972352C26.7317 1.26225 27.6473 1.96785 28.2025 2.93395L37.9115 19.8295C38.2784 20.4682 38.4711 21.1923 38.4704 21.9292C38.4697 22.666 38.2757 23.3898 37.9077 24.0279C37.5397 24.666 37.0107 25.1959 36.3737 25.5647C35.7367 25.9335 35.0142 26.1282 34.2784 26.1291Z" fill="#00EBA7" />
+                    <path d="M8.94407 34.5347L7.63327 38.7775L6.31327 34.5347H5.16007L3.84927 38.7775L2.52937 34.5347H0.951172L3.23087 41.005H4.45837L5.74107 36.938L7.02417 41.005H8.24257L10.522 34.5347H8.94407Z" fill="#9EA4A9" />
+                    <path d="M17.4362 41.0055L17.187 40.2197H14.8886L14.6397 41.0055H13.043L15.3504 34.5352H16.7257L19.0605 41.0055H17.4362ZM16.0424 36.3837L15.2487 39.0457H16.8176L16.0424 36.3837Z" fill="#9EA4A9" />
+                    <path d="M27.6868 34.5342H25.9422L24.567 37.0763L24.5659 37.0784L24.5651 37.0768L23.1899 34.535H21.4453L23.8091 38.7061V41.0061H25.3227V38.7061L27.6868 34.5342Z" fill="#9EA4A9" />
+                    <path d="M37.8554 41.005H36.397V36.9933L35.0034 41.005H33.8958L32.4562 36.9933V41.005H30.998V34.5347H32.7234L34.4496 39.0362L36.1572 34.5347H37.8554V41.005Z" fill="#9EA4A9" />
+                    <path d="M41.4464 37.77C41.4418 37.0919 41.6383 36.4276 42.0111 35.8614C42.3838 35.2952 42.916 34.8526 43.5402 34.5897C44.1644 34.3267 44.8525 34.2553 45.5173 34.3845C46.1821 34.5136 46.7936 34.8375 47.2744 35.3151C47.7552 35.7927 48.0835 36.4025 48.2179 37.0672C48.3522 37.7319 48.2865 38.4216 48.029 39.0488C47.7716 39.6761 47.334 40.2127 46.7717 40.5906C46.2094 40.9685 45.5477 41.1707 44.8706 41.1716C44.4191 41.1869 43.9693 41.1096 43.5488 40.9445C43.1282 40.7794 42.7459 40.5298 42.4252 40.2112C42.1045 39.8927 41.8522 39.5118 41.6839 39.0919C41.5156 38.6721 41.4348 38.2223 41.4464 37.77ZM46.7627 37.77C46.7627 36.7071 46.0429 35.7181 44.8706 35.7181C43.6891 35.7181 42.9785 36.7071 42.9785 37.77C42.9785 38.833 43.6891 39.822 44.8706 39.822C46.0429 39.822 46.7627 38.833 46.7627 37.77Z" fill="#9EA4A9" />
+                </svg>
+                <div class="profile">
+                    <h5>Waymo Manual Documentation</h5>
+                </div>
+            </div>
+        </header>
+        <main>
+          <div class="leftbar">
+            <h5>Device Documnent List</h5>
+            <div class="content">
+                <div class="title">
+                    <div class="sub-content"><input type="checkbox" id="deviceDriverDocument" class="checkBox" /><label for="deviceDriverDocument">
+                            <p><span class="btn">+</span><span class="btn-min">-</span></p><a>Device Driver Document</a>
+                        </label>
+                        <ul>
+                            <li><a  href="#">Brain Box</a></li>
+                            <li><a  href="#">Animatic Motor</a></li>
+                            <li><a  href="#">Keyence LJV7020</a></li>
+                            <li><a  href="#">Basler Camera </a></li>
+                            <li><a  href="#">Janome </a></li>
+                            <li><a  href="#">Opto Camera  </a></li>
+                            <li><a  href="#">LMI Gocator</a></li>
+                            <!-- <li><a target="_blank" href="./>LMI Gocator.html" style="color: #202122;">LMI Gocator</a>-->
+                            <li class="deviceScroll"><input type="checkbox" id="devicePosition" class="checkBox" /><label for="devicePosition">
+                              <p><span class="btn">+</span><span class="btn-min">-</span></p><a>LMI Gocator</a>
+                            </label>
+                                <ul>
+                                <li><a href="#introduction">Introduction</a ></li>
+                                  <li><a href="#deviceOverview">Device Overview & SDK Instalation</a ></li>
+                                    <li><a href="#driverDevelopment">Driver Development</a ></li>
+                                      <li><a href="#gRPC_API">gRPC API’s Description</a ></li>
+                                        <li><a href="#testingDebug">Testing and Debugging</a ></li>
+                                         <li><a href="#resourcesLinks">Resources & Links</a ></li>
+                                </ul></li>
+                                </ul>
+                            <li><a  href="#">Banner SC10 </a></li>
+                            <li><a  href="#">Keyence CL3000 </a></li>
+                            <li><a  href="#">Alio 3 axis stage </a></li>
+                            <li><a  href="#">Prosilica GT6600 </a></li>
+                            <li><a  href="#">Denkovi Relay</a></li>
+                            <li><a  href="#">EX250-SEN1 </a></li>
+                    </div>
+                    <div class="sub-content"><input type="checkbox" id="CDocument" class="checkBox" /><label for="CDocument">
+                            <p><span class="btn">+</span><span class="btn-min">-</span></p>
+                        <a>C# Document</a></label>
+                        <ul>
+                            <li><a target="_blank" href="#">GRPC Client Helpfile</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="sub-content"><input type="checkbox" id="gRPCDocument" class="checkBox" /><label for="gRPCDocument">
+                                <p><span class="btn">+</span><span class="btn-min">-</span></p><a>gRPC Document</a>
+                            </label>
+                            <ul>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="sub-content"><a target="_blank" href="#">Quick Links</a></div>
+                            <div class="sub-content"><a target="_blank" href="#">Help</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+           <div class="container" id="deviceDriverLMIGocator">
+                <div class="title">
+                    <h1>LMI Gocator driver document</h1>
+                </div>
+                <section class="content" id="introductionLMIGocator">
+                  <div class="deviceImg" style="height: 202px; width: auto;    padding-bottom: 30px;">
+                    <img src="../DocumentImages/DeviceImage/Gocator3506.jpg" alt="Gocator" style="    width: auto;
+    height: 100%;"/>
+                    <p>Gocator 3506</p>
+                                      </div>
+                  <div class="deviceImg"  style="height: 202px; width: auto;    padding-bottom: 30px;">
+                    <img src="../DocumentImages/DeviceImage/Gocator2530.jpg" alt="Gocator" style="    width: auto;
+    height: 100%;"/>
+                    <p>Gocator 2530</p>
+                   </div>
+                    <h2>Introduction</h2>
+                    <article>
+                        <h3>Brief overview of the project</h3>
+                        <p>This project aims to develop drivers for the Gocator 2530 and 3506 high-performance 3D smart sensor, integrating it with a user interface (UI) application for use in automation. The goal is to enable seamless communication between the sensor and the UI application for inline inspection tasks. This integration will allow for capturing high-resolution 3D point cloud data of the target object, facilitating detailed surface analysis and measurement. Ultimately, the project seeks to enhance the usability and functionality of the Gocator 2530 and 3506 in automated processes, leading to increased efficiency and productivity in various industrial settings.</p>
+                    </article>
+                    <article>
+                        <h3>Purpose of the document</h3>
+                        <p>The purpose of this document is to provide a detailed guide for developing a drivers for the Gocator 2530 and 3506 device . The driver will enable communication between the 3d Smart Laser Line Profile Sensor and external software applications, allowing to get raw 3D data points, Load and Save programs and many more. It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, and integrating the driver with the Gocator 2530 and and 3506. </p>
+                        <p>The primary objective of the document is to provide a comprehensive guide for developed drivers Gocator 2530 and and 3506 used in automation using a UI application. This includes detailed instructions, software installation guide, a device description with its features, and best practices to ensure the successful development and integration of drivers with the devices.</p>
+                    </article>
+                    <article>
+                        <h3>Scope and objectives</h3>
+                        <ol>
+                            <li><b>Driver Development:</b> <span>The document focuses on the development of a driver for Gocator 2530 and 3506  using industry-standard protocols. </span></li>
+                            <li><b>Technical Information:</b> <span>It includes technical specifications of the device, hardware and software requirements, and information about the Software Development Kit (SDK) provided for the device. </span></li>
+                            <li><b>SDK Overview:</b> <span>Introduction to Software GoSDK and its Installation.</span></li>
+                            <li><b>Driver Implementation:</b> <span>It covers the development process, including the choice of programming language, information on APIs, how to use APIs, limitations of the driver, precautions to take before execution, and the actual implementation of the driver. </span></li>
+                            <li><b>Testing and Debugging:</b> <span>This section covers strategies and methodologies for testing the Gocator 2530 and 3506 driver, ensuring its reliability, stability, and performance under different conditions. It also provides guidance on debugging techniques to troubleshoot any issues that may arise during driver development or deployment.</span></li>
+                            <li><b>Resources and Links:</b> <span>The document serves as a comprehensive resource for developers, offering detailed information on the Gocator 2530 and 3506 device manuals, Installation Links required for software and drivers, and reference videos for setup, configuration etc</span></li>                          
+                        </ol>
+                        <p>Overall, the aim is to facilitate the successful development and implementation of the Gocator 2530 and 3506, ensuring it meets the required standards and serves its intended purpose effectively. </p>
+                    </article>
+                    </li>
+                    </ol>
+                </section>
+                <section class="content" id="deviceOverviewLMIGocator">
+                    <h2>Device Overview</h2>
+                    <h3>Description of the device for which the driver is being developed</h3>
+                    <p>Gocator 2530 and and 3506 is a high-performance 3D smart sensor designed for industrial automation and quality control applications. It features a built-in web interface for easy setup and configuration, making it ideal for inline inspection tasks. The sensor uses laser triangulation technology to capture high-resolution 3D point cloud data of the target object, allowing for detailed surface analysis and measurement. With its compact design and versatile capabilities, the Gocator 2530 and 3506 is well-suited for a wide range of industries, including automotive, electronics</p>
+                    <article>
+                        <h4>Features of Gocator 2530 and 3506</h4>
+                        <ul>
+                          <li>Up To 100 Mm Field Of View </li>
+                          <li>28 Microns X Resolution </li>
+                          <li>0.5 Microns Z Repeatability </li>
+                          <li>10,000 Profiles Per Second Including 3d Measurement </li>
+                          <li>Setup & Control Via Web Browser Or Sdk </li>
+                          <li>Built-In Tools, No Programming </li>
+                          <li>Extend With Gdk And Gomax</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>Technical Specifications of Gocator 2530</h3>
+                          <table>
+                            <tbody>
+                              <tr>
+                                <td><b>Type </b></td>
+                                <td>3D Sensor</td>
+                              </tr>
+                              <tr>
+                                <td><b>Data Points</b> </td>
+                                <td>Profile 1920</td>
+                              </tr>
+                              <tr>
+                                <td><b>Resolution X (µm) (Profile Data Interval)</b></td>
+                                <td>28.0 - 54.0</td>
+                              </tr>
+                              <tr>
+                                <td><b>Repeatability Z (µm) </b></td>
+                                <td>0.5</td>
+                              </tr>
+                              <tr>
+                                <td><b>Clearance Distance (CD) (mm) </b></td>
+                                <td>40</td>
+                              </tr>
+                              <tr>
+                                <td><b>Measurement Range (MR) (mm)</b> </td>
+                                <td>80</td>
+                              </tr>
+                              <tr>
+                                <td><b>Field of View (FOV) (mm)</b> </td>
+                                <td>Field of View (FOV) (mm) 48 - 100</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                          <h3>Technical Specifications of Gocator 3506</h3>
+                          <table>
+                            <tbody>
+                              <tr>
+                                <td><b>Type </b></td>
+                                <td>3D Sensor</td>
+                              </tr>
+                              <tr>
+                                <td><b>Resolution X (µm) (Profile Data Interval)</b></td>
+                                <td>0.020 (CE) mm - 0.025 (FE) mm</td>
+                              </tr>
+                              <tr>
+                                <td><b>Repeatability Z (µm)</b> </td>
+                                <td>2.0 um</td>
+                              </tr>
+                              <tr>
+                                <td><b>Clearance Distance (CD) (mm)</b></td>
+                                <td>87.0 mm / 3.43 inches</td>
+                              </tr>
+                              <tr>
+                                <td><b>Measurement Range (MR) (mm)</b> </td>
+                                <td>25.0 mm / 0.98 inches</td>
+                              </tr>
+                              <tr>
+                                <td><b>Field of View (FOV) (mm)</b> </td>
+                                <td>27.0 x 45.0 mm - 30.0 x 45.0 mm <br>
+                                  1.06 x 1.77 inches - 1.18 x 1.77 inches <br>
+                                </td>
+                              </tr>
+                            </tbody>
+                        </table>
+                    </article>
+                    <article>
+                        <h3>Software Overview and Requirements - GoSDK</h3>
+                        <p>The Gocator Software Development Kit (GoSDK) includes open-source software libraries and documentation that can be used to programmatically access and control Gocator sensors.</p>
+                        <h3>Features Of GoSDK</h3>
+                        <ul>
+                          <li><b>Sensor Control:</b> APIs for configuring sensor settings such as exposure, resolution, and measurement parameters.</li>
+                          <li><b>Data Acquisition:</b> Functions for capturing 3D point cloud data from the sensor.</li>
+                          <li><b>Data Processing:</b> Tools for processing and analyzing 3D point cloud data, including filtering, alignment, and measurement functions.</li>
+                          <li><b>Integration:</b> Support for integrating Gocator sensors into existing applications and systems, including PLCs and robotic systems.</li>
+                          <li><b>Visualization:</b> Functions for visualizing 3D point cloud data in real-time or offline for analysis and inspection.</li>
+                          <li><b>Calibration:</b> Tools for calibrating sensors and correcting for distortion or misalignment in the captured data.</li>
+                          <li><b>Networking:</b> APIs for communicating with Gocator sensors over Ethernet or other network protocols.</li>
+                        </ul>
+                        <h3>Hardware and Software Requirements</h3>
+                        <p><b>Hardware / System Requirements:</b></p>
+                        <ul>
+                          <li>Intel i7 5960X </li>
+                          <li>16 GB RAM </li>
+                          <li>Windows 8.1 Pro</li>
+                          <li>Graphics Card - NVIDIA GeForce GTX 970 - 12 GB DDR5 RAM</li>
+                        </ul>
+                        <p><b>Software Requirements:</b></p>
+                        <ul>
+                          <li>GoSDK</li>
+                          <li>Microsoft Visual Studio for C++ IDE for development</li>
+                          <li>Additional software or libraries required by the SDK or application</li>
+                        </ul>
+                        <p><b>Additional Requirements:</b></p>
+                        <p>This version of Microsoft Visual Studio works best with Internet Explorer 10 or higher. If Internet Explorer 10 is not installed on your computer, some features might not work as expected</p>
+
+                        <h3>Installing GoSDK Software</h3>
+                        <p>This topic explains how to install the GoSDK for Windows. To get the latest version of the Gocator SDK package, go to this <a href="https://lmi3d.com/product-downloads/?searchdownloads=&productcategory=43&productcategoryone=48&productcategorytwo=60&resourcecategory=%20&resourceindustry=%20&resourcefiletype=%20&softwarerelease=%20&action=mydownloadfilter">link</a>, choose your product from the Product Downloads section, and download it from the Download Centre.</p>
+                        <p>To download the GoSDK: </p>
+
+                        <ol>
+                          <li>Go to the Manage page and click on the Support category </li>
+                          <li>Next to Software Development Kit (SDK), click Download </li>
+                          <li>Choose the location for the SDK on the client computer.</li>
+                        </ol>
+
+                    </article>
+                    <article id="driverDevelopmentLMIGocator">
+                        <h3>DRIVER DEVELOPMENT</h3>
+                        <h4>Introduction to driver development for the device</h4>
+                        <p>Users of the Gocator 2530 and 3506 Interface Software Suite may want to build their own C applications without the need to purchase an integrated development environment (IDE). This application note describes an alternative way to build C applications using free Microsoft Visual Studio.</p>
+                        <p>Microsoft stopped providing single-language programming environments. Therefore, it is necessary to install the complete edition of free Microsoft Visual Studio. This will automatically enable you to build C applications with .NET languages such as C# and Visual Basic (*) as well, which are also supported by the GoSDK Software Suite.</p>
+                        <p>The following two free Microsoft Visual Studio tools are applicable to build pylon-based C applications:</p>
+                        <ul>
+                          <li>Microsoft Visual Studio Express 2013 for Windows Desktop does not provide the x64 native compiler. However, you can build 64-bit executables just fine using the x86-x64 cross compiler running on WOW64.</li>
+                          <li>Microsoft Visual Studio Community is the successor of the Express Edition starting with the 2015 release, but is also available in a 2013 release. It is comparable in its functionality to the full Professional Edition.</li>
+                        </ul>
+                        <p>To get an overview of the Visual C features available in Microsoft Visual Studio, refer to the following <a href="https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2013/hs24szh9(v=vs.120)?redirectedfrom=MSDN">link </a>.</p>
+
+                        <h3>Steps To Be Carried Out</h3>
+                        <p>To build powerful Windows Gocator 2530 and 3506 applications,following steps are involver: </p>
+                        <ol>
+                          <li>Install the GoSDK (Latest Version). </li>
+                          <li>Install Microsoft Visual Studio (choose the desired free edition).</li>
+                          <li>Set Up the C Project in Visual Studio. </li>
+                          <li>Add Dependencies – Include necessary libraries and DLLs in the project.</li>
+                          <li>Develop the Application.</li>
+                          <li>Build and Run the project to test and validate functionality.</li>
+                        </ol>  
+
+                        <h4>Driver Implementation</h4>
+                        <p>The following drivers or APIs are developed and tested</p>
+                        <ol>
+                          <li>GetDeviceDetails</li>
+                          <li>OpenDevice</li>
+                          <li>CloseDevice</li>
+                          <li>ChangeAlias</li>
+                          <li>Load Program </li>
+                          <li>Select Program</li>
+                          <li>Save Program </li>
+                          <li>Get Raw 3D data </li>
+                          <li>Get Judgement Output</li>
+                          <li>Start Storage</li>
+                          <li>Stop Storage</li>
+                          <li>Clear Storage</li>
+                          <li>Get Stored Values</li>
+                          <li>GoStartData</li>
+                          <li>GoStopData</li>
+                      </ol>
+                     </article>
+                </section>
+                <section id="gRPC_APILMIGocator">
+                  
+                    <h2>gRPC API’s Description for Gocator 2530 and 3506</h2>
+                    
+                    <ol>
+                      <li>
+                        <article>
+                          <h3>GetDeviceDetails</h3>
+                          <p><b>Description for GetDeviceDetails API:</b> Retrieves detailed information about the connected Gocator, including its configuration and status.</p>
+                          <p><b>RPC Command : </b>rpc GetDeviceDetails(.generic. CommandRequest) returns (.generic.GenericDeviceModel) {}</p>
+                        </article>
+                       
+                      <article>
+                        <b> Request:</b>
+                        <br>
+                        <code>
+                          message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>device_alias</td>
+                                <td>Unique alias of the device</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                      </article>
+                      <article>
+                        <b> Response:</b>
+                        <br>
+                        <code>
+                          message GenericDeviceModel{<br>
+                            string instance_id = 1; <br>
+                            string device_alias = 2; <br>
+                            DeviceType device_type = 3;<br>
+                            DeviceModel device_model_name = 4; <br>
+                            optional DeviceStatus device_status = 5;<br>
+                            string ipaddr = 6;<br>
+                            string mac_addr = 7;<br>
+                            google.protobuf.Value conn_handle=8;<br>
+                            string port_name = 9; <br>
+                            int64 port_address = 10; <br>
+                            CommandResponse cmd_response = 11; <br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Parameter </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>instance_id</td>
+                              <td>New instance for the device in the enumeration</td>
+                            </tr>
+                            <tr>
+                              <td>device_alias</td>
+                              <td>device_alias	Unique identifier (alphanumeric) for every device in the enumeration</td>
+                            </tr>
+                            <tr>
+                              <td>device_type</td>
+                              <td>device_type	Indicates the type of device  like Motion stage, Safety Controller etc (defined below in the DeviceType enum)</td>
+                            </tr>
+                            <tr>
+                              <td>device_model_name</td>
+                              <td>Indicate the model name for each device (define below in the DeviceModel enum)</td>
+                            </tr>
+                            <tr>
+                              <td>device_status</td>
+                              <td>
+                                device_status	indicate whether the device is online , offline or not reachable (define below in the device status enum)
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>ipaddr</td>
+                              <td>indicate the ipaddress of the device</td>
+                            </tr>
+                            <tr>
+                              <td>mac_addr</td>
+                              <td>mac_addr	indicate the mac address of the device</td>
+                            </tr>
+                            <tr><td>Conn_handle</td>
+                            <td>Conn_handle	Handle object to keep the device open</td></tr>
+                            <tr>
+                              <td>port_name</td>
+                              <td>Port name </td>
+                            </tr>
+                            <tr>
+                              <td>port_address</td>
+                              <td>port_address	Port address</td>
+                            </tr>
+                            <tr>
+                              <td>cmd_response</td>
+                              <td>cmd_response	Indicates command response that describes API response code and its description (Defined below in CommandResponse)</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </article>
+                        <article>
+                          <code>
+                            enum DeviceType{<br>
+                              NONE = 0;<br>
+                              SENSOR_3D = 1;<br>
+                              MOTION_STAGE = 2;<br>
+                              CAMERA = 3;<br>
+                              IO_MODULE = 4;<br>
+                              SAFETY_CONTROLLER = 5;<br>
+                              ANIMATIC_MOTOR=6;<br>
+                          }<br>
+                          enum DeviceModel{<br>
+                              DUMMY_MODEL = 0;<br>
+                              ED527 = 1;<br>
+                              ED588 = 2 ;<br>
+                              JR3000 = 3;<br>
+                              OPTOE = 4;<br>
+                              BASLER = 5;<br>
+                              SPiiPlusEC=6;<br>
+                              GT6600 = 7;<br>
+                              MOTOR = 8;<br>
+                          }<br>
+                          enum DeviceStatus{<br>
+                              OFFLINE = 0;<br>
+                              ONLINE = 1;<br>
+                              NOT_REACHABLE =2;<br>
+                          }<br>
+                          message CommandResponse{<br>
+                              int32 resp_code = 1;<br>
+                              string resp_message = 2;<br>
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>resp_code</td>
+                                <td>Response code from the device API</td>
+                              </tr>
+                              <tr>
+                                <td>resp_message</td>
+                                <td>Description of the response code</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </article>
+                          <p>CLI Command: <b>python gocator.py GetDeviceDetails GOCATOR_1</b></p>
+                         
+                        
+                        <article>
+                          <b>Description for CLI Command: </b>
+                          <ul>
+                            <li><b>GetDeviceDetails: </b>API called to the Gocator through CLI Command</li>
+                            <li><b>GOCATOR_1: </b>Alias Name of the device</li>
+                          </ul>
+                        </article>
+                      </li>
+                        
+                      <li>
+                        <article>
+                        <h3>OpenDevice</h3>
+                        <p><b>Description for OpenDevice API: </b>Establishes a connection to the Gocator Device,initializing communication for further operations.</p>
+                        <p><b>RPC Command :</b>rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}</p>
+                      
+                      </article>
+                  <article>
+                          <b>Request:</b><br>
+                          <code>
+                            message CommandIPRequest {<br>
+                              string ip_address = 1;<br>
+                              string com = 2;<br>
+                              int64 port_address = 3;<br>
+                              int32 device_id = 4;<br>
+                              string file_path = 5;<br>
+                              int64 device_model =6;<br>
+                              optional string device_alias=7;<br>
+                              int32 axis =8; <br>
+                              string user_name=9;<br>
+                              string password =10;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>device_alias </td>
+                                <td>The unique device_alias used to refer the device </td></tr>
+                                <tr><td>ip_address </td>
+                                  <td>Specifies the IP address of the device.</td></tr>
+                                  <tr><td>com </td>
+                              <td>Indicates the communication protocol or interface to be used</td></tr>
+                              <tr><td>port_address</td>
+                              <td>Denotes the specific port address for the device on the communication interface.</td></tr>
+                              <tr><td>device_id</td>
+                              <td>Unique identifier for the device, used to distinguish it from other devices in the system.</td></tr>
+                              <tr><td>file_path</td>
+                              <td>The path to the file, which may include configuration, program, or data files for the device.</td></tr>
+                              <tr><td>device_model</td>
+                              <td>Represents the model number or type of the device being communicated with.</td></tr>
+                              <tr><td>device_alias</td>
+                              <td>A user-defined alias for the device, providing a more descriptive or convenient reference.</td></tr>
+                              <tr><td>axis </td>
+                              <td>Specifies the axis number (e.g., X, Y, Z) on which the command or operation will be performed.</td></tr>
+                              <tr><td>user_name </td>
+                              <td>Specifies the user name </td></tr>
+                               <tr><td>password </td>
+                              <td>Specifies the password</td></tr>
+    
+                            </tbody>
+                          </table>
+                      </article>
+                      <article>
+                        <code>
+                          enum DeviceType{<br>
+                            NONE = 0;<br>
+                            SENSOR_3D = 1;<br>
+                            MOTION = 2;<br>
+                            CAMERA = 3;<br>
+                            IO_MODULE = 4;<br>
+                            SAFETY_PLC = 5;<br>
+                            BARCODE_READER=6;<br>
+                        }<br>
+                        enum DeviceModel{<br>
+                            DUMMY_MODEL = 0;<br>
+Brainbox_ED527 = 1;<br>
+Brainbox_ED588 = 2 ;<br>
+Janome_Jr3403 = 3;<br>
+Opto_OPTOE = 4;<br>
+Basler_AcA2500_14gm = 5;<br>
+Alio_SPiiPlusEC_1_Axis=6;<br>
+ProSilica_GT6600 = 7;<br>
+Animatic_SM23165D_CDS7 = 8;<br>
+Keyence_CL3000 =9;<br>
+Keyence_LJV7020 =10;<br>
+LMI_GOCATOR2530 = 11;<br>
+SafetyPLC_SC10=12;<br>
+SMC_EX250=13;<br>
+Denkovi_DENKOVI=14;<br>
+Denso_VP6242=15;<br>
+Lucid_TRI0245S_MC=16;<br>
+Janome_Jr3304=17;<br>
+Alio_SPiiPlusEC_3_Axis=18;<br>
+BarCode_DM262=19;<br>
+BarCode_DM282=20;<br>
+Basler_A2A2448_23gmPRO=21;<br>
+LMI_GOCATOR3056 = 22;<br>
+Keyence_LKG5000 = 23;<br>
+Denso_HS45352=24;<br>
+                            
+                        }<br>
+                        enum DeviceStatus{<br>
+                            OFFLINE = 0;<br>
+                            ONLINE = 1;<br>
+                            NOT_REACHABLE =2;<br>
+                        }<br>
+                        message CommandResponse{<br>
+                            int32 resp_code = 1;<br>
+                            string resp_message = 2;<br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_message</td>
+                              <td>Response message code</td>
+                            </tr>  
+                            </tbody>
+                            </table>
+                            
+                      <article>
+                        <b>Response</b><br>
+                        <code>
+                          message CommandResponse {<br>
+                            int32 resp_code = 1; <br>
+                            string resp_message = 2; <br>
+                          }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Parameter </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_message</td>
+                              <td>Response Message</td>
+                            </tr>
+                            </tbody>
+                            </table>
+                      <i>CLI Command: <b>python gocator.py OpenDevice 192.168.1.10 GOCATOR_1</b></i>
+                      <article>
+                        <b>Description for CLI Command</b>
+                        <ul>
+                          <li><b>OpenDevice: </b>OpenDevice is the API called to the Gocator through CLI Command to connect.</li>
+                          <li><b>192.168.1.10: </b>IP Address of the device</li>
+                          <li><b>GOCATOR_1:</b> Aliased Name for device</li>                          
+                        </ul>
+                      </article>
+                      </li>
+                        <li>
+                          <h3>CloseDevice</h3>
+                          <b>Description for CloseDevice API: </b>Disconnects from the Gocator, releasing all resources and deleting associated handlers to ensure a clean shutdown.<br>
+                          <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
+                          <article>
+                            <b>Request:
+                             
+                              </b>
+                              <code> message CommandRequest {<br>
+                                string device_alias = 1;<br>
+                           }<br> 
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>device_alias</td>
+                                <td>Unique alias of the device</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          </article>
+                        <article>
+                          <b>Response:
+                            
+                            </b>
+                            <code>
+                              message CommandResponse {<br>
+                                int32 resp_code = 1;       <br>     
+                                string resp_description = 2;   <br> 
+                         }<br>
+                            </code>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>Parameter</th>
+                                  <th>Description</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>resp_code</td>
+                                  <td>Response code from the device API</td>
+                                </tr>
+                                <tr>
+<td>resp_description</td>
+<td>Description of the response code</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </article>
+                            <p>CLI Command: <b>python gocator.py CloseDevice GOCATOR_1</b></p>
+                        
+                        <article>
+                         <b> Description for CLI Command: </b>
+<ul>
+  <li>
+   <b> CloseDevice: </b>API called to Gocator through CLI Command</li>
+  <li>
+   <b> GOCATOR_1: </b>Alias name of the device
+  </li>
+</ul>
+
+
+                        </article>
+
+                        </li>
+                        <li>
+                          <h3>ChangeAlias</h3>
+                          <article>
+                               <b> Description for ChangeAlias API: </b>Updates the alias of the device, allowing it to be referenced by a new identifier.<br>
+                              <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
+
+                           <code>
+                          
+                            <b></b>  Request:  </b>
+                            message ChangeAliasRequest{	<br>
+                                string current_alias=1;<br> 		    
+                                string new_alias=2; 		<br>
+                            }<br>
+                           </code>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>current_alias</td>
+      <td>The unique device_alias used to refer the device</td>
+    </tr>
+    <tr>
+      <td>new_alias</td>
+      <td>The device_alias to change to</td>
+    </tr>
+  </tbody>
+</table>
+
+                          </article>
+                          <article>
+                           <b> Response:</b>
+                           <code>
+message CommandResponse {<br>
+    int32 resp_code = 1; <br>           
+    string resp_description = 2;  <br>
+    }<br>
+  </code>
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>resp_code</td>
+        <td>Response code from the device API</td>
+      </tr>
+      <tr>
+        <td>resp_description</td>
+        <td>Description of the response code</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+  <p>CLI Command: <b>python gocator.py ChangeAlias current_alias new_alias</b></p>
+                          
+                          
+                            <b>Description for CLI Command:</b> 
+                            <ul>
+<li>
+  <b>ChangeAlias: </b>API called to the Gocator through CLI Command to get new alias name</li>
+  <li> <b>current_alias: </b>The unique device_alias used to refer the device
+</li>
+<li>
+ <b> new_alias: </b>The device_alias to change to
+</li>
+                        </ul>
+                        </li>
+                        <li>
+                          <h3>Loadprogram</h3>
+                            <b>Description for API: </b>Loads the specified program onto the Gocator sensor and sets it as the active (live) job for execution.<br>
+                            <b>RPC Command: </b>rpc LoadProgram(LoadProgramCommandRequest) returns (.generic.CommandResponse) {}
+                         <article>
+                          <b>Request:   </b>
+<code>
+                            message LoadProgramCommandRequest {<br>
+                              string device_alias = 1;<br>
+                              bytes data = 2; <br>
+                              string file_name = 3; 
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>data</td>
+                              <td>The program file contents</td></tr>
+                              <tr><td>file_name</td>
+                              <td>The name of the program to be loaded on the Gocator</td></tr>
+                              <tr><td>device_alias</td>
+                              <td>Unique alias of the device</td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                          <b>Response: </b>
+<code>
+  message CommandResponse  {<br>
+    int32 resp_code = 1; <br>
+    string resp_message = 2; <br>
+  }<br>
+  </code>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>resp_code</td>
+      <td>Response code from the device API</td>
+    </tr>
+    <tr>
+      <td>resp_message</td>
+      <td>Description of the response code</td>
+    </tr>
+  </tbody>
+</table>
+	<p>CLI Command: <b>python gocator.py LoadProgram GOCATOR_1 newjob.job</b></p>
+  <b>Description for CLI Command: </b>
+  <ul>
+    <li><b>LoadProgram:</b> API called to the Gocator through CLI Command</li>
+    <li><b>GOCATOR_1: </b>Alias name of the device </li>
+    <li><b>newjob.job: </b>The program that has to be uploaded onto the device</li>
+</ul>
+</article>
+
+<li>
+  <h3>SelectProgram</h3>
+    <b>Description for API: </b>Selects a program that is already stored on the Gocator sensor and activates it as the live job.<br>
+    <b>RPC Command: </b>rpc SelectProgram(SelectProgramCommandRequest) returns (.generic.CommandResponse) {}
+ <article>
+  <b>Request:   </b>
+<code>
+    message SelectProgramCommandRequest {<br>
+      string device_alias = 1;<br>
+      string file_name = 2;	<br>
+    }<br>
+  </code>
+  <table>
+    <thead>
+      <tr><th>Parameter</th>
+      <th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>file_name</td>
+      <td>The program filename to be saved as live program</td></tr>
+      <tr><td>device_alias</td>
+      <td>Unique alias of the device</td></tr>
+    </tbody>
+  </table>
+ </article>
+ <article>
+  <b>Response: </b>
+
+<code>
+message CommandResponse  {<br>
+int32 resp_code = 1; <br>
+string resp_message = 2; <br>
+}<br>
+</code>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>resp_code</td>
+<td>Response code from the device API</td>
+</tr>
+<tr>
+<td>resp_message</td>
+<td>Description of the response code</td>
+</tr>
+</tbody>
+</table>
+<p>CLI Command: <b>python gocator.py SelectProgram GOCATOR_1 newjob.job</b></p>
+<b>Description for CLI Command: </b>
+<ul>
+<li><b>SelectProgram:</b> API called to the Gocator through CLI Command</li>
+<li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
+<li><b>newjob.job: </b>The program that has to be selected as live program on the device</li>
+</ul>
+</article>
+                  
+<li>
+  <h3>SaveProgram</h3>
+    <b>Description for API: </b>Retrieves the currently active (live) program from the Gocator sensor and streams it to the client over gRPC.<br>
+    <b>RPC Command: </b>rpc SaveProgram(.generic.CommandRequest) returns (SaveProgramCommandResponse){}
+ <article>
+  <b>Request:   </b>
+<code>
+    message CommandRequest  {<br>
+      string device_alias = 1;<br>
+    }<br>
+</code>
+  <table>
+    <thead>
+      <tr><th>Parameter</th>
+      <th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>device_alias</td>
+      <td>Unique alias of the device</td></tr>
+    </tbody>
+  </table>
+ </article>
+ <article>
+  <b>Response: </b>
+<code>
+message SaveProgramCommandResponse  {<br>
+  string resp_code = 1;  <br>
+  string resp_message = 2;  <br>
+  bytes data = 3; <br>
+  string file_name = 4; <br>
+  int64 file_size = 5; <br>
+}<br>
+</code>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td>The file contents of the program from Gocator</td>
+</tr>
+<tr>
+<td>file_name</td>
+<td>The name of the program file</td>
+</tr>
+<tr>
+<td>file_size</td>
+<td>Program file size </td>
+</tr>
+<tr>
+<td>resp_code</td>
+<td>Response code from the device API</td>
+</tr>
+<tr>
+<td>resp_message</td>
+<td>Description of the response code</td>
+</tr>
+</tbody>
+</table>
+<p>CLI Command: <b>python gocator.py SaveProgram GOCATOR_1</b></p>
+<b>Description for CLI Command: </b>
+<ul>
+<li><b>SaveProgram:</b> API called to the Gocator through CLI Command </li>
+<li><b>GOCATOR_1: </b>Aliased Name for Gocator </li>
+</ul>
+</article>
+
+<li>
+  <h3>GetRaw3dData</h3>
+    <b>Description for API: </b>Retrieves raw 3D point cloud data from the Gocator sensor and streams it to the client over gRPC.<br>
+    <b>RPC Command: </b>rpc GetRaw3dData(.generic.CommandRequest) returns (stream RawDataResponse) {}
+ <article>
+  <b>Request:   </b>
+<code>
+    message CommandRequest  {<br>
+      string device_alias = 1;<br>
+    }<br>
+</code>
+  <table>
+    <thead>
+      <tr><th>Parameter</th>
+      <th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>device_alias</td>
+        <td>Unique alias of the device</td></tr>
+    </tbody>
+  </table>
+ </article>
+ <article>
+  <b>Response: </b>
+<code>
+message RawDataResponse  {<br>
+  bytes data = 1; <br>
+  string file_name = 2;  <br>
+  int64 file_size = 3; <br>
+  .generic.CommandResponse cmd_response = 4; <br>
+}<br>
+</code>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td>File contents of the point cloud data</td>
+</tr>
+<tr>
+<td>file-name</td>
+<td>Name to be used when saving the file.</td>
+</tr>
+<tr>
+<td>File_size</td>
+<td>File size</td>
+</tr>
+<tr>
+<td>resp_code</td>
+<td>Response code from the device API</td>
+</tr>
+<tr>
+<td>resp_message</td>
+<td>Description of the response code</td>
+</tr>
+</tbody>
+</table>
+<p>CLI Command: <b>python gocator.py GetRaw3dData GOCATOR_1</b></p>
+<b>Description for CLI Command: </b>
+<ul>
+<li><b>GetRaw3dData:</b> API called to the Gocator through CLI Command</li>
+<li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
+</ul>
+</article>
+
+<li>
+  <h3>GetJudgementOutput</h3>
+    <b>Description for API: </b>Retrieves the judgment result data from the Gocator sensor, indicating pass/fail or other evaluation outcomes.<br>
+    <b>RPC Command: </b>rpc GetJudgementOutput(.generic.CommandRequest) returns (JudgementDataResponse) {}
+ <article>
+  <b>Request:   </b>
+<code>
+    message CommandRequest  {<br>
+      string device_alias = 1;<br>
+    }<br>
+</code>
+  <table>
+    <thead>
+      <tr><th>Parameter</th>
+      <th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>device_alias</td>
+        <td>Unique alias of the device</td></tr>
+    </tbody>
+  </table>
+ </article>
+ <article>
+  <b>Response: </b>
+<code>
+message JudgementDataResponse  {<br>
+  int32 resp_code = 1; <br>
+  string resp_message = 2;  <br>
+  GocatorDecisionList gocator_decisionL_list = 3; <br>
+}<br>
+</code>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gocator_decisionL_list</td>
+<td>Decision data list </td>
+</tr>
+<tr>
+<td>resp_code</td>
+<td>Response code from the device API</td>
+</tr>
+<tr>
+<td>resp_message</td>
+<td>Description of the response code</td>
+</tr>
+</tbody>
+</table>
+<p>CLI Command: <b>python gocator.py GetJudgementOutput GOCATOR_1</b></p>
+<b>Description for CLI Command: </b>
+<ul>
+<li><b>GetJudgementOutput:</b>API called to the Gocator through CLI Command</li>
+<li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
+</ul>
+</article>
+
+<li>
+  <h3>StartStorage</h3>
+    <b>Description for API: </b>Initiates storage of the currently active (live) program on the Gocator sensor.<br>
+    <b>RPC Command: </b>rpc StartStorage (StorageDataCommandRequest) returns (.generic.CommandResponse) {}
+ <article>
+  <b>Request:   </b>
+<code>
+    message StorageDataCommandRequest  {<br>
+      string file_name=1; <br>
+      .generic.CommandRequest cmd_request = 2; <br>
+    }<br>
+</code>
+  <table>
+    <thead>
+      <tr><th>Parameter</th>
+      <th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>file_name</td>
+        <td>The filename under which the stored program will be saved. The .rec extension suggests it’s a “recorded” program or configuration file coming from the device.</td></tr>
+        <tr><td>device_alias</td>
+        <td>Unique alias of the device</td></tr>
+    </tbody>
+  </table>
+ </article>
+ <article>
+  <b>Response: </b>
+<code>
+message CommandResponse  {<br>
+  int32 resp_code = 1; <br>
+  string resp_message = 2; <br>
+}<br>
+</code>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>resp_code</td>
+<td>Response code from the device API</td>
+</tr>
+<tr>
+<td>resp_message</td>
+<td>Description of the response code</td>
+</tr>
+</tbody>
+</table>
+<p>CLI Command: <b>python gocator.py StartStorage GOCATOR_1 gocator_storage_data.rec</b></p>
+<b>Description for CLI Command: </b>
+<ul>
+<li><b>StartStorage:</b> API called to the Gocator through CLI Command </li>
+<li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
+<li><b>gocator_storage_data.rec:</b>The filename under which the stored program will be saved. The .rec extension suggests it’s a “recorded” program or configuration file coming from the device.</li>
+</ul>
+</article>
+
+<li>
+  <h3>StopStorage</h3>
+    <b>Description for API: </b>Stops the storage process that was initiated by the StartStorage API.<br>
+    <b>RPC Command: </b>rpc StopStorage (.generic.CommandRequest) returns (.generic.CommandResponse) {}
+ <article>
+  <b>Request:   </b>
+<code>
+    message CommandRequest  {<br>
+      string device_alias = 1;<br>
+    }<br>
+</code>
+  <table>
+    <thead>
+      <tr><th>Parameter</th>
+      <th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>device_alias</td>
+        <td>Unique alias of the device</td></tr>
+    </tbody>
+  </table>
+ </article>
+ <article>
+  <b>Response: </b>
+<code>
+message CommandResponse  {<br>
+  int32 resp_code = 1; <br>
+  string resp_message = 2;  <br>
+}<br>
+</code>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>resp_code</td>
+<td>Response code from the device API</td>
+</tr>
+<tr>
+<td>resp_message</td>
+<td>Description of the response code</td>
+</tr>
+</tbody>
+</table>
+<p>CLI Command: <b>python gocator.py StopStorage GOCATOR_1</b></p>
+<b>Description for CLI Command: </b>
+<ul>
+<li><b>StopStorage:</b> API called to the Gocator through CLI Command</li>
+<li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
+</ul>
+</article>
+
+<li>
+  <h3>ClearStorage</h3>
+    <b>Description for API: </b>Clear all storage Gocator device’s internal storage. <br>
+    <b>RPC Command: </b>rpc ClearStorage (.generic.CommandRequest) returns (.generic.CommandResponse) {}
+ <article>
+  <b>Request:   </b>
+<code>
+    message CommandRequest  {<br>
+      string device_alias = 1;<br>
+    }<br>
+</code>
+  <table>
+    <thead>
+      <tr><th>Parameter</th>
+      <th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>device_alias</td>
+        <td>Unique alias of the device</td></tr>
+    </tbody>
+  </table>
+ </article>
+ <article>
+  <b>Response: </b>
+<code>
+message CommandResponse  {<br>
+  int32 resp_code = 1;<br>
+  string resp_message = 2; <br>
+}<br>
+</code>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>resp_code</td>
+<td>Response code from the device API</td>
+</tr>
+<tr>
+<td>resp_message</td>
+<td>Description of the response code</td>
+</tr>
+</tbody>
+</table>
+<p>CLI Command: <b>python gocator.py ClearStorage GOCATOR_1</b></p>
+<b>Description for CLI Command: </b>
+<ul>
+<li><b>ClearStorage:</b> API called to the Gocator through CLI Command </li>
+<li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
+</ul>
+</article>
+
+<li>
+  <h3>GetStoredValues</h3>
+    <b>Description for API: </b>Retrieves stored data from the Gocator device and streams it to the client over gRPC. <br>
+    <b>RPC Command: </b>rpc GetStoredValues (StorageDataCommandRequest) returns (stream GetStorageCommandResponse) {}
+ <article>
+  <b>Request:   </b>
+<code>
+    message StorageDataCommandRequest  {<br>
+      string file_name=1; <br>
+      .generic.CommandRequest cmd_request = 2;  <br>
+    }<br>
+</code>
+  <table>
+    <thead>
+      <tr><th>Parameter</th>
+      <th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>device_alias</td>
+        <td>Unique alias of the device</td></tr>
+        <tr><td>file_name</td>
+        <td>Filename(.rec) under which the data has to be stored</td></tr>
+    </tbody>
+  </table>
+ </article>
+ <article>
+  <b>Response: </b>
+<code>
+message GetStorageCommandResponse  {<br>
+  bytes data = 1; <br>
+  string file_name = 2;  <br>
+  int64 file_size = 3; <br>
+  .generic.CommandResponse cmd_response = 4; <br>
+}<br>
+</code>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td>File contents of the point cloud data</td>
+</tr>
+<tr>
+<td>file-name</td>
+<td>Name under which the file has to be saved</td>
+</tr>
+<tr>
+<td>File_size</td>
+<td>File size</td>
+</tr>
+<tr>
+<td>resp_code</td>
+<td>Response code from the device API</td>
+</tr>
+<tr>
+<td>resp_message</td>
+<td>Description of the response code</td>
+</tr>
+</tbody>
+</table>
+<p>CLI Command: <b>python gocator.py GetStorageData GOCATOR_1 storage_data.rec</b></p>
+<b>Description for CLI Command: </b>
+<ul>
+<li><b>GetStoredValues:</b> API called to the Gocator through CLI Command </li>
+<li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
+</ul>
+<li>
+  <h3>GoStartData</h3>
+  <b>Description for GoStartData API: </b>Starts the data acquisition function on the Gocator sensor, enabling the device to begin capturing and streaming measurement data.<br>
+  <b>RPC Command: </b>rpc GoStartData(.generic.CommandRequest) returns (.generic.CommandResponse) {}
+  <article>
+    <b>Request:
+     
+      </b>
+      <code> message CommandRequest {<br>
+        string device_alias = 1;<br>
+   }<br> 
+  </code>
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>device_alias</td>
+        <td>Unique alias of the device</td>
+      </tr>
+    </tbody>
+  </table>
+  </article>
+<article>
+  <b>Response:
+    
+    </b>
+    <code>
+      message CommandResponse {<br>
+        int32 resp_code = 1;       <br>     
+        string resp_description = 2;   <br> 
+ }<br>
+    </code>
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>resp_code</td>
+          <td>Response code from the device API</td>
+        </tr>
+        <tr>
+<td>resp_description</td>
+<td>Description of the response code</td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
+    <p>CLI Command: <b>python gocator.py GoStartData GOCATOR_1</b></p>
+
+<article>
+ <b> Description for CLI Command: </b>
+<ul>
+<li>
+<b> GoStartData: </b>Name of the API</li>
+<li>
+<b> GOCATOR_1: </b>Aliased Name for Gocator 2350
+</li>
+</ul>
+<li>
+  <h3>GoStopData</h3>
+  <b>Description for GoStopData API: </b>To stop the data acquisition function on the Gocator senso.<br>
+  <b>RPC Command: </b>rpc GoStopData(.generic.CommandRequest) returns (.generic.CommandResponse) {}
+  <article>
+    <b>Request:
+     
+      </b>
+      <code> message CommandRequest {<br>
+        string device_alias = 1;<br>
+   }<br> 
+  </code>
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>device_alias</td>
+        <td>Unique alias of the device</td>
+      </tr>
+    </tbody>
+  </table>
+  </article>
+<article>
+  <b>Response:
+    
+    </b>
+    <code>
+      message CommandResponse {<br>
+        int32 resp_code = 1;       <br>     
+        string resp_description = 2;   <br> 
+ }<br>
+    </code>
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>resp_code</td>
+          <td>Response code from the device API</td>
+        </tr>
+        <tr>
+<td>resp_description</td>
+<td>Description of the response code</td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
+    <p>CLI Command: <b>python gocator.py GoStopData GOCATOR_1</b></p>
+
+<article>
+ <b> Description for CLI Command: </b>
+<ul>
+<li>
+<b> GoStopData: </b>Name of the API</li>
+<li>
+<b> GOCATOR_1: </b>Aliased Name for Gocator 2350
+</li>
+
+</article>
+
+</li>
+</article>
+</section>
+
+<section>
+<h2>Limitations of the driver</h2>
+<article>
+ 
+  <ul>
+    <li><b>Compatibility:</b> The driver may only be compatible with Gocator, limiting its use with other devices.</li>
+    <li><b>Integration:</b> Integrating the driver with other systems or software may pose challenges, especially if there are compatibility issues or dependencies.</li> 
+  </ul>
+</article>
+
+                </section>
+                <section id="testingDebugLMIGocator">
+                  <h2>Testing and Debugging</h2>
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Code</th>
+                                        <th>Description</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>FFFFFC18</td>
+                                        <td>Operation cannot be completed in the current state.,Gocator,</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC19</td>
+                                        <td>Item was not found</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC1A</td>
+                                        <td>Command was not recognized.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC1B</td>
+                                        <td>Parameter was not valid</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC1C</td>
+                                        <td>Feature is not implemented</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC1E</td>
+                                        <td>Out of memory</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC1F</td>
+                                        <td>Action timed out.,</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC20</td>
+                                        <td>Data incomplete (e.g. buffer insufficient for results)</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC21</td>
+                                        <td>Error in communication stream (e.g. network, file)</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC22</td>
+                                        <td>Resource is no longer available.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC23</td>
+                                        <td>Incompatible version</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC24</td>
+                                        <td>Operation aborted</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC25</td>
+                                        <td>Request conflicts with existing item</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC26</td>
+                                        <td>Network setup/resource error</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC27</td>
+                                        <td>Heap error (leak/double-free)</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC28</td>
+                                        <td>Data parsing/formatting error</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC29</td>
+                                        <td>Object is read-only (cannot be written)</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC2A</td>
+                                        <td>Object is write-only (cannot be read)</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC2B</td>
+                                        <td>Agent is busy (cannot service request)</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC2C</td>
+                                        <td>Current state has one or more configuration or resource conflicts</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC2D</td>
+                                        <td>Generic error reported by underlying OS</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC2E</td>
+                                        <td>Hardware device error</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC2F</td>
+                                        <td>Resource is already fully utilized.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC30</td>
+                                        <td>Operation is in progress, but not yet complete</td>
+                                      </tr>
+                                      <tr>
+                                        <td>0</td>
+                                        <td>General error</td>
+                                      </tr>
+                                      <tr>
+                                        <td>1</td>
+                                        <td>Operation successful</td>
+                                      </tr>
+                                      </tbody>
+                                      </table>
+                                      </section>
+                                      
+
+                                                    <section id="resourcesLinksLMIGocator">
+                                                      <h2>RESOURCES AND LINKS</h2>
+                                                      <ul>
+                                                        <li>GoSDK Software Suite Download:<a href="https://lmi3d.com/product-downloads/?searchdownloads=&productcategory=43&productcategoryone=48&productcategorytwo=60&resourcecategory=%20&resourceindustry=%20&resourcefiletype=%20&softwarerelease=%20&action=mydownloadfilter">Page link</a></li>
+                                                        <li>GoSDK Installation and Demo Video: <a href="https://lmi3d.com/video/gosdk-setup-and-demo/">Page Link</a></li>
+                                                        <li>GoSDK User Manual: <a href="https://www.lakewoodautomation.com/support/manuals/LMI/15159-6.0.21.13_MANUAL_User_Gocator_Line_Profile_Sensors_EN-US.pdf">Watch here </a></li>
+                                                      </ul>
+                                                    </section>
+                                                    <section>
+                                                      <article>
+                                                      <h2>GLOSSARY</h2>
+                                                      <ul>
+                                                        <li><b>Gocator:</b> A family of 3D smart sensors manufactured by LMI Technologies, used for inline inspection, measurement, and quality control in industrial applications.</li>
+                                                        <li><b>3D Point Cloud:</b> A set of data points in a three-dimensional coordinate system that represents the external surface of an object scanned by a 3D sensor, such as the Gocator.</li>
+                                                        <li><b>Field of View (FOV):</b> The area that a sensor can capture or observe at any given moment. It is typically defined by the sensor's lens and sensor size.</li>
+                                                        <li><b>Resolution:</b> The smallest detectable change in position or dimension that a sensor can measure. Higher resolution sensors can detect smaller features.</li>
+                                                        <li><b>Scan Rate:</b> The speed at which a sensor captures and processes data. It is usually measured in Hz or frames per second (FPS).</li>
+                                                        <li><b>Measurement Range:</b> The range of distances over which a sensor can accurately measure objects. It is typically defined by the sensor's optics and laser.</li>
+                                                        <li><b>Profile:</b> A 2D cross-section of a 3D object captured by the sensor. Gocator sensors often capture profiles along a line to build a 3D point cloud.</li>
+                                                        <li><b>ROI (Region of Interest):</b> A specific area within the sensor's field of view where measurements or inspections are performed.</li>
+                                                        <li><b>Calibration:</b> The process of adjusting a sensor to ensure that its measurements are accurate and consistent. Calibration is often necessary to correct for distortions or misalignments.</li>
+                                                        <li><b>Alignment:</b> The process of adjusting the sensor's position or orientation to ensure that it is correctly aligned with the object being scanned.</li>
+                                                       </ul>
+                                                    </article>
+                                                    </section>
+
+            </div>
+        </main>
+        <footer></footer>
+    </body>
+    </html>
