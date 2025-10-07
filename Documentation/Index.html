@@ -2729,7 +2729,7 @@ font-weight: 400;
                                   <li class="deviceScroll">
                                    
                                       <p></p>
-                                      <a>Opto Camera(coe-050-m-poe-050ir-c)</a>
+                                      <a onclick="handlePage(this,'TroubleshootingOptoCamera')">Opto Camera(coe-050-m-poe-050ir-c)</a>
                                    
                                   </li>
                                   <li class="deviceScroll">
@@ -16018,6 +16018,281 @@ Denso_HS45352=24;<br>
                                                      </ul>
                                                     </article>
                                                     </section>
+
+            </div>
+             <div class="container" id="TroubleshootingOptoCamera" style="display: none">
+                <div class="title">
+                    <h1>Troubleshooting Guide for Opto Camera(coe-050-m-poe-050ir-c)</h1>
+                </div>     
+                
+                    
+                    <article>                     
+                      
+                      <p>This guide provides comprehensive solutions for diagnosing and resolving common issues related to hardware, desktop applications, connectivity, network configurations, and driver installations associated with Opto Camera(coe-050-m-poe-050ir-c). By following the troubleshooting steps outlined, users can effectively address and rectify challenges encountered during the setup and operation of these cameras.</p>
+                     
+                      
+                    
+                     
+                  </article>
+                  <article>   
+                    <h2>
+                      Hardware-Trouble Shooting Guide
+                    </h2>
+                    <h3>Understanding LED Indicators and Troubleshooting Power Issues:</h3>
+                    <p>Below is a table detailing common LED indications, their possible causes, and recommended troubleshooting steps:​</p>
+                        <table>
+                          <tr>                            
+                            <td style="width: 20%;"><b>Issue</b></td>
+                            <td style="width: 20%;"><b>Camera Status</b></td>
+                            <td style="width: 20%;"><b>Possible Cause</b></td>    
+                            <td style="width: 40%;"><b>TroubleShooting Steps</b></td>                       
+                        </tr>                         
+                          <tr>
+                            <td><b>No LED (Unlit)</b></td>
+                            <td>Camera is off or hardware damaged.</td>
+                            <td>Power supply issue or hardware failure.</td>
+                            <td>1.Check the power connection.<br>2.Try a different Ethernet port or cable.<br>3.Verify that the network adapter is enabled and properly configured.<br>4.Ensure the PC and camera are on the same subnet. </td>
+                          </tr>
+                          <tr>
+                            <td><b>Red LED - Steady On<br></b></td>
+                            <td>Camera is starting up.</td>
+                            <td>Normal operation.</td>
+                            <td>Wait for the startup to complete. If it remains in this state for too long, restart the camera.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Red LED - Fast Flicker</b></td>
+                            <td>Boot loading failed.</td>
+                            <td>Boot failure.</td>
+                            <td>1.Power cycle the camera.<br>2.If the issue remains, contact technical support.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Red LED - Extreme Slow Flicker</b></td>
+                            <td>IP address conflict or connection error.</td>
+                            <td>Network issue.</td>
+                            <td>1.Check the network settings and IP configuration.<br>2.Ensure no IP conflict with other devices.<br>3.Restart the camera and network switch/router.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Blue LED - Slow Flicker</b></td>
+                            <td>Camera is idle in internal trigger mode.</td>
+                            <td>Normal operation.</td>
+                            <td>No action required unless the camera should be capturing images.</td>
+                          </tr> 
+                          <tr>
+                            <td><b>Blue LED - Fast Flicker</b></td>
+                            <td>Camera is transmitting images in internal trigger mode.</td>
+                            <td>Normal operation.</td>
+                            <td>No action required.</td>
+                          </tr> 
+                          <tr>
+                            <td><b>Red LED - Extreme Slow Flicker</b></td>
+                            <td>Camera is transmitting images in external trigger mode.</td>
+                            <td>Normal operation.</td>
+                            <td>No action required.</td>
+                          </tr> 
+                          <tr>
+                            <td><b>Red & Blue Alternate Flicker (Every 1 second)</b></td>
+                            <td>Camera is upgrading firmware.</td>
+                            <td>Normal operation.</td>
+                            <td>Do not turn off the camera. Wait until the upgrade completes.</td>
+                          </tr> 
+                          <tr>
+                            <td><b>Blue LED - Slow Flicker</b></td>
+                            <td>Camera is functioning but unable to transmit data.</td>
+                            <td>Data transmission failure.</td>
+                            <td>1.Check network cables and connections.<br>2.Verify network settings and bandwidth.<br> 3.Restart the camera and network equipment.</td>
+                          </tr> 
+                          <tr>
+                            <td><b>Red LED - Steady On</b></td>
+                            <td>Firmware upgrade failed.</td>
+                            <td>Corrupted firmware or update error.</td>
+                            <td>1.Try reinstalling the firmware.<br>2.Contact technical support if the issue persists.</td>
+                          </tr> 
+                        </table>            
+                        </article>                        
+                      <article>
+                        <h3>Troubleshooting Physical Damage and Overheating</h3>                        
+                        <table>                        
+                          <tr>
+                            <td style="width: 20%;"><b>Issue</b></td>
+                            <td style="width: 30%;"><b>Possible Cause</b></td>
+                            <td style="width: 50%;"><b>Solution</b></td>
+                        </tr>
+                          <tr>
+                            <td><b>Camera Overheating.</b></td>
+                            <td>Poor ventilation or high ambient temperature.</td>
+                            <td>Ensure proper cooling. Use the camera in a well-ventilated area.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Blurry Images / Focus Issues.</b></td>
+                            <td>Dust or debris on the lens.</td>
+                            <td>Clean the lens carefully with a microfiber cloth. Remove the lens cap before use.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Burnt Smell or Physical Damage.</b></td>
+                            <td>A power surge or short circuit.</td>
+                            <td>Inspect the camera for visible damage. If burnt marks are found, do not power it on. Contact support.</td>
+                          </tr>                                         
+                        </table>
+                      </article>
+                      <article>
+                        <h3>Troubleshooting Network and Communication:</h3>                        
+                        <table>                        
+                          <tr>
+                            <td style="width: 20%;"><b>Issue</b></td>
+                            <td style="width: 30%;"><b>Possible Cause</b></td>
+                            <td style="width: 50%;"><b>Solution</b></td>
+                        </tr>
+                          <tr>
+                            <td><b>Slow Image or Incomplete Image Transfer.</b></td>
+                            <td>Incorrect frame size settings.</td>
+                            <td>Set Jumbo Frames (Jumbo Packets) to maximum size (1.5kB).</td>
+                          </tr>
+                          <tr>
+                            <td><b>Firmware Compatibility Issue</b></td>
+                            <td>Outdated firmware/software.</td>
+                            <td>Upgrade firmware using OECS Firmware Upgrader.</td>
+                          </tr>                                                                
+                        </table>
+                      </article>
+                        <article>
+                        <h3>Reset & Recovery:</h3>                        
+                        <table>                        
+                          <tr>
+                            <td><b>Step</b></td>                            
+                            <td><b>Action</b></td>
+                          </tr>
+                          <tr>
+                            <td><b>Power Cycle</b></td>                            
+                            <td>Turn off the camera, wait for 10 seconds, and turn it back on.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Factory Reset</b></td>                            
+                            <td>Use the OECS Software Suite to reset the camera to factory settings.</td>
+                          </tr>
+                          </table>
+                          </article>
+                          <article>
+                          <h2>TroubleShooting Desktop Application(OECS Software Suite)Issues:</h2>                        
+                          <table>                        
+                            <tr>
+                              <td style="width: 20%;"><b>Issue</b></td>
+                              <td style="width: 30%;"><b>Possible Cause</b></td>
+                              <td style="width: 50%;"><b>Solution</b></td>
+                          </tr>
+                            <tr>
+                              <td><b>Not Recognized in Windows Device Manager.</b></td> 
+                              <td>Driver not installed.</td>                           
+                              <td>Install or update the Driver from the official website.</td>
+                            </tr>
+                            <tr>
+                              <td><b>Network Connection Lost (Alternating Bright Green/Off LED).</b></td>
+                              <td>No GigE connection.</td>                            
+                              <td>Connect the camera directly to the PC to rule out switch issues. Check for firewall restrictions.
+                                </td>
+                            </tr>
+                            <tr>
+                              <td><b>Camera Not Accessible via IP.</b></td> 
+                              <td>IP conflict or wrong subnet.</td>                           
+                              <td>Use ipconfig or ping to verify the assigned IP address. Set the Jumbo Frame size to a maximum (1.5kB) for better communication.                                                              
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>The camera cannot be detected by the client software.<br>The camera is detected by the client software but connecting failed.</b></td> 
+                                <td>1.The camera does not work properly. <br>2. The network cable is disconnected. <br> 3. The camera and the PC that runs the OECS client software are not in the same subnet.</td>                                                       
+                                <td>1.Confirm if the power supply of camera is well connected (via LED indicator), and the network connects properly (via network interface indicator).<br>2.Use OECS IP Configurator to detect the camera and change the IP address. <br> 
+                                  3.Confirm if the GenICam and network Filter driver are installed on the PC.<br>                                                               
+                                  </td>
+                              </tr>
+                              <tr>
+                                <td><b>The camera is in read-only status.</b></td> 
+                                <td>The camera is connected with another client software.</td>                                                       
+                                <td>Plug out the network cable, and replace it 3 seconds later.<br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>The live view of camera is black.</b></td> 
+                                <td>1.The iris is closed.<br> 2. Camera error</td>                                                       
+                                <td>Open the iris and Reboot the camera. <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Camera cannot be triggered</b></td> 
+                                <td>1.Incorrect cable connection. <br> 2.The camera works in the internal trigger mode</td>                                                       
+                                <td>Make sure the trigger mode is correct and the external trigger is well connected.<br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>The live view and image is normal, while the image saved could not be displayed properly.</b></td> 
+                                <td>The image format mismacthes.</td>                                                       
+                                <td>Make sure the image format what you saved is supported.<br>
+                                </td>
+                            </tr>
+                          </table>
+                          </article>                                 
+                                
+                            <article>
+                            <h2>Troubleshooting Driver-Related Issues:</h2>
+                            <p>Below Table shows the Challenges, Function Calls, and Troubleshooting Steps for Opto Camera Driver Development.</p>                        
+                        <table>                        
+                          <tr>
+                            <td style="width: 20%;"><b>Issue</b></td>
+                            <td style="width: 30%;"><b>Possible Cause</b></td>
+                            <td style="width: 50%;"><b>Solution</b></td>
+                        </tr>
+                          <tr>
+                            <td><b>Camera Not Connected</b></td>
+                            <td>OpenDevice</td>
+                            <td>1. Verify Opto Camera connection using OECS Software Suite<br>
+                              2.Ensure the connection is closed before calling OpenDevice API through gRPC<br>
+                              3.Check for OpenDevice API timeout errors or specific error codes<br>                          
+                              4.Close the Connection before calling OpenDevice API through gRPC<br>
+                              </td>
+                          </tr>
+                          <tr>
+                            <td><b>Incomplete Grab</b></td>
+                            <td>GetImage</td>
+                            <td>1.Indicates lost/corrupted packets due to hardware issues (NIC, switch, Ethernet cable).<br>
+                              2.Optimize Network Adapter Settings: <br>
+                                   - Enable Jumbo Frames (maximum value). <br>
+                                   - If Jumbo Frames are not supported, set Packet Size = 1500. <br>
+                              3. Increase Inter-Packet Delay for stable frame rate.<br>
+                              </td>
+                          </tr>                            
+                          <tr>
+                            <td><b>Invalid Gain</b></td>
+                            <td>SetGain</td>
+                            <td>Configuring Gain should be within the range. </td>
+                          </tr> 
+                          <tr>
+                            <td><b>Invalid Exposure Time</b></td>
+                            <td>Set Exposure Time</td>
+                            <td>Configuring Exposure Time should be within the range.</td>
+
+                          </tr> 
+                          <tr>
+                            <td><b>Invalid Pixel Format</b></td>
+                            <td>Set Pixel Format</td>
+                            <td>Configure Valid Pixel Format. <br> Opto Camera supports Mono 8, Mono 16, Mono 12.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Invalid Configuration File</b></td>
+                            <td>Save and Load Configuration </td>
+                            <td>1.Provide a valid Configuration file format for saving and loading camera features. An invalid entry causes configuration issues while capturing an image.<br>2.Opto camera supports .ini configuration file format.
+                            </td>                            
+                          </tr>  
+                          <tr>
+                            <td><b>User Sets(Parameter Configuration file not Loading to the Camera) </b></td>
+                            <td>If the camera is acquiring images, AcquisitionStop must be called before loading or saving a user set</td>
+                            <td>1.If the camera is not closed properly—either due to the Close API not being called or an Unexpected Service crash—the camera handlers may not be released correctly. As a result, the camera will not allow a new connection until the existing handlers are properly released.<br>
+                                2.Check the camera connection in OECS Software Suite.<br>
+                                3.Restart the PC/Station to resolve this Issue OR Wait until the OECS Software Connects to the camera.<br>
+                                4.User Sets, Streamables, and File Access functions do not load or save camera IP configuration settings.<br> 
+                                5.Restart the application or release the camera from previous sessions.<br>                     
+                            </td>                            
+                          </tr>
+                                      
+                           
+                        
 
             </div>
       <!-- <div
