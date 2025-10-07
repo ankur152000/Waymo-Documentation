@@ -2642,10 +2642,7 @@ font-weight: 400;
                                   <li class="deviceScroll">
                                     
                                       <p></p>
-                                      <a
-                                        >Alio Single and Three Axis ACS
-                                        Controller</a
-                                      >
+                                      <a onclick="handlePage(this,'TroubleshootingALIO')">Alio Single and Three Axis ACS Controller</a>
                                   
                                   </li>
                                   <li class="deviceScroll">
@@ -16020,281 +16017,363 @@ Denso_HS45352=24;<br>
                                                     </section>
 
             </div>
-             <div class="container" id="TroubleshootingOptoCamera" style="display: none">
+            <div class="container" id="TroubleshootingALIO" style="display: none">
                 <div class="title">
-                    <h1>Troubleshooting Guide for Opto Camera(coe-050-m-poe-050ir-c)</h1>
+                    <h1>Troubleshooting Guide – ALIO ACS Controller(Three Axis and Single Axis)</h1>
                 </div>     
                 
                     
-                    <article>                     
+                    <article>                 
                       
-                      <p>This guide provides comprehensive solutions for diagnosing and resolving common issues related to hardware, desktop applications, connectivity, network configurations, and driver installations associated with Opto Camera(coe-050-m-poe-050ir-c). By following the troubleshooting steps outlined, users can effectively address and rectify challenges encountered during the setup and operation of these cameras.</p>
-                     
-                      
-                    
+                      <p>This guide helps diagnose and resolve Common Hardware, Desktop Application, and Driver Issues with the Alio One Axis and Three-Axis ACS Controller. </p>                     
+                                    
                      
                   </article>
                   <article>   
                     <h2>
-                      Hardware-Trouble Shooting Guide
-                    </h2>
+                      Hardware-Trouble Shooting Guide for Alio One Axis and Three-Axis ACS Controller </h2>
                     <h3>Understanding LED Indicators and Troubleshooting Power Issues:</h3>
-                    <p>Below is a table detailing common LED indications, their possible causes, and recommended troubleshooting steps:​</p>
                         <table>
-                          <tr>                            
-                            <td style="width: 20%;"><b>Issue</b></td>
-                            <td style="width: 20%;"><b>Camera Status</b></td>
-                            <td style="width: 20%;"><b>Possible Cause</b></td>    
-                            <td style="width: 40%;"><b>TroubleShooting Steps</b></td>                       
-                        </tr>                         
-                          <tr>
-                            <td><b>No LED (Unlit)</b></td>
-                            <td>Camera is off or hardware damaged.</td>
-                            <td>Power supply issue or hardware failure.</td>
-                            <td>1.Check the power connection.<br>2.Try a different Ethernet port or cable.<br>3.Verify that the network adapter is enabled and properly configured.<br>4.Ensure the PC and camera are on the same subnet. </td>
-                          </tr>
-                          <tr>
-                            <td><b>Red LED - Steady On<br></b></td>
-                            <td>Camera is starting up.</td>
-                            <td>Normal operation.</td>
-                            <td>Wait for the startup to complete. If it remains in this state for too long, restart the camera.</td>
-                          </tr>
-                          <tr>
-                            <td><b>Red LED - Fast Flicker</b></td>
-                            <td>Boot loading failed.</td>
-                            <td>Boot failure.</td>
-                            <td>1.Power cycle the camera.<br>2.If the issue remains, contact technical support.</td>
-                          </tr>
-                          <tr>
-                            <td><b>Red LED - Extreme Slow Flicker</b></td>
-                            <td>IP address conflict or connection error.</td>
-                            <td>Network issue.</td>
-                            <td>1.Check the network settings and IP configuration.<br>2.Ensure no IP conflict with other devices.<br>3.Restart the camera and network switch/router.</td>
-                          </tr>
-                          <tr>
-                            <td><b>Blue LED - Slow Flicker</b></td>
-                            <td>Camera is idle in internal trigger mode.</td>
-                            <td>Normal operation.</td>
-                            <td>No action required unless the camera should be capturing images.</td>
-                          </tr> 
-                          <tr>
-                            <td><b>Blue LED - Fast Flicker</b></td>
-                            <td>Camera is transmitting images in internal trigger mode.</td>
-                            <td>Normal operation.</td>
-                            <td>No action required.</td>
-                          </tr> 
-                          <tr>
-                            <td><b>Red LED - Extreme Slow Flicker</b></td>
-                            <td>Camera is transmitting images in external trigger mode.</td>
-                            <td>Normal operation.</td>
-                            <td>No action required.</td>
-                          </tr> 
-                          <tr>
-                            <td><b>Red & Blue Alternate Flicker (Every 1 second)</b></td>
-                            <td>Camera is upgrading firmware.</td>
-                            <td>Normal operation.</td>
-                            <td>Do not turn off the camera. Wait until the upgrade completes.</td>
-                          </tr> 
-                          <tr>
-                            <td><b>Blue LED - Slow Flicker</b></td>
-                            <td>Camera is functioning but unable to transmit data.</td>
-                            <td>Data transmission failure.</td>
-                            <td>1.Check network cables and connections.<br>2.Verify network settings and bandwidth.<br> 3.Restart the camera and network equipment.</td>
-                          </tr> 
-                          <tr>
-                            <td><b>Red LED - Steady On</b></td>
-                            <td>Firmware upgrade failed.</td>
-                            <td>Corrupted firmware or update error.</td>
-                            <td>1.Try reinstalling the firmware.<br>2.Contact technical support if the issue persists.</td>
-                          </tr> 
-                        </table>            
-                        </article>                        
-                      <article>
-                        <h3>Troubleshooting Physical Damage and Overheating</h3>                        
-                        <table>                        
                           <tr>
                             <td style="width: 20%;"><b>Issue</b></td>
                             <td style="width: 30%;"><b>Possible Cause</b></td>
                             <td style="width: 50%;"><b>Solution</b></td>
-                        </tr>
-                          <tr>
-                            <td><b>Camera Overheating.</b></td>
-                            <td>Poor ventilation or high ambient temperature.</td>
-                            <td>Ensure proper cooling. Use the camera in a well-ventilated area.</td>
                           </tr>
                           <tr>
-                            <td><b>Blurry Images / Focus Issues.</b></td>
-                            <td>Dust or debris on the lens.</td>
-                            <td>Clean the lens carefully with a microfiber cloth. Remove the lens cap before use.</td>
+                            <td><b>No Power to the ACS Controller</b></td>
+                            <td>Power supply failure or loose connections</td>
+                            <td>1.Check power cables and connections. <br>2.Verify the power supply voltage is correct.<br>3.Inspect for blown fuses or faulty breakers.</td>
                           </tr>
                           <tr>
-                            <td><b>Burnt Smell or Physical Damage.</b></td>
-                            <td>A power surge or short circuit.</td>
-                            <td>Inspect the camera for visible damage. If burnt marks are found, do not power it on. Contact support.</td>
-                          </tr>                                         
+                            <td><b>LED turns to green or red LED but not blinking after scanning.</b></td>
+                            <td>User Indicator LEDs Not Functioning as Expected.</td>
+                            <td>1.Check Scanner Alignment: Ensure the barcode is positioned correctly.<br>2.Barcode Quality: Dirty, damaged, or poorly printed barcodes may not scan properly.<br>3.Check Scanner Lens: Clean the scanner lens to remove dust or smudges.<br>4.Increase Exposure Time: If lighting conditions are poor, adjust the scanner’s exposure settings.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Controller Does Not Boot Up</b></td>
+                            <td>Corrupt firmware or hardware failure</td>
+                            <td>1.Power cycle the controller.<br>2.Connect via SPII Plus MMI Studio and check for error logs.<br>3.Reflash the firmware if necessary.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Motor Does Not Enable</b></td>
+                            <td>Motor disabled or not commutated</td>
+                            <td>1.Execute the EnableMotor and CommuteMotor APIs. <br>Use SPII Plus software to manually enable the motor. <br>Ensure safety conditions (E-STOP, limits) are not triggered.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Motor Not Moving After Enable</b></td>
+                            <td>Drive fault, limit switch active, or encoder issue </td>
+                            <td>1.Check for S-FAULT.#DRIVE or SAFIN signals. <br>2.Verify the encoder feedback signal. <br>3.Manually override limits if needed and test movement in small increments.</td>
+                          </tr>   
+                          <tr>
+                            <td><b>Drive Fault (#DRIVE) is Raised</b></td>
+                            <td>Overcurrent, voltage issue, or motor disconnected</td>
+                            <td>1.Check motor and drive connections.<br>2.Verify power supply stability.<br>3.Inspect for short circuits or wiring issues.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Motor Stalls or Stops Mid-Movement</b></td>
+                            <td>Overload, excessive torque, or safety condition.</td>
+                            <td>1.Reduce speed and acceleration parameters. <br>2.Check for over-temperature faults (#HOT). <br>3.Inspect mechanical components for binding or obstructions.</td>
+                          </tr> 
+                          <tr>
+                            <td><b>Emergency Stop (E-STOP) is Triggered</b></td>
+                            <td>Safety circuit activated.</td>
+                            <td>1.Check the E-STOP wiring and reset it if necessary. <br>2.Ensure all safety conditions (e.g., door interlocks) are met.<br>3.Restart the system and clear faults. </td>
+                          </tr> 
+                          <tr>
+                            <td><b>Left Limit (#LL) or Right Limit (#RL) Stuck</b></td>
+                            <td>Limit switch engaged or wiring issue.</td>
+                            <td>1.Physically inspect limit switches.<br>2.Reset the fault using SPII Plus software.<br>3.If necessary, adjust SAFINI settings to disable limit faults.</td>
+                          </tr>  
+                          <tr>
+                            <td><b>Restart the system and clear faults.</b></td>
+                            <td>Motor tuning issue or mechanical misalignment</td>
+                            <td>1.Check motor coupling and mounting for misalignment. <br>2.Reduce torque limit settings in SPII Plus.<br>3.Re-tune PID parameters to stabilize motion. </td>
+                          </tr>                          
                         </table>
-                      </article>
-                      <article>
-                        <h3>Troubleshooting Network and Communication:</h3>                        
-                        <table>                        
-                          <tr>
-                            <td style="width: 20%;"><b>Issue</b></td>
-                            <td style="width: 30%;"><b>Possible Cause</b></td>
-                            <td style="width: 50%;"><b>Solution</b></td>
-                        </tr>
-                          <tr>
-                            <td><b>Slow Image or Incomplete Image Transfer.</b></td>
-                            <td>Incorrect frame size settings.</td>
-                            <td>Set Jumbo Frames (Jumbo Packets) to maximum size (1.5kB).</td>
-                          </tr>
-                          <tr>
-                            <td><b>Firmware Compatibility Issue</b></td>
-                            <td>Outdated firmware/software.</td>
-                            <td>Upgrade firmware using OECS Firmware Upgrader.</td>
-                          </tr>                                                                
-                        </table>
-                      </article>
+                        </article>
                         <article>
-                        <h3>Reset & Recovery:</h3>                        
+                        <h3>Types of Malfunction and TroubleShooting Steps:</h3>                        
                         <table>                        
                           <tr>
-                            <td><b>Step</b></td>                            
-                            <td><b>Action</b></td>
+                            <td style="width: 20%;"><b>Type of fault</b></td>
+                            <td style="width: 30%;"><b>Examples</b></td>
+                            <td style="width: 50%;"><b>Possible Troubleshooting Steps</b></td>
                           </tr>
                           <tr>
-                            <td><b>Power Cycle</b></td>                            
-                            <td>Turn off the camera, wait for 10 seconds, and turn it back on.</td>
+                            <td><b>User error</b></td>
+                            <td>The power adapter not connected or is faulty.</td>
+                            <td>Verify the connection</td>
                           </tr>
                           <tr>
-                            <td><b>Factory Reset</b></td>                            
-                            <td>Use the OECS Software Suite to reset the camera to factory settings.</td>
+                            <td><b>Improper or broken wiring</b></td>
+                            <td>A loose connection in the feedback encoder wiring.</td>
+                            <td>1.Inspect and secure all wiring connections.<br>2.Use an oscilloscope or multimeter to check for continuity and signal integrity.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Power amplifier malfunction</b></td>
+                            <td>The power amplifier malfunctions and sends a fault signal to the controller</td>
+                            <td>1.Check for amplifier fault codes in the ACS software.<br>2.Inspect power connections and ensure proper grounding.<br>3.Reset the amplifier and reinitialize the controller. <br>3.Check the controller logs for specific error messages.</td>
+                          </tr>                       
+                        <tr>
+                          <td><b>Motor malfunction</b></td>
+                          <td>A motor overheats.</td>
+                          <td>1.Verify motor load and operating conditions.<br>2.Check motor cooling and ventilation.<br>3.Ensure proper current limits and thermal protection settings. <br>4.Inspect and clean motor connections.</td>
+                        </tr>                   
+                    <tr>
+                      <td><b>Controller hardware malfunctions</b></td>
+                      <td>The Main Processor Unit (MPU) and the Servo Processors (SPs) work together to detect malfunctions in the controller. Examples include the servo processor alarm and the servo interrupt.</td>
+                      <td>1.Perform a power cycle reset on the controller.<br>2.Check for firmware updates or reflash the firmware if necessary.<br>3.Run controller self-diagnostics using ACS tools.<br>4. Contact ACS technical support if the issue persists.</td>
+                    </tr>             
+                    </table>
+                      </article>
+                      <article>
+                        <p><b>Note:</b>How the Controller Detects Malfunctions</p>
+                        <ol>
+                          <li>To detect malfunctions the controller monitors safety inputs, such as limit switches, and internal safety conditions, such as comparing the reference position with the software limits. </li>
+                          <li>Internal safety conditions may consist of a static formula, such as checking the acceleration limit, or may include time dependencies, such as measuring the time interval between two interrupts to detect servo interrupt faults. </li>
+                          <li>Some safety conditions are a mixture of both techniques. For example, position error control is based on a static condition, whether a motor is positioned at a certain location, and a time dependency, how long the motor is positioned at the location.</li>
+                        </ol>                    
+                      </article>
+                      <article>                      
+                            <h2>Troubleshooting Driver-Related Issues:</h2>
+                            <p>Below Table shows the Challenges, Function Calls, and Troubleshooting Steps for Alio ACS Driver Development.</p> 
+                        <table>                        
+                          <tr>
+                            <td style="width: 20%;"><b>Issue</b></td>
+                            <td style="width: 30%;"><b>API/Function name</b></td>
+                            <td style="width: 50%;"><b>Solution</b></td>                            
+                          </tr>
+                          <tr>
+                            <td><b>Alio Not Connected</b></td>
+                            <td>OpenDevice</td>
+                            <td>1.Verify Device connection using Spii Plus MMI Studio Tool Software Suite.<br>
+                              2.Ensure the connection is closed before calling OpenDevice API through gRPC.<br>
+                              3.Check for OpenDevice API timeout errors or specific error Close the Connection before calling OpenDevice API through gRPC.<br>                             
+                              4.Check the device model.<br>                  
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Error in Executing any function</b></td>
+                            <td>Not adding dependent libraries and dlls</td>
+                            <td>Add, ACSPCI32.SYS (for 32-bit), ACSPCI64.SYS (for 64-bit), WINDRVR6.SYS – Kernel-mode drivers for low-level communication support, ACSCSRV.EXE, ACSCL_X64.DLL, ACSCL_X64.LIB and ACSC.H in the solution              
+                              </td>
+                          </tr>
+                          <tr>
+                            <td><b>Error while moving the motor (Absolute or Relative PTP)</b></td>
+                            <td>The motor is in a disabled state or not commutated</td>
+                            <td>1. Execute the EnableMotor API and CommuteMotor API. <br>2.Open SP Software and manually enable the motor. <br>3.In the Command Terminal, enter: COMMUT <Axis> (Replace <Axis> with the actual axis number.)</td>                              
+                          </tr>
+                          <tr>
+                            <td><b>Motor Does Not Move When Commanded</b></td>
+                            <td>Motor is disabled or not commutatedhe motor is in a disabled state or not commutated</td>
+                            <td>1.Execute the EnableMotor and CommuteMotor APIs.<br>2.In MMI Studio, manually enable the motor frCheck for active faults and clear them before retryingom the Axis Control Panel.<br>3.</td>                              
+                          </tr>
+                          <tr>
+                            <td><b>Motor Movement is Erratic or Stops Unexpectedly</b></td>
+                            <td>Incorrect tuning parameters or safety limits triggered</td>
+                            <td>1. Verify the velocity, acceleration, and jerk limits in the motion profile. <br>2.Check the S-FAULT and S-SAFIN registers for any active faults.  <br>3.Perform a gain tuning procedure in MMI Studio.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Axis Shows ‘Following Error’ Fault</b></td>
+                            <td>Position error exceeded the allowed limit</td>
+                            <td>1. Execute the EnableMotor API and CommuteMotor API.Verify the encoder feedback and ensure it is connected properly.  <br>2.Adjust the following error limit in MMI Studio.  <br>3.Reduce the speed or acceleration to avoid sudden position deviations.</td>                              
+                          </tr>
+                          <tr>
+                            <td><b>Invalid Velocity</b></td>
+                            <td>SetVelocity</td>
+                            <td>Configuring Velocity should be within the range.</td>                              
+                          </tr>
+                          <tr>
+                            <td><b>Invalid Acceleration</b></td>
+                            <td>Set Acceleration</td>
+                            <td>Configuring Acceleration should be within the range.</td>                              
+                          </tr>
+                          <tr>
+                            <td><b>SP Software Could not establish Connection with ACS Controller</b></td>
+                            <td>Set Acceleration</td>
+                            <td>Check if the assigned IP Address falls under the network.<br>Provide enough timeout. <br>Check the alio connection in SPii Plus MMI Studio.<br>Restart the PC/Station to resolve this Issue OR Wait until SPii Plus MMI Studio Connects to Alio.<br>Restart the application or release the alio from previous sessions</td>                              
+                          </tr>
+                          <tr>
+                            <td><b>Random/Occasional #TIME Fault</b></td>
+                            <td>Varying real-time processing load.</td>
+                            <td>If the fault is infrequent, no immediate action is needed.</td>                              
+                          </tr>
+                          <tr>
+                            <td><b>Frequent/Persistent #TIME Fault</b></td>
+                            <td>High CPU load due to excessive program execution.</td>
+                            <td>Reduce concurrent programs.<br>Lower execution rates using PRATE, ONRATE. <br>Optimize autoroutines by simplifying conditions. <br>Reduce commands in a single program line. <br>Minimize short-time motions or replace them with segmented motions.<br>Simplify complex formulas in CONNECT and MASTER commands.</td>                              
+                          </tr>
+                          <tr>
+                            <td><b>#LL / #RL (Limit Switches)</b></td>
+                            <td>Motor reached travel limits</td>
+                            <td>Check & adjust motion parameters</td>                              
+                          </tr>
+                          <tr>
+                            <td><b>#HOT (Overheat)</b></td>
+                            <td>Motor temperature too high</td><
+                            <td>Check to cool, reduce load</td>                              
+                          </tr>
+                          <tr>
+                            <td><b>#DRIVE (Drive Fault)</b></td>
+                            <td>Drive error or wiring issue</td>
+                            <td>Inspect connections & power</td>                              
+                          </tr>
+                           <tr>
+                            <td><b>Memory Overflow Fault (#MEM)</b>(The user application requires more memory than is available.)Excessive Memory Usage</td>
+                            <td>Large ACSPL+ program size <br>Too many local/global variables <br>Large arrays consuming memory</td>
+                            <td>Reduce ACSPL+ program length by breaking it into smaller programs<br>Minimize variable usage, especially arrays.<br>Use global variables efficiently to reduce memory consumption.</td>                              
+                          </tr>
+                          <tr>
+                            <td><b>Long Command Strings</td>
+                            <td>Commands exceeding 2032 characters</td>
+                            <td>Split long commands into multiple smaller ones. <br>Avoid complex string concatenation in commands.</td>                              
+                          </tr>
+                          <tr>
+                            <td><b>Complex Expressions in CONNECT/MASTER Commands</td>
+                            <td>Overly complex mathematical expressions</td>
+                            <td>Simplify formulas used in CONNECT and MASTER commands.  <br>Break long expressions into multiple smaller ones.</td>                              
+                          </tr>
+                          <tr>
+                            <td><b>During the development and integration of the Alio ACS, various error types may occur.</td>
+                            <td></td>
+                            <td>The Testing and Debugging section of the Alio ACS Device Driver page provides a comprehensive list of error types, error codes, and their descriptions. You can leverage this information to efficiently diagnose and resolve issues by cross-referencing error codes with their respective descriptions during debugging.</td>                              
+                          </tr>                         
+                            </table>
+                            </article>
+                            <article>                      
+                            <h2>Trouble Shooting Desktop Application SpiiPlus MMI Application -Related Issues:</h2>
+                            <p>Below Table shows the Challenges, Function Calls, and Troubleshooting Steps for Alio ACS Driver Development.</p> 
+                        <table>                        
+                          <tr>
+                            <td style="width: 20%;"><b>Issue</b></td>
+                            <td style="width: 30%;"><b>API/Function name</b></td>
+                            <td style="width: 50%;"><b>Solution</b></td>                            
+                          </tr>
+                          <tr>
+                            <td><b>Controller Not Connecting to SPII Plus MMI Studio</b></td>
+                            <td>Incorrect IP Address or Communication Settings</td>
+                            <td>1.Check if the controller's IP address matches the settings in MMI Studio.<br>
+                              2.Verify the Ethernet cable and network connection.<br>
+                              3.Restart both MMI Studio and the Controller.<br>                           
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>SPii Plus MMI Application Studio loses communication with SPiiPlusEC when the application is not on the host PC</b></td>
+                            <td>Windows power management option Put the computer to sleep is checked. This means that after several minutes,Windows enters sleep mode and SPiiPlusEC disconnects.</td>
+                            <td>Set the Put computer to sleep option to Never.<br>                                                       
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>SPiiPlusEC starts and communication is established from the MMI Application Studio. However, after a few seconds communication is lost</b></td>
+                            <td>An additional SPiiPlusEC Controller is in the same network (LAN) with the same MAC Address. MAC Addresses must be unique within the same network.</td>
+                            <td>Change the MAC Address of the SPiiPlusEC Controller in the User Mode Driver\SPiiPlusEC tab.<br>                                                       
+                            </td>
                           </tr>
                           </table>
                           </article>
-                          <article>
-                          <h2>TroubleShooting Desktop Application(OECS Software Suite)Issues:</h2>                        
-                          <table>                        
-                            <tr>
-                              <td style="width: 20%;"><b>Issue</b></td>
-                              <td style="width: 30%;"><b>Possible Cause</b></td>
-                              <td style="width: 50%;"><b>Solution</b></td>
-                          </tr>
-                            <tr>
-                              <td><b>Not Recognized in Windows Device Manager.</b></td> 
-                              <td>Driver not installed.</td>                           
-                              <td>Install or update the Driver from the official website.</td>
-                            </tr>
-                            <tr>
-                              <td><b>Network Connection Lost (Alternating Bright Green/Off LED).</b></td>
-                              <td>No GigE connection.</td>                            
-                              <td>Connect the camera directly to the PC to rule out switch issues. Check for firewall restrictions.
-                                </td>
-                            </tr>
-                            <tr>
-                              <td><b>Camera Not Accessible via IP.</b></td> 
-                              <td>IP conflict or wrong subnet.</td>                           
-                              <td>Use ipconfig or ping to verify the assigned IP address. Set the Jumbo Frame size to a maximum (1.5kB) for better communication.                                                              
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><b>The camera cannot be detected by the client software.<br>The camera is detected by the client software but connecting failed.</b></td> 
-                                <td>1.The camera does not work properly. <br>2. The network cable is disconnected. <br> 3. The camera and the PC that runs the OECS client software are not in the same subnet.</td>                                                       
-                                <td>1.Confirm if the power supply of camera is well connected (via LED indicator), and the network connects properly (via network interface indicator).<br>2.Use OECS IP Configurator to detect the camera and change the IP address. <br> 
-                                  3.Confirm if the GenICam and network Filter driver are installed on the PC.<br>                                                               
-                                  </td>
-                              </tr>
-                              <tr>
-                                <td><b>The camera is in read-only status.</b></td> 
-                                <td>The camera is connected with another client software.</td>                                                       
-                                <td>Plug out the network cable, and replace it 3 seconds later.<br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><b>The live view of camera is black.</b></td> 
-                                <td>1.The iris is closed.<br> 2. Camera error</td>                                                       
-                                <td>Open the iris and Reboot the camera. <br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><b>Camera cannot be triggered</b></td> 
-                                <td>1.Incorrect cable connection. <br> 2.The camera works in the internal trigger mode</td>                                                       
-                                <td>Make sure the trigger mode is correct and the external trigger is well connected.<br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><b>The live view and image is normal, while the image saved could not be displayed properly.</b></td> 
-                                <td>The image format mismacthes.</td>                                                       
-                                <td>Make sure the image format what you saved is supported.<br>
-                                </td>
-                            </tr>
-                          </table>
-                          </article>                                 
-                                
-                            <article>
-                            <h2>Troubleshooting Driver-Related Issues:</h2>
-                            <p>Below Table shows the Challenges, Function Calls, and Troubleshooting Steps for Opto Camera Driver Development.</p>                        
+                         <article>                      
+                            <h2>Network & Connection TroubleShooting Steps:</h2>
+                            <p>Below Table shows the Challenges, Function Calls, and Troubleshooting Steps for Alio ACS Driver Development.</p> 
                         <table>                        
                           <tr>
                             <td style="width: 20%;"><b>Issue</b></td>
-                            <td style="width: 30%;"><b>Possible Cause</b></td>
-                            <td style="width: 50%;"><b>Solution</b></td>
-                        </tr>
-                          <tr>
-                            <td><b>Camera Not Connected</b></td>
-                            <td>OpenDevice</td>
-                            <td>1. Verify Opto Camera connection using OECS Software Suite<br>
-                              2.Ensure the connection is closed before calling OpenDevice API through gRPC<br>
-                              3.Check for OpenDevice API timeout errors or specific error codes<br>                          
-                              4.Close the Connection before calling OpenDevice API through gRPC<br>
-                              </td>
+                            <td style="width: 30%;"><b>API/Function name</b></td>
+                            <td style="width: 50%;"><b>Solution</b></td>                            
                           </tr>
                           <tr>
-                            <td><b>Incomplete Grab</b></td>
-                            <td>GetImage</td>
-                            <td>1.Indicates lost/corrupted packets due to hardware issues (NIC, switch, Ethernet cable).<br>
-                              2.Optimize Network Adapter Settings: <br>
-                                   - Enable Jumbo Frames (maximum value). <br>
-                                   - If Jumbo Frames are not supported, set Packet Size = 1500. <br>
-                              3. Increase Inter-Packet Delay for stable frame rate.<br>
-                              </td>
-                          </tr>                            
+                            <td><b>Network Initialization Failure</b></td>
+                            <td>EtherCAT stack could not start properly</td>
+                            <td>1.Check the ECST and ECERR variables to identify the failure stage.<br>
+                              2.Ensure all EtherCAT devices are powered on and properly connected.<br>
+                              3.Verify EtherCAT network settings in ACS software.<br>
+                              4.Restart the controller and reinitialize the network.<br>                           
+                            </td>
+                          </tr>
                           <tr>
-                            <td><b>Invalid Gain</b></td>
-                            <td>SetGain</td>
-                            <td>Configuring Gain should be within the range. </td>
-                          </tr> 
+                            <td><b>Network Failure During Normal Operation</b></td>
+                            <td>Physical Ethernet cable disconnection <br>Power down of a single slave <br>Reset of EtherCAT slave chip</td>
+                            <td>Inspect and reconnect any loose Ethernet cables.<br>Check power supply to all EtherCAT nodes. <br>Use ACS diagnostics to check for any node errors. <br>Reset faults using FCLEAR or ENABLE commands.<br>                                                       
+                            </td>
+                          </tr>
                           <tr>
-                            <td><b>Invalid Exposure Time</b></td>
-                            <td>Set Exposure Time</td>
-                            <td>Configuring Exposure Time should be within the range.</td>
+                            <td><b>Servo Processor Alarm (FAULTX.17)</b></td>
+                            <td>Loss of communication between MPU and SP. <br>SP Software failure or overload. <br>Loss of synchronization.</td>
+                            <td>Check if the master-slave handshake counter (SYNC) is out of sync.<br>Ensure SP software is running correctly. <br>Verify that the SP is not overloaded or in reset state. <br>Perform a system reboot using #HWRES or a full power cycle.<br>                                                       
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Axes Disabled Due to Network Fault</b></td>
+                            <td>The master loses control over the EtherCAT bus.</td>
+                            <td>1.Check if the SP program is running.<br>
+                              2.Verify if the handshake SYNC counter is frozen. <br>
+                              3.After successful reconnection, use FCLEAR or ENABLE to reset the fault and resume operation.<br>                                                  
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>SP Software Failure</b></td>
+                            <td>Watchdog reset or power down <br>Unpredictable SP malfunction<br>Power failure</td>
+                            <td>1.Perform a full power cycle to reset the SP. <br>
+                              2.If the fault persists, run #HWRES (Reboot Controller) in SPiiPlus MMI Application Studio. <br>
+                              3.Reload the SP program and ensure proper synchronization.<br>                                                      
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Network Initialization Failure</b></td>
+                            <td>EtherCAT stack could not start properly</td>
+                            <td>1.Check the ECST and ECERR variables to identify the failure stage.<br>
+                              2.Ensure all EtherCAT devices are powered on and properly connected.<br>
+                              3.Verify EtherCAT network settings in ACS software.<br>                                                       
+                            </td>
+                          </tr>
+                          </table>
+                          </article>
+                           <article>                      
+                            <h2>Component Failure Trouble Shooting:</h2>
+                            <p>Below Table shows the Challenges, Function Calls, and Troubleshooting Steps for Alio ACS Component Failure Detected</p> 
+                        <table>                        
+                          <tr>
+                            <td style="width: 20%;"><b>Issue</b></td>
+                            <td style="width: 30%;"><b>API/Function name</b></td>
+                            <td style="width: 50%;"><b>Solution</b></td>                            
+                          </tr>
+                          <tr>
+                            <td><b>Component Failure Detected</b></td>
+                            <td>Power supply failure <br>I/O extension card failure <br>Encoder card malfunction</td>
+                            <td>1.Check S_FAULT.#FAILURE (S_FAULT.31) to confirm the failure. <br>
+                              2.Use system functions to retrieve faulty card details via I²C address. <br>
+                              3.Inspect physical connections and power supply status. <br>
+                              4.Replace or reset the malfunctioning component.<br>                           
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Controller Not Examining Component Failure Faults</b></td>
+                            <td>Fault masking is enabled</td>
+                            <td>Check S_FMASK.#FAILURE (S_FMASK.31). <br>If S_FMASK.#FAILURE = 1, the controller is monitoring component failures. <br>If needed, disable fault-masking to ignore the failure temporarily.                                                  
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Custom Fault Response Not Triggering</b></td>
+                            <td>S_FDEF.#FAILURE is not set</td>
+                            <td>Ensure S_FDEF.#FAILURE (S_FDEF.31) is programmed for a specific fault response. <br>Write an ACSPL+ application to handle the failure.                                              
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Component Failure Input Status Incorrect</b></td>
+                            <td>Fault input logic mismatch.</td>
+                            <td>1.Check S_SAFIN.#FAILURE (S_SAFIN.31) to verify the actual input status. <br>
+                              2.Use S_SAFINI.#FAILURE (S_SAFINI.31) to invert the input logic if needed.<br>                                                                          
+                            </td>
+                          </tr>                       
+                          </table>
+                          </article>
+                       
 
-                          </tr> 
-                          <tr>
-                            <td><b>Invalid Pixel Format</b></td>
-                            <td>Set Pixel Format</td>
-                            <td>Configure Valid Pixel Format. <br> Opto Camera supports Mono 8, Mono 16, Mono 12.</td>
-                          </tr>
-                          <tr>
-                            <td><b>Invalid Configuration File</b></td>
-                            <td>Save and Load Configuration </td>
-                            <td>1.Provide a valid Configuration file format for saving and loading camera features. An invalid entry causes configuration issues while capturing an image.<br>2.Opto camera supports .ini configuration file format.
-                            </td>                            
-                          </tr>  
-                          <tr>
-                            <td><b>User Sets(Parameter Configuration file not Loading to the Camera) </b></td>
-                            <td>If the camera is acquiring images, AcquisitionStop must be called before loading or saving a user set</td>
-                            <td>1.If the camera is not closed properly—either due to the Close API not being called or an Unexpected Service crash—the camera handlers may not be released correctly. As a result, the camera will not allow a new connection until the existing handlers are properly released.<br>
-                                2.Check the camera connection in OECS Software Suite.<br>
-                                3.Restart the PC/Station to resolve this Issue OR Wait until the OECS Software Connects to the camera.<br>
-                                4.User Sets, Streamables, and File Access functions do not load or save camera IP configuration settings.<br> 
-                                5.Restart the application or release the camera from previous sessions.<br>                     
-                            </td>                            
-                          </tr>
-                                      
-                           
-                        
+
+                          
 
             </div>
+            
+              
       <!-- <div
         class="no-page"
         style="
