@@ -1813,7 +1813,7 @@ font-weight: 400;
                                              
                                             id="checkBoxEX250"
                                             class="checkBox"
-                                            onclick="handlePage(this,'EX250')"
+                                           
                                           />
                                           <label for="checkBoxEX250">
                                             <p>
@@ -1829,14 +1829,14 @@ font-weight: 400;
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('introductionEX250', -80,'EX250')"
+                                                onclick="scrollToElement('introductionEX250', -80,'DriverDetailEX250_SEN1',this)"
                                                 >Introduction</a
                                               >
                                             </li>
                                             <li>
 <p></p>
                                               <a
-                                                onclick="scrollToElement('deviceOverviewEX250', -80,'EX250')"
+                                                onclick="scrollToElement('deviceOverviewEX250', -80,'DriverDetailEX250_SEN1',this)"
                                                 >Device Overview &amp; SDK
                                                 Installation</a
                                               >
@@ -1844,28 +1844,28 @@ font-weight: 400;
                                             <li>
 <p></p>
                                               <a
-                                                onclick="scrollToElement('driverDevelopmentEX250', -80,'EX250')"
+                                                onclick="scrollToElement('driverDevelopmentEX250', -80,'DriverDetailEX250_SEN1',this)"
                                                 >Driver Development</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('gRPC_APIEX250', -80,'EX250')"
+                                                onclick="scrollToElement('gRPC_APIEX250', -80,'DriverDetailEX250_SEN1',this)"
                                                 >gRPC API’s Description</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('testingDebugEX250', -80,'EX250')"
+                                                onclick="scrollToElement('testingDebugEX250', -80,'DriverDetailEX250_SEN1',this)"
                                                 >Testing and Debugging</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToBottom('resourcesLinksEX250', -80,'EX250')"
+                                                onclick="scrollToBottom('resourcesLinksEX250', -80,'DriverDetailEX250_SEN1',this)"
                                                 >Resources &amp; Links</a
                                               >
                                             </li>
@@ -22592,10 +22592,10 @@ message ReadIoResponse <br>
                 </div>
                 <section class="content" id="introduction">
                   
-    <div class="deviceImg">
+    <!-- <div class="deviceImg">
       <img src="../DocumentImages/DeviceImage/Denso6-axisRobot.jpeg" alt="Denso"/>
       <p>Waymo Automation Tool: Device Driver Development Overview</p>
-                        </div>
+                        </div> -->
                     
                     <article>
                         <h3>Brief overview of the Device Driver Development</h3>
@@ -22634,13 +22634,13 @@ message ReadIoResponse <br>
                     <section>In summary, the Waymo Automation Tool showcases advanced device driver development principles a convergence of device protocol mastery, API/library integration (SDKs, DLLs), communication engineering (socket, gRPC), and robust client service definitions (proto files, error handling), all tailored to a heterogeneous set of automation components to deliver high reliability and scalable performance.</section>                    
 
             </div>
-            <div class="container" id="DriverDetailEX250_SEN1" style="display: none">
+                <div class="container" id="DriverDetailEX250_SEN1" style="display: none">
                 <div class="title">
                     <h1>EX250-SEN1 driver document</h1>
                 </div>
-                <section class="content" id="introduction">
+                <section class="content" id="introductionEX250">
                   <div class="deviceImg">
-                    <img src="../DocumentImages/DeviceImage/EX250-SEN1.jpg" alt="EX250-SEN1"/>
+                    <img src="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/DeviceImage/EX250-SEN1.jpg" alt="EX250-SEN1"/>
                     <p>EX250 SEN1  </p>
                                       </div>
                     <h2>Introduction</h2>
@@ -22671,7 +22671,7 @@ message ReadIoResponse <br>
                     </li>
                     </ol>
                 </section>
-                <section class="content" id="deviceOverview">
+                <section class="content" id="deviceOverviewEX250">
                     <h2>Device Overview</h2>
                     <h3>Description of the device for which the driver is being developed</h3>
                     <p>The EX250-SEN1 is an advanced pneumatic control system developed by SMC, a leading manufacturer in the valve products line. It streamlines operations through reduced wiring complexity and seamless integration with EtherNet/IP, facilitating efficient communication between input and output equipment.</p>
@@ -22749,7 +22749,7 @@ message ReadIoResponse <br>
                                to implement feature for getting the program name of the controller. Article 28917 was used for collecting other controller
                                 information.</p>
                     </article>
-                    <article id="driverDevelopment">
+                    <article id="driverDevelopmentEX250">
                         <h3>DRIVER DEVELOPMENT</h3>
                         <h4>Introduction to driver development for the device</h4>
                         <p>The <a href="https://docs.pycomm3.dev/en/latest/api_reference/cip_driver.html#pycomm3.CIPDriver">CIPDriver</a> is the foundational class for all drivers within the pycomm3 library. It serves as a base for implementing communication with devices using the Common Industrial Protocol (CIP).</p>
@@ -22770,7 +22770,7 @@ message ReadIoResponse <br>
                       </ol>
                      </article>
                 </section>
-                <section id="gRPC_API">
+                <section id="gRPC_APIEX250">
                   
                     <h2>gRPC API’s Description for EX250-SEN1</h2>
                     
@@ -23579,7 +23579,7 @@ string resp_description = 2; <br>
 </article>
 
                 </section>
-                <section id="testingDebug">
+                <section id="testingDebugEX250">
                   <h2>TROUBLESHOOTING TECHNIQUES</h2>
                                   <i>Trouble No.1</i>
                                   <table>
@@ -23665,7 +23665,7 @@ string resp_description = 2; <br>
                                           </table>
                                           </section>
 
-                                                    <section id="resourcesLinks">
+                                                    <section id="resourcesLinksEX250">
                                                       <h2>RESOURCES AND LINKS</h2>
                                                       <ul>
                                                         <li>Library Used to Develop Drivers:<a href="https://pypi.org/project/pycomm3/">pycomm3 </a></li>
