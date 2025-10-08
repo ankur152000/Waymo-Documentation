@@ -2236,14 +2236,14 @@ font-weight: 400;
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('introductionBarcodeReader', -80,'BarcodeReader')"
+                                                onclick="scrollToElement('introductionBarcodeReader', -80,'DriverDetailBarCodeReader',this)"
                                                 >Introduction</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('deviceOverviewBarcodeReader', -80,'BarcodeReader')"
+                                                onclick="scrollToElement('deviceOverviewBarcodeReader', -80,'DriverDetailBarCodeReader',this)"
                                                 >Device Overview &amp; SDK
                                                 Installation</a
                                               >
@@ -2251,28 +2251,28 @@ font-weight: 400;
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('driverDevelopmentBarcodeReader', -80,'BarcodeReader')"
+                                                onclick="scrollToElement('driverDevelopmentBarcodeReader', -80,'DriverDetailBarCodeReader',this)"
                                                 >Driver Development</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('gRPC_APIBarcodeReader', -80,'BarcodeReader')"
+                                                onclick="scrollToElement('gRPC_APIBarcodeReader', -80,'DriverDetailBarCodeReader',this)"
                                                 >gRPC API’s Description</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('testingDebugBarcodeReader', -80,'BarcodeReader')"
+                                                onclick="scrollToElement('testingDebugBarcodeReader', -80,'DriverDetailBarCodeReader',this)"
                                                 >Testing and Debugging</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToBottom('resourcesLinksBarcodeReader', -80,'BarcodeReader')"
+                                                onclick="scrollToBottom('resourcesLinksBarcodeReader', -80,'DriverDetailBarCodeReader',this)"
                                                 >Resources &amp; Links</a
                                               >
                                             </li>
@@ -15794,11 +15794,11 @@ message CommandResponse {<br>
                                                     </section>
 
             </div>
-             <div class="container" id="DriverDetailBarCodeReader" style="display: none">
+             <div class="container" id="DriverDetailBarCodeReader" style="display: none;">
                 <div class="title">
                     <h1>Barcode Reader (DM262X and DM282X) Driver Development Guide</h1>
                 </div>
-                <section class="content" id="introduction">
+                <section class="content" id="introductionBarcodeReader">
                     <h2>Introduction</h2>
                     <article>
                         <h3>Brief overview of the project</h3>
@@ -15831,7 +15831,7 @@ message CommandResponse {<br>
                     </li>
                     </ol>
                 </section>
-                <section class="content" id="deviceOverview">
+                <section class="content" id="deviceOverviewBarcodeReader">
                     <h2>Device Overview</h2>
                     <article>
                         <h3>Description of the device for which the driver is being developed</h3>
@@ -15995,7 +15995,7 @@ message CommandResponse {<br>
                     </article>
                     
                 </section>
-                <section id="driverDevelopment">
+                <section id="driverDevelopmentBarcodeReader">
                   <h2>Driver Development and SDK Installation</h2>
                   <p><b>Introduction to driver development for the device</b></p>
                   <p>The driver development consists of three key components:</p>
@@ -16022,7 +16022,7 @@ message CommandResponse {<br>
                   </article>
                  
                 </section>
-                <section id="gRPC_API">
+                <section id="gRPC_APIBarcodeReader">
                   
                     <h2>gRPC API’s Description for Barcode Reader Device</h2>
                     
@@ -16743,7 +16743,7 @@ message CommandResponse {<br>
 </section>
                   
                   </section>
-                            <section id="testingDebug">
+                            <section id="testingDebugBarcodeReader">
                                     <h2>TESTING AND DEBUGING:</h2>
                                   <b>DMCC Commands</b>
                                   <table>
@@ -16789,7 +16789,7 @@ message CommandResponse {<br>
                                       </tbody>
                                       </table>
                             </section>
-                                                    <section id="resourcesLinks">
+                                                    <section id="resourcesLinksBarcodeReader">
                                                       <h2>RESOURCES AND LINKS</h2>
                                                       <ul>
                                                         <li>DM280 series documents:  <a target="_blank" href="https://support.cognex.com/docs/dmst_2420/web/EN/DM280_Manual/Content/Topics/getting-started/getting-started.htm?tocpath=Getting%20Started%7C_____0">https://support.cognex.com/docs/dmst_2420/web/EN/DM280_Manual/Content/Topics/getting-started/getting-started.htm?tocpath=Getting%20Started%7C_____0</a></li>
