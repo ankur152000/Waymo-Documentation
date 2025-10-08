@@ -1428,7 +1428,7 @@ font-weight: 400;
                                              
                                             id="checkBoxBaslerCamera"
                                             class="checkBox"
-                                            onclick="handlePage(this,'BaslerCamera')"
+                                           
                                           />
                                           <label for="checkBoxBaslerCamera">
                                             <p>
@@ -1444,14 +1444,14 @@ font-weight: 400;
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('introductionBaslerCamera', -80,'BaslerCamera')"
+                                                onclick="scrollToElement('introductionBaslerCamera', -80,'DriverDetailBaslerCamera',this)"
                                                 >Introduction</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('deviceOverviewBaslerCamera', -80,'BaslerCamera')"
+                                                onclick="scrollToElement('deviceOverviewBaslerCamera', -80,'DriverDetailBaslerCamera',this)"
                                                 >Device Overview &amp; SDK
                                                 Installation</a
                                               >
@@ -1459,28 +1459,28 @@ font-weight: 400;
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('driverDevelopmentBaslerCamera', -80,'BaslerCamera')"
+                                                onclick="scrollToElement('driverDevelopmentBaslerCamera', -80,'DriverDetailBaslerCamera',this)"
                                                 >Driver Development</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('gRPC_APIBaslerCamera', -80,'BaslerCamera')"
+                                                onclick="scrollToElement('gRPC_APIBaslerCamera', -80,'DriverDetailBaslerCamera',this)"
                                                 >gRPC API’s Description</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('testingDebugBaslerCamera', -80,'BaslerCamera')"
+                                                onclick="scrollToElement('testingDebugBaslerCamera',  -80,'DriverDetailBaslerCamera',this)"
                                                 >Testing and Debugging</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToBottom('resourcesLinksBaslerCamera', -80,'BaslerCamera')"
+                                                onclick="scrollToBottom('resourcesLinksBaslerCamera', -80,'DriverDetailBaslerCamera',this)"
                                                 >Resources &amp; Links</a
                                               >
                                             </li>
@@ -15794,11 +15794,15 @@ message CommandResponse {<br>
                                                     </section>
 
             </div>
-             <div class="container" id="DriverDetailBarCodeReader" style="display: none;">
+            <div class="container" id="DriverDetailBarCodeReader" style="display: none;">
                 <div class="title">
                     <h1>Barcode Reader (DM262X and DM282X) Driver Development Guide</h1>
                 </div>
                 <section class="content" id="introductionBarcodeReader">
+                  <div class="deviceImg">
+                    <img src="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/DeviceImage/Barcode-Readers.jpg" alt="Barcode Reader">
+                    <p>Barcode Reader </p>
+                  </div>
                     <h2>Introduction</h2>
                     <article>
                         <h3>Brief overview of the project</h3>
@@ -16815,13 +16819,13 @@ message CommandResponse {<br>
                                                     </section>
 
             </div>
-            <div class="container" id="DriverDetailBaslerCamera" style="display: none">
+              <div class="container" id="DriverDetailBaslerCamera" style="display: none;">
                 <div class="title">
                     <h1>Basler Camera (acA2500-14gm and a2A2448-23gm PRO) Driver Development Guide</h1>
                 </div>
-                <section class="content" id="introduction">
+                <section class="content" id="introductionBaslerCamera">
                   <div class="deviceImg">
-                    <img src="../DocumentImages/DeviceImage/baslerCamera.jpg" alt="baslerCamera"/>
+                    <img src="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/DeviceImage/baslerCamera.jpg" alt="baslerCamera"/>
                     <p>Basler Camera</p>
                                       </div>
                     <h2>Introduction</h2>
@@ -16851,7 +16855,7 @@ message CommandResponse {<br>
                     </li>
                     </ol>
                 </section>
-                <section class="content" id="deviceOverview">
+                <section class="content" id="deviceOverviewBaslerCamera">
                     <h2>Device Overview and SDK Installation</h2>
                     <h3>Description of the device for which the driver is being developed</h3>
                     <p>Basler offers unmatched camera performance at very competitive prices, without compensating at the expense of quality. The hardware is an important element for your machine vision and computer vision projects, but the Basler camera software suite (Pylon) with the SDK (Software Development Kit) also contributes to high user satisfaction. Basler’s ace is currently the smallest GigE camera in its class with Power over Ethernet (PoE).</p>
@@ -17029,7 +17033,7 @@ message CommandResponse {<br>
                       <p>Additional Requirements </p>
                       <p>This version of Microsoft Visual Studio works best with Internet Explorer 10 or higher. If Internet Explorer 10 is not installed on your computer, some features might not work as expected </p>             
                     </article>                
-                   <article id="driverDevelopment">
+                   <article id="driverDevelopmentBaslerCamera">
                         <h3>DRIVER DEVELOPMENT</h3>
                         <h4>Installing the Basler Pylon Camera Software Suite SDK</h4>
                         <p>Download the desired or current version of the Basler pylon Camera Software Suite from the Basler website: </p>
@@ -17079,7 +17083,7 @@ message CommandResponse {<br>
                      </article>
                 </section>
 
-                <section id="gRPC_API">
+                <section id="gRPC_APIBaslerCamera">
                   
                     <h2>gRPC API’s Description for Basler Camera</h2>
                     
@@ -18338,7 +18342,7 @@ Denso_HS45352=24;<br>
                     
                     
 
-                <section id="testingDebug">
+                <section id="testingDebugBaslerCamera">
                   <h2>TESTING AND DEBUGGING</h2>
                   <p>During the development and integration of the Basler camera, various error types may occur. These errors can be categorized based on their source, such as communication failures, hardware malfunctions, or incorrect configurations. Below are some common error types along with their descriptions</p>
              
@@ -18553,7 +18557,7 @@ Denso_HS45352=24;<br>
                                       </table>
                                       <p>To diagnose and resolve errors, refer to the Basler Pylon SDK documentation, enable logging, and use debugging tools like the Pylon Viewer to verify camera functionality.</p>
                                       </section>
-                                                    <section id="resourcesLinks">
+                                                    <section id="resourcesLinksBaslerCamera">
                                                       <h2>RESOURCES AND LINKS</h2>
                                                       <ul>
                                                         <li>Pylon Deployment Guide: <a href="https://docs.baslerweb.com/pylonapi/pylon-deployment-guide">: pylon Deployment Guide | Basler Product Documentation (baslerweb.com)</a></li>
