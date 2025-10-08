@@ -1690,7 +1690,7 @@ font-weight: 400;
                                              
                                             id="checkBoxBrainbox"
                                             class="checkBox"
-                                            onclick="handlePage(this,'Brainbox')"
+                                           
                                           />
                                           <label for="checkBoxBrainbox">
                                             <p>
@@ -1703,14 +1703,14 @@ font-weight: 400;
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('introductionBrainbox', -80,'Brainbox')"
+                                                onclick="scrollToElement('introductionBrainbox', -80,'DriverDetailBrainBoxED588',this)"
                                                 >Introduction</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('deviceOverviewBrainbox', -80,'Brainbox')"
+                                                onclick="scrollToElement('deviceOverviewBrainbox', -80,'DriverDetailBrainBoxED588',this)"
                                                 >Device Overview &amp; SDK
                                                 Installation</a
                                               >
@@ -1718,21 +1718,29 @@ font-weight: 400;
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('gRPC_APIBrainbox', -80,'Brainbox')"
+                                                onclick="scrollToElement('driverDevelopmentBrainbox', -80,'DriverDetailBrainBoxED588',this)"
+                                                >Device Overview &amp; SDK
+                                                Installation</a
+                                              >
+                                            </li>
+                                            <li>
+                                              <p></p>
+                                              <a
+                                                onclick="scrollToElement('gRPC_APIBrainbox', -80,'DriverDetailBrainBoxED588',this)"
                                                 >gRPC API’s Description</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('testingDebugBrainbox', -80,'Brainbox')"
+                                                onclick="scrollToElement('testingDebugBrainbox', -80,'DriverDetailBrainBoxED588',this)"
                                                 >Testing and Debugging</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToBottom('resourcesLinksBrainbox', -80,'Brainbox')"
+                                                onclick="scrollToBottom('resourcesLinksBrainbox', -80,'DriverDetailBrainBoxED588',this)"
                                                 >Resources &amp; Links</a
                                               >
                                             </li>
@@ -18595,17 +18603,17 @@ Denso_HS45352=24;<br>
                                                     </section>
 
             </div>
-            <div class="container" id="DriverDetailBrainBoxED588" style="display: none">
+              <div class="container" id="DriverDetailBrainBoxED588" style="display: none">
                 <div class="title">
                     <h1>Brain Box (ED588 and ED527) Driver Development Guide</h1>
                 </div>
-                <section class="content" id="introduction">
+                <section class="content" id="introductionBrainbox">
                   <div class="deviceImg">
-                    <img src="../DocumentImages/DeviceImage/BrainBoxED527.jpeg" alt="ED527"/>
+                    <img src="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/DeviceImage/BrainBoxED527.jpeg" alt="ED527"/>
                     <p>Brain Box ED527 </p>
                   </div>
                   <div class="deviceImg">
-                    <img src="../DocumentImages/DeviceImage/BrainboxED588.jpeg" alt="ED588"/>
+                    <img src="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/DeviceImage/BrainboxED588.jpeg" alt="ED588"/>
                     <p>Brain Box ED588</p>
                   </div>
                     <h2>Introduction</h2>
@@ -18633,7 +18641,7 @@ Denso_HS45352=24;<br>
                     </li>
                     </ol>
                 </section>
-                <section class="content" id="deviceOverview">
+                <section class="content" id="deviceOverviewBrainbox">
                     <h2>Device Overview</h2>
                     <h3>Description of the device for which the driver is being developed</h3>
                     <p>The Brainboxes Ethernet to digital I/O media converter has 8 non-isolated digital input channels and 8 digital output channels. It offers a robust and intelligent ’control side’ devices that provide the interface to systems on the 24VDC factory floor environment, commonly referred to as ’process side’.</p>
@@ -18828,7 +18836,7 @@ Denso_HS45352=24;<br>
                         </article>
                         <article>
                    
-                    <article id="driverDevelopment">
+                    <article id="driverDevelopmentBrainbox">
                         <h3>DRIVER DEVELOPMENT and UI INSTALLATION </h3>
                         <p>Socket programming is a fundamental technique in network-based communication that enables two devices to exchange data over a network using standard protocols such as TCP/IP. In the context of Brainbox driver development, socket programming is used to establish a direct TCP connection between a host application and a Brainboxes remote I/O device. These devices act as TCP servers, listening for incoming connections on a specific IP and port. The driver, acting as a client, creates a socket, connects to the device, and communicates by sending ASCII-based command strings (e.g., to read inputs or control outputs) and receiving structured responses. This approach allows the software to interact with the Brainbox hardware in real-time, enabling operations like device identification, I/O monitoring, and control without needing proprietary middleware. By leveraging sockets, the driver ensures lightweight, low-latency, and platform-agnostic communication, making it suitable for industrial automation and embedded systems.</p>
                         <h4>Installing the Boost.IO Manager Suite SDK</h4>
@@ -18862,7 +18870,7 @@ Denso_HS45352=24;<br>
                         </ol>
                      </article>
                 </section>
-                <section id="gRPC_API">
+                <section id="gRPC_APIBrainbox">
                   
                     <h2>gRPC API’s Description for BrainBox(ED588 and ED527)</h2>
                     
@@ -19650,7 +19658,7 @@ Denso_HS45352=24;<br>
                     </article>
                     </section>
 
-                <section id="testingDebug">
+                <section id="testingDebugBrainbox">
                   <h2>TESTING AND DEBUGGING</h2>
                   <h3>ASCII Commands and Response :</h3>
                                   <table>
@@ -19830,7 +19838,7 @@ Denso_HS45352=24;<br>
                                           </tbody>
                                           </table>
                                           </section>
-                                                    <section id="resourcesLinks">
+                                                    <section id="resourcesLinksBrainbox">
                                                       <h2>RESOURCES AND LINKS</h2>
                                                       
                                                       <p>Introduction to Boost IO Manager SDK:<a href="https://www.brainboxes.com/faq/boostio-software-installation">Click Here</a></li></p>
