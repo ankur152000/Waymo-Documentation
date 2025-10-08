@@ -2021,7 +2021,7 @@ font-weight: 400;
                                              
                                             id="checkBoxDenso"
                                             class="checkBox"
-                                            onclick="handlePage(this,'Denso')"
+                                         
                                           />
                                           <label for="checkBoxDenso">
                                             <p>
@@ -2034,14 +2034,22 @@ font-weight: 400;
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('introductionDenso', -80,'Denso')"
+                                                onclick="scrollToElement('introductionDenso', -80,'DriverDetailDenso6axis',this)"
                                                 >Introduction</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('deviceOverviewDenso', -80,'Denso')"
+                                                onclick="scrollToElement('deviceOverviewDenso', -80,'DriverDetailDenso6axis',this)"
+                                                >Device Overview &amp; SDK
+                                                Installation</a
+                                              >
+                                            </li>
+                                             <li>
+                                              <p></p>
+                                              <a
+                                                onclick="scrollToElement('driverDevelopmentDenso', -80,'DriverDetailDenso6axis',this)"
                                                 >Device Overview &amp; SDK
                                                 Installation</a
                                               >
@@ -2049,21 +2057,21 @@ font-weight: 400;
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('gRPC_APIDenso', -80,'Denso')"
+                                                onclick="scrollToElement('gRPC_APIDenso', -80,'DriverDetailDenso6axis',this)"
                                                 >gRPC API’s Description</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('testingDebugDenso', -80,'Denso')"
+                                                onclick="scrollToElement('testingDebugDenso', -80,'DriverDetailDenso6axis',this)"
                                                 >Testing and Debugging</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToBottom('resourcesLinksDenso', -80,'Denso')"
+                                                onclick="scrollToBottom('resourcesLinksDenso', -80,'DriverDetailDenso6axis',this)"
                                                 >Resources &amp; Links</a
                                               >
                                             </li>
@@ -19871,10 +19879,10 @@ Denso_HS45352=24;<br>
                 <div class="title">
                     <h1>Denso 4-axis and 6-axis Driver Development Guide</h1>
                 </div>
-                <section class="content" id="introduction">
+                <section class="content" id="introductionDenso">
                   
     <div class="deviceImg">
-      <img src="../DocumentImages/DeviceImage/Denso6-axisRobot.jpeg" alt="Denso"/>
+      <img src="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/DeviceImage/Denso6-axisRobot.jpeg" alt="Denso"/>
       <p>Denso6 Axis Robot</p>
                         </div>
                     <h2>Introduction</h2>
@@ -19901,7 +19909,7 @@ Denso_HS45352=24;<br>
                     </article>
                     </li>                    
                 </section>
-                <section class="content" id="deviceOverview">
+                <section class="content" id="deviceOverviewDenso">
                     <h2>Device Overview and SDK Installation</h2>
                     <h3>Description of the device for which the driver is being developed</h3>
                     <p>The Denso VP-6242 is a compact 6-axis articulated robot designed for high-precision tasks such as assembly, handling, and inspection. With a total arm length of 420 mm, the VP-6242 has segments of 210 mm for each of the first two joints and an additional 75 mm offset on Joint 3, allowing for a versatile range of motion. Equipped with absolute encoders, this robot eliminates the need for homing at startup, enhancing positional accuracy, and its AC servomotors provide smooth, precise control with brakes on each joint for added safety. Capable of handling a maximum payload of 2.5 kg, it is optimized for speed with a high composite speed and short cycle time, making it suitable for applications requiring consistent accuracy. The robot's built-in user air piping and signal lines simplify integration with pneumatic tools, sensors, and other end-effectors, while its compact footprint allows for easy installation in confined spaces. Its low noise operation makes it suitable for quieter environments, and its robust design supports repetitive tasks across various industries, including electronics, automotive, and medical. </p>
@@ -20044,7 +20052,7 @@ ORiN is a licensed SDK and provides a well-structured, intuitive API, allowing d
                     </article>
                     
                 
-                    <article id="driverDevelopment">
+                    <article id="driverDevelopmentDenso">
                         <h3>DRIVER DEVELOPMENT</h3>
                         <h4>Introduction to driver development for the device</h4>
                       <article>
@@ -20091,7 +20099,7 @@ Microsoft stopped providing single-language programming environments. Therefore,
                         </ol>
                      </article>
                 </section>
-                <section id="gRPC_API">
+                <section id="gRPC_APIDenso">
                     <h2>gRPC API’s Description for Denso</h2>
                     <ol>
                       <li>
@@ -22173,7 +22181,7 @@ message ReadIoResponse <br>
                     </article>
                     </section>
 
-                <section id="testingDebug">
+                <section id="testingDebugDenso">
                   <h2>TESTING AND DEBUGGING</h2>
                   <h3>Response Codes :</h3>
                                   <table>
@@ -22543,7 +22551,7 @@ message ReadIoResponse <br>
                                           </tr>
                                           </tbody>
                                           </table>
-                                                    <section id="resourcesLinks">
+                                                    <section id="resourcesLinksDenso">
                                                       <h2>RESOURCES AND LINKS</h2>
                                                       <li>OriN2 Software Overview: <a  href="https://support.densorobotics.com/support/solutions/articles/60000698631-orin2-overview"> Article </a></li>
                                                       <li>RC Controller User Manual: <a  href="https://www.manualslib.com/manual/1354294/Denso-Rc7m.html">Manual Link</a></li>
