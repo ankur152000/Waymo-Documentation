@@ -1492,7 +1492,7 @@ font-weight: 400;
                                              
                                             id="checkBoxOptoCamera"
                                             class="checkBox"
-                                            onclick="handlePage(this,'OptoCamera')"
+                                            
                                           />
                                           <label for="checkBoxOptoCamera">
                                             <p>
@@ -1508,14 +1508,14 @@ font-weight: 400;
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('introductionOptoCamera', -80,'OptoCamera')"
+                                                onclick="scrollToElement('introductionOptoCamera', -80,'DriverDetailOptoCamera',this)"
                                                 >Introduction</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('deviceOverviewOptoCamera', -80,'OptoCamera')"
+                                                onclick="scrollToElement('deviceOverviewOptoCamera', -80,'DriverDetailOptoCamera',this)"
                                                 >Device Overview &amp; SDK
                                                 Installation</a
                                               >
@@ -1523,28 +1523,28 @@ font-weight: 400;
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('driverDevelopmentOptoCamera', -80,'OptoCamera')"
+                                                onclick="scrollToElement('driverDevelopmentOptoCamera', -80,'DriverDetailOptoCamera',this)"
                                                 >Driver Development</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('gRPC_APIOptoCamera', -80,'OptoCamera')"
+                                                onclick="scrollToElement('gRPC_APIOptoCamera', -80,'DriverDetailOptoCamera',this)"
                                                 >gRPC API’s Description</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('testingDebugOptoCamera', -80,'OptoCamera')"
+                                                onclick="scrollToElement('testingDebugOptoCamera', -80,'DriverDetailOptoCamera',this)"
                                                 >Testing and Debugging</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToBottom('resourcesLinksOptoCamera', -80,'OptoCamera')"
+                                                onclick="scrollToBottom('resourcesLinksOptoCamera', -80,'DriverDetailOptoCamera',this)"
                                                 >Resources &amp; Links</a
                                               >
                                             </li>
@@ -22597,13 +22597,7 @@ message ReadIoResponse <br>
                     <h1>Device Driver Development Overview</h1>
                 </div>
                 <section class="content" id="introduction">
-                  
-    <!-- <div class="deviceImg">
-      <img src="../DocumentImages/DeviceImage/Denso6-axisRobot.jpeg" alt="Denso"/>
-      <p>Waymo Automation Tool: Device Driver Development Overview</p>
-                        </div> -->
-                    
-                    <article>
+        <article>
                         <h3>Brief overview of the Device Driver Development</h3>
                         <p>The Waymo Automation Tool project centres on developing robust device drivers that enable seamless integration and control of diverse industrial and automation hardware in the autonomous vehicle manufacturing domain. The drivers are engineered to support reliable, real-time communications and efficient data exchange across cameras, sensors, robots, and controllers used by Waymo and similar advanced production environments.</p>
                     </article>
@@ -27270,10 +27264,10 @@ Denso_HS45352=24;<br>
                 <div class="title">
                     <h1>Opto Camera driver document</h1>
                 </div>
-                <section class="content" id="introduction">
+                <section class="content" id="introductionOptoCamera">
                   
     <div class="deviceImg" style=" width: 206px;">
-      <img src="../DocumentImages/DeviceImage/OptoCamera.jpg" alt="OptoCamera"/>
+      <img src="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/DeviceImage/OptoCamera.jpg" alt="OptoCamera"/>
       <p>Opto Camera</p>
                         </div>
                     <h2>Introduction</h2>
@@ -27307,7 +27301,7 @@ Denso_HS45352=24;<br>
                     </li>
                     </ol>
                 </section>
-                <section class="content" id="deviceOverview">
+                <section class="content" id="deviceOverviewOptoCamera">
                     <h2>Device Overview</h2>
                     <p>The COE-G series includes Gigabit Ethernet cameras equipped with the latest sensors, ranging from high speed VGA to the latest 12MP SONY Pregius sensor, which deliver GigE connectivity with high frame rate. </p>
                     <article>
@@ -27493,7 +27487,7 @@ Denso_HS45352=24;<br>
                     
                     </article>
                 </section>
-                <section id="driverDevelopment">
+                <section id="driverDevelopmentOptoCamera">
                   <h2>	Driver Development </h2>
                   <p>To Install the OECS Camera Software Suite for Windows:</p>                      
                         <ul>
@@ -27525,7 +27519,7 @@ Denso_HS45352=24;<br>
                      </article>
                 </section>
 
-                <section id="gRPC_API">
+                <section id="gRPC_APIOptoCamera">
                   
                     <h2>gRPC API’s Description for Opto Camera</h2>
                     
@@ -28717,7 +28711,7 @@ Denso_HS45352=24;<br>
                         <li><b>image.jpeg: </b>User Defined name with Format.</li>
                     </ul>
                     </article>
-                  <section id="testingDebug">
+                  <section id="testingDebugOptoCamera">
                     <h2>Testing and Debugging</h2>
                     <table>
                       <tbody>
@@ -28954,7 +28948,7 @@ Denso_HS45352=24;<br>
                   
                                   </section>
                                                     
-                                                    <section id="resourcesLinks">
+                                                    <section id="resourcesLinksOptoCamera">
                                                       <h2>RESOURCES AND LINKS</h2>
                                                       <ul>
                                                         <li>OEC Firmware and Installation file: <a target="_blank" href="https://www.opto-e.com/en/products/coe-u-series#downloads"> click here</a></li>
