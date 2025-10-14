@@ -1617,7 +1617,7 @@ font-weight: 400;
                                              
                                             id="checkBoxTriton"
                                             class="checkBox"
-                                            onclick="handlePage(this,'Triton')"
+                                           
                                           />
                                           <label for="checkBoxTriton">
                                             <p>
@@ -1630,14 +1630,14 @@ font-weight: 400;
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('introductionTriton', -80,'Triton')"
+                                                onclick="scrollToElement('introductionTriton', -80,'DriverDetailTritonCamera',this)"
                                                 >Introduction</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('deviceOverviewTriton', -80,'Triton')"
+                                                onclick="scrollToElement('deviceOverviewTriton', -80,'DriverDetailTritonCamera',this)"
                                                 >Device Overview &amp; SDK
                                                 Installation</a
                                               >
@@ -1645,21 +1645,28 @@ font-weight: 400;
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('gRPC_APITriton', -80,'Triton')"
+                                                onclick="scrollToElement('driverDevelopmentTriton', -80,'DriverDetailTritonCamera',this)"
+                                                >Driver Development</a
+                                              >
+                                            </li>
+                                            <li>
+                                              <p></p>
+                                              <a
+                                                onclick="scrollToElement('gRPC_APITriton', -80,'DriverDetailTritonCamera',this)"
                                                 >gRPC API’s Description</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToElement('testingDebugTriton', -80,'Triton')"
+                                                onclick="scrollToElement('testingDebugTriton', -80,'DriverDetailTritonCamera',this)"
                                                 >Testing and Debugging</a
                                               >
                                             </li>
                                             <li>
                                               <p></p>
                                               <a
-                                                onclick="scrollToBottom('resourcesLinksTriton', -80,'Triton')"
+                                                onclick="scrollToBottom('resourcesLinksTriton', -80,'DriverDetailTritonCamera',this)"
                                                 >Resources &amp; Links</a
                                               >
                                             </li>
@@ -1719,8 +1726,7 @@ font-weight: 400;
                                               <p></p>
                                               <a
                                                 onclick="scrollToElement('driverDevelopmentBrainbox', -80,'DriverDetailBrainBoxED588',this)"
-                                                >Device Overview &amp; SDK
-                                                Installation</a
+                                                >Driver Development</a
                                               >
                                             </li>
                                             <li>
@@ -30695,9 +30701,9 @@ Denso_HS45352=24;<br>
                 <div class="title">
                     <h1>Lucid Triton Camera (TRI0245S-MC) Driver Document Guide</h1>
                 </div>
-                <section class="content" id="introduction">
+                <section class="content" id="introductionTriton">
                   <div class="deviceImg">
-                    <img src="../DocumentImages/DeviceImage/Triton-TRI0245S-MC-Camera.jpeg" alt="AlioImage"/>
+                    <img src="https://raw.githubusercontent.com/ankur152000/Waymo-Documentation/refs/heads/main/Images/DeviceImage/Triton-TRI0245S-MC-Camera.jpeg" alt="AlioImage"/>
                     <p>Lucid Triton TRI0245S-MC Camera</p>
                                       </div>
                     <h2>Introduction</h2>
@@ -30725,7 +30731,7 @@ Denso_HS45352=24;<br>
                     </li>
                     </ol>
                 </section>
-                <section class="content" id="deviceOverview">
+                <section class="content" id="deviceOverviewTriton">
                     <h2>Device Overview</h2>
                     <h3>Description of the device for which the driver is being developed</h3>
                     <p>LUCID Vision Labs Triton™ GigE Power over Ethernet (PoE) Cameras provide exceptional price performance in a compact 29 x 29mm form factor. These cameras are available with Sony’s Pregius™ and Starvis™ imaging sensors with up to 24.5 megapixels of resolution, as well as Sony’s polarized sensor. Each imaging sensor is actively aligned during manufacturing, ensuring sharp and crisp images even in the corners. Using the accessory IP67 lens tubes (sold separately), LUCID Vision Labs Triton GigE Power over Ethernet (PoE) Cameras can operate in harsh environments where dust or water are present up to IP67 thresholds. Triton cameras are ideal for automotive, process control, and food and beverage applications..</p>  
@@ -30901,7 +30907,7 @@ Denso_HS45352=24;<br>
                       <p>Documentation and Samples Comprehensive documentation, plus a collection of programming samples for C ++, C, .NET languages (C#, VB.NET, etc.), illustrate various use cases for different grab strategies, multi-camera applications, recording video files, apply image processing, and many more.d many more.</p>
                     </article>             
    
-                    <article id="DriverDevelopment">
+                    <article id="driverDevelopmentTriton">
                         <h3>DRIVER DEVELOPMENT</h3> 
                         <h4>Installing the Arena Software Suite SDK</h4>
                         <p>Download the desired or current version of the Triton Arena Camera Software Suite from the Lucid Vision website:</p>
@@ -30940,7 +30946,7 @@ Denso_HS45352=24;<br>
                      </article>
                 </section>
 
-                <section id="gRPC_API">
+                <section id="gRPC_APITriton">
                   
                     <h2>gRPC API’s Description for lucid triton Camera</h2>
                     
@@ -32076,7 +32082,7 @@ Denso_HS45352=24;<br>
                     </article>
                     </section>
 
-                <section id="testingDebug">
+                <section id="testingDebugTriton">
                   <h2>TESTING AND DEBUGGING</h2>
              
                   <h3><b>Error Types and codes with Description for Triton Camera</b></h3>
@@ -32199,7 +32205,7 @@ Denso_HS45352=24;<br>
                                       </table>
 
                                       
-                                                    <section id="resourcesLinks">
+                                                    <section id="resourcesLinksTriton">
                                                       <h2>RESOURCES AND LINKS</h2>
                                                       <ul>
                                                         
